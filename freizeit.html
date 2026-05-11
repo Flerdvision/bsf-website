@@ -154,6 +154,38 @@ window.openBooking=function(){var m=document.getElementById('bookingModal');if(m
   </div>
 </section>
 
+<!-- Transaktionsuhr Preview -->
+<section style="padding:5rem 2rem;background:var(--f)">
+  <div style="max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center">
+    <!-- Mini-SVG left -->
+    <div class="reveal" style="aspect-ratio:1;max-width:320px;margin:0 auto;background:rgba(255,255,255,.06);border-radius:50%;box-shadow:0 0 0 1px rgba(255,255,255,.12)">
+      <svg viewBox="0 0 400 400" style="width:100%;height:100%">
+        <circle cx="200" cy="200" r="178" fill="none" stroke="rgba(255,255,255,.12)" stroke-width="1"/>
+        <circle cx="200" cy="200" r="128" fill="none" stroke="rgba(255,255,255,.08)" stroke-width="1" stroke-dasharray="2 5"/>
+        <line x1="200" y1="22" x2="200" y2="378" stroke="rgba(255,255,255,.1)" stroke-dasharray="2 5"/>
+        <line x1="22" y1="200" x2="378" y2="200" stroke="rgba(255,255,255,.1)" stroke-dasharray="2 5"/>
+        <g fill="rgba(255,255,255,.55)">
+          <circle cx="319" cy="148" r="15"/><circle cx="334" cy="207" r="15"/>
+          <circle cx="303" cy="270" r="15"/><circle cx="248" cy="321" r="15"/>
+          <circle cx="182" cy="333" r="15"/><circle cx="118" cy="305" r="15"/>
+          <circle cx="76"  cy="252" r="15"/><circle cx="66"  cy="190" r="15"/>
+          <circle cx="97"  cy="128" r="15"/><circle cx="152" cy="82"  r="15"/>
+          <circle cx="220" cy="67"  r="15"/>
+        </g>
+        <circle cx="288" cy="96" r="15" fill="#D4B976"/>
+        <circle cx="200" cy="200" r="4" fill="rgba(255,255,255,.3)"/>
+      </svg>
+    </div>
+    <!-- Text right -->
+    <div class="reveal">
+      <div class="section-tag" style="color:var(--el);justify-content:flex-start">Das BSF-Instrument</div>
+      <h2 style="font-family:'Lora',serif;font-size:clamp(1.8rem,3vw,2.8rem);color:#fff;font-weight:600;margin-bottom:1rem;line-height:1.1">Die <em style="color:var(--el);font-style:italic">Transaktionsuhr</em> — Ihr Marktkompass.</h2>
+      <p style="color:rgba(255,255,255,.65);line-height:1.75;margin-bottom:2rem">12 Sektoren, 4 Marktphasen, halbjährlich aktualisiert. Unser proprietärer Marktalgorithmus zeigt Ihnen genau, ob jetzt der richtige Moment für Ihr Mandat ist.</p>
+      <a href="transaktionsuhr.html" class="btn btn-green" style="background:var(--el);color:var(--f);border:none">→ Vollständige Uhr ansehen</a>
+    </div>
+  </div>
+</section>
+
 <footer>
   <div class="footer-top">
     <div class="footer-brand">

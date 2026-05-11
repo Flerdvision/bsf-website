@@ -416,6 +416,43 @@ window.openBooking=function(){var m=document.getElementById('bookingModal');if(m
   </div>
 </section>
 
+<!-- ═══════════════ TRANSAKTIONSUHR PREVIEW ═══════════════ -->
+<section style="padding:6rem 2rem;background:var(--ff)">
+  <div style="max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center">
+    <div class="reveal">
+      <div class="section-tag">Das BSF-Instrument</div>
+      <h2 class="section-title">Die <em style="color:var(--el);font-style:italic">Transaktions­uhr.</em></h2>
+      <p class="section-sub" style="margin-bottom:2rem">Seit über zwei Dekaden bestimmt unser proprietärer Marktalgorithmus den Zyklus-Stand von 12 Sektoren — halbjährlich aktualisiert. Sie zeigt auf einen Blick, ob Ihr Sektor gerade Verkäufer- oder Käufermarkt ist.</p>
+      <a href="transaktionsuhr.html" class="btn btn-green">→ Aktuelle Uhr ansehen</a>
+    </div>
+    <!-- Mini-Vorschau-SVG -->
+    <div class="reveal" style="aspect-ratio:1;max-width:360px;margin:0 auto;background:var(--wh);border-radius:50%;box-shadow:0 20px 60px rgba(26,43,72,.10);border:1px solid var(--bd)">
+      <svg viewBox="0 0 400 400" style="width:100%;height:100%">
+        <circle cx="200" cy="200" r="180" fill="none" stroke="#e0ddd6" stroke-width="1.5"/>
+        <circle cx="200" cy="200" r="130" fill="none" stroke="#e8e3d8" stroke-width="1" stroke-dasharray="2 5"/>
+        <line x1="200" y1="20" x2="200" y2="380" stroke="#e0ddd6" stroke-dasharray="2 5"/>
+        <line x1="20" y1="200" x2="380" y2="200" stroke="#e0ddd6" stroke-dasharray="2 5"/>
+        <text x="294" y="68" font-size="8" letter-spacing="2" fill="#999" text-anchor="middle" font-family="Inter,sans-serif">HOCH</text>
+        <text x="294" y="342" font-size="8" letter-spacing="2" fill="#999" text-anchor="middle" font-family="Inter,sans-serif">ABKÜHL.</text>
+        <text x="106" y="342" font-size="8" letter-spacing="2" fill="#999" text-anchor="middle" font-family="Inter,sans-serif">TIEF</text>
+        <text x="106" y="68" font-size="8" letter-spacing="2" fill="#999" text-anchor="middle" font-family="Inter,sans-serif">AUFSCHW.</text>
+        <!-- 12 Sektor-Tokens (stilisiert) -->
+        <g fill="#1a2b48" opacity=".85">
+          <circle cx="319" cy="148" r="16"/><circle cx="334" cy="207" r="16"/>
+          <circle cx="303" cy="270" r="16"/><circle cx="248" cy="321" r="16"/>
+          <circle cx="182" cy="333" r="16"/><circle cx="118" cy="305" r="16"/>
+          <circle cx="76"  cy="252" r="16"/><circle cx="66"  cy="190" r="16"/>
+          <circle cx="97"  cy="128" r="16"/><circle cx="152" cy="82"  r="16"/>
+          <circle cx="220" cy="67"  r="16"/>
+        </g>
+        <!-- Highlight-Token in Gold -->
+        <circle cx="288" cy="96" r="16" fill="#D4B976"/>
+        <circle cx="200" cy="200" r="4" fill="#1a2b48" opacity=".5"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
 <!-- ═══════════════ CTA BANNER ═══════════════ -->
 <!-- TODO: BSF-Bild — Sulmsee-Foto temporär drin, später ersetzen -->
 <section class="cta-banner">
