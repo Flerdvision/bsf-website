@@ -32,11 +32,11 @@ window.openBooking=function(){var m=document.getElementById('bookingModal');if(m
 .tu-clock-wrap{max-width:920px;margin:0 auto}
 .tu-clock-frame{position:relative;aspect-ratio:1;max-width:680px;margin:0 auto;background:var(--wh);border-radius:50%;box-shadow:0 30px 80px rgba(26,43,72,.12),inset 0 0 0 1px var(--bd)}
 .tu-clock-svg{width:100%;height:100%;display:block}
-.tu-token{cursor:pointer;transition:transform .25s cubic-bezier(.2,.8,.2,1)}
-.tu-token:hover{transform:scale(1.15)}
-.tu-token-circle{fill:var(--f);stroke:var(--wh);stroke-width:2.5;transition:fill .2s}
-.tu-token:hover .tu-token-circle{fill:var(--el)}
-.tu-token-text{fill:#fff;font-family:'Inter',sans-serif;font-size:11px;font-weight:700;letter-spacing:.04em;text-anchor:middle;dominant-baseline:central;pointer-events:none}
+.tu-token{cursor:pointer}
+.tu-token-circle{fill:var(--f);stroke:var(--wh);stroke-width:2.5;transition:fill .2s,stroke-width .2s}
+.tu-token:hover .tu-token-circle{fill:var(--el);stroke-width:5}
+.tu-token-text{fill:#fff;font-family:'Inter',sans-serif;font-size:11px;font-weight:700;letter-spacing:.04em;text-anchor:middle;dominant-baseline:central;pointer-events:none;transition:font-size .2s}
+.tu-token:hover .tu-token-text{font-size:13px}
 .tu-quadrant-label{font-family:'Inter',sans-serif;font-size:10px;letter-spacing:.22em;text-transform:uppercase;fill:var(--tl);font-weight:600}
 
 .tu-detail{margin-top:3rem;background:var(--wh);border:1px solid var(--bd);border-radius:var(--r);padding:2.5rem;min-height:160px;display:none}
