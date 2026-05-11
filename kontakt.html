@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="BSF Consulting AG – Kontakt und Erstgespräch | M&A-Beratung Zug">
-<title>Kontakt – BSF Consulting AG</title>
+<meta name="description" content="BSF Consulting AG – Kontakt, Standort & Anfahrt | Gubelstrasse 12, CH-6300 Zug">
+<title>Kontakt & Standort – BSF Consulting AG</title>
 <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 <script>
@@ -33,6 +33,21 @@ window.openBooking=function(){var m=document.getElementById('bookingModal');if(m
 .form-success{display:none;background:var(--fp);border:1px solid rgba(26,43,72,.3);border-radius:var(--r);padding:1.2rem 1.5rem;margin-top:1rem;color:var(--f);font-weight:600;font-size:.9rem;align-items:center;gap:.6rem}
 .form-success.show{display:flex;animation:panelIn .4s cubic-bezier(.22,1,.36,1) both}
 @keyframes panelIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+/* Intro path cards */
+.path-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;max-width:1100px;margin:2.5rem auto 0}
+.path-card{background:#fff;border:1.5px solid var(--bd);border-radius:20px;padding:2rem 1.8rem;text-align:center;transition:all .3s cubic-bezier(.22,1,.36,1)}
+.path-card:hover{border-color:var(--fl);box-shadow:var(--sh);transform:translateY(-4px)}
+.path-icon{font-size:2.4rem;margin-bottom:1rem;display:block}
+.path-lbl{font-weight:700;font-size:1rem;color:var(--f);margin-bottom:.4rem}
+.path-val{font-size:.88rem;color:var(--tl);margin-bottom:1.2rem;line-height:1.5}
+@media(max-width:768px){.path-grid{grid-template-columns:1fr}}
+/* Route cards */
+.route-card{background:#fff;border:1.5px solid var(--bd);border-radius:16px;padding:1.6rem 1.8rem;position:relative;overflow:hidden;transition:all .3s cubic-bezier(.22,1,.36,1)}
+.route-card::before{content:'';position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--bd);border-radius:0 2px 2px 0;transition:background .3s}
+.route-card:hover{box-shadow:var(--sh);transform:translateY(-2px)}
+.route-card:hover::before{background:var(--fl)}
+.route-num{position:absolute;top:1rem;right:1.2rem;font-family:'Lora',serif;font-size:2.5rem;color:var(--bd);font-weight:600;line-height:1;transition:color .3s}
+.route-card:hover .route-num{color:var(--fp2,var(--f))}
 </style>
 </head>
 <body>
@@ -45,7 +60,6 @@ window.openBooking=function(){var m=document.getElementById('bookingModal');if(m
   <a href="preise.html" onclick="closeMobMenu()">Honorar</a>
   <a href="freizeit.html" onclick="closeMobMenu()">Methode</a>
   <a href="transaktionsuhr.html" onclick="closeMobMenu()">Transaktionsuhr</a>
-  <a href="anreise.html" onclick="closeMobMenu()">Standort</a>
   <a href="kontakt.html" onclick="closeMobMenu()">Kontakt</a>
   <a href="#" onclick="closeMobMenu();openBooking();return false;" style="color:var(--el)">→ Erstgespräch</a>
 </div>
@@ -61,7 +75,6 @@ window.openBooking=function(){var m=document.getElementById('bookingModal');if(m
       <li><a href="preise.html">Honorar</a></li>
       <li><a href="freizeit.html">Methode</a></li>
       <li><a href="transaktionsuhr.html">Transaktionsuhr</a></li>
-      <li><a href="anreise.html">Standort</a></li>
       <li><a href="kontakt.html" class="nav-active">Kontakt</a></li>
       <li><a href="#" onclick="openBooking();return false;" class="nav-book">→ Erstgespräch</a></li>
     </ul>
@@ -88,23 +101,42 @@ window.openBooking=function(){var m=document.getElementById('bookingModal');if(m
   </div>
 </div>
 
-<!-- INFO STRIP -->
-<div class="count-section">
-  <div class="count-inner">
-    <div class="count-item reveal"><div class="count-num">1 Tag</div><div class="count-divider"></div><div class="count-label">Antwortzeit</div></div>
-    <div class="count-item reveal"><div class="count-num">📞</div><div class="count-divider"></div><div class="count-label"><a href="tel:+41417603616" style="color:inherit;text-decoration:none">+41 41 760 36 16</a></div></div>
-    <div class="count-item reveal"><div class="count-num">✉️</div><div class="count-divider"></div><div class="count-label"><a href="mailto:info@bsfconsulting.ch" style="color:inherit;text-decoration:none">info@bsfconsulting.ch</a></div></div>
-    <div class="count-item reveal"><div class="count-num">1998</div><div class="count-divider"></div><div class="count-label">Vertraulich seit</div></div>
+<!-- INTRO: DREI WEGE -->
+<section style="padding:6rem 2rem;background:#fff">
+  <div style="max-width:1100px;margin:0 auto;text-align:center">
+    <div class="section-tag reveal">Kontaktwege</div>
+    <h2 class="section-title reveal">Drei Wege<br><em>zu uns</em></h2>
+    <p class="section-sub reveal" style="margin:0 auto">Wählen Sie den Weg, der Ihnen am besten passt – alle führen zu einer persönlichen Antwort.</p>
+    <div class="path-grid">
+      <div class="path-card reveal from-left">
+        <span class="path-icon">→</span>
+        <div class="path-lbl">Erstgespräch-Formular</div>
+        <div class="path-val">Strukturiert, vertraulich, innerhalb eines Werktags bestätigt. Auf Wunsch vorab per NDA.</div>
+        <a href="#" onclick="openBooking();return false;" class="btn btn-green" style="display:inline-block;font-size:.85rem;padding:.7rem 1.4rem">Jetzt anfragen</a>
+      </div>
+      <div class="path-card reveal">
+        <span class="path-icon">📞</span>
+        <div class="path-lbl">Telefon</div>
+        <div class="path-val">Direkt persönlich. Montag–Freitag, 8–18 Uhr. Außerhalb der Bürozeiten hinterlassen Sie eine Nachricht.</div>
+        <a href="tel:+41417603616" class="btn btn-green" style="display:inline-block;font-size:.85rem;padding:.7rem 1.4rem">+41 41 760 36 16</a>
+      </div>
+      <div class="path-card reveal from-right">
+        <span class="path-icon">✉️</span>
+        <div class="path-lbl">E-Mail</div>
+        <div class="path-val">Diskret und dokumentiert. Schreiben Sie uns direkt oder nutzen Sie das Formular weiter unten.</div>
+        <a href="mailto:info@bsfconsulting.ch" class="btn btn-green" style="display:inline-block;font-size:.85rem;padding:.7rem 1.4rem">info@bsfconsulting.ch</a>
+      </div>
+    </div>
   </div>
-</div>
+</section>
 
-<!-- CONTACT SECTION -->
-<section class="contact" id="kontakt" style="padding:5rem 2rem 6rem">
+<!-- KONTAKTFORMULAR -->
+<section class="contact" id="kontakt" style="padding:6rem 2rem;background:var(--fp)">
   <div class="contact-inner">
     <div style="text-align:center;margin-bottom:3rem">
-      <div class="section-tag reveal">Sprechen Sie uns an</div>
-      <h2 class="section-title reveal">Wir sind <em style="font-style:italic;color:var(--el)">für Sie da</em></h2>
-      <p class="section-sub reveal" style="margin:0 auto">Alle Kontaktwege – wählen Sie, was Ihnen am liebsten ist.</p>
+      <div class="section-tag reveal">Direkte Nachricht</div>
+      <h2 class="section-title reveal">Schreiben Sie<br><em>uns direkt</em></h2>
+      <p class="section-sub reveal" style="margin:0 auto">Wir antworten vertraulich innerhalb eines Werktags.</p>
     </div>
     <div class="contact-grid">
       <div class="reveal from-left">
@@ -143,7 +175,7 @@ window.openBooking=function(){var m=document.getElementById('bookingModal');if(m
       </div>
 
       <div class="contact-form-wrap reveal from-right">
-        <h3>Schreiben Sie uns</h3>
+        <h3>Ihre Nachricht</h3>
         <p style="margin-bottom:1.8rem">Wir antworten vertraulich innerhalb eines Werktags.</p>
         <div class="form-row">
           <div class="form-group"><label>Vorname</label><input type="text" id="c-fname" placeholder="Max"></div>
@@ -162,6 +194,84 @@ window.openBooking=function(){var m=document.getElementById('bookingModal');if(m
   </div>
 </section>
 
+<!-- STANDORT & ANFAHRT -->
+<section class="anreise" id="standort" style="padding:6rem 2rem">
+  <div class="anreise-inner">
+    <div>
+      <div class="section-tag reveal">Standort & Anfahrt</div>
+      <h2 class="section-title reveal">Im Herzen<br><em>von Zug</em></h2>
+      <p class="section-sub reveal">Egal ob mit Auto, Bahn oder Flugzeug – wir sind gut erreichbar.</p>
+      <div class="route-list">
+        <div class="route-card reveal from-left">
+          <div class="route-num">01</div>
+          <div class="route-icon">🚗</div>
+          <div><div class="route-lbl">Mit dem Auto</div>
+          <div class="route-text">A4 Richtung Zug, Ausfahrt <strong>Zug-Nord</strong>, dann über die Zugerstrasse zur Gubelstrasse. Parkplätze in der Umgebung vorhanden.</div></div>
+        </div>
+        <div class="route-card reveal from-left">
+          <div class="route-num">02</div>
+          <div class="route-icon">🚂</div>
+          <div><div class="route-lbl">Mit der Bahn</div>
+          <div class="route-text">Direktverbindung ab <strong>Zürich HB</strong> in ca. 40 Minuten zum Bahnhof Zug. Vom Bahnhof zur Gubelstrasse ca. 15 Min. zu Fuß oder Bus.</div></div>
+        </div>
+        <div class="route-card reveal from-left">
+          <div class="route-num">03</div>
+          <div class="route-icon">✈️</div>
+          <div><div class="route-lbl">Ab Flughafen Zürich</div>
+          <div class="route-text">Flughafen Zürich (ZRH): ca. <strong>50 Minuten</strong> mit Bahn oder Auto. Direktzüge via Zürich HB fahren stündlich nach Zug.</div></div>
+        </div>
+        <div class="route-card reveal from-left">
+          <div class="route-num">04</div>
+          <div class="route-icon">🏢</div>
+          <div><div class="route-lbl">Unser Büro</div>
+          <div class="route-text"><strong>Gubelstrasse 12, CH-6300 Zug.</strong> Bitte vereinbaren Sie Ihren Besuch vorab telefonisch oder per E-Mail mit uns.</div></div>
+        </div>
+      </div>
+      <div class="addr-box reveal">
+        <div class="addr-lbl">Adresse</div><div class="addr-val" style="margin-bottom:1rem">Gubelstrasse 12, CH-6300 Zug, Schweiz</div>
+        <div class="addr-lbl">Telefon</div><div class="addr-val" style="margin-bottom:1rem"><a href="tel:+41417603616" style="color:#fff">+41 41 760 36 16</a></div>
+        <div class="addr-lbl">E-Mail</div><div class="addr-val" style="margin-bottom:1.5rem"><a href="mailto:info@bsfconsulting.ch" style="color:#fff">info@bsfconsulting.ch</a></div>
+        <a href="https://maps.google.com/?q=Gubelstrasse+12,+6300+Zug,+Schweiz" target="_blank" class="btn btn-white">📍 In Google Maps öffnen</a>
+      </div>
+    </div>
+    <div class="reveal from-right">
+      <!-- TODO: Google Maps iframe für Gubelstrasse 12, Zug einbetten -->
+      <div class="map-iframe-wrap" style="background:var(--fp);border-radius:var(--r);display:flex;align-items:center;justify-content:center;min-height:380px">
+        <div style="text-align:center;color:var(--f);padding:2rem">
+          <div style="font-size:3rem;margin-bottom:1rem">📍</div>
+          <div style="font-family:'Lora',serif;font-size:1.2rem;font-weight:600;margin-bottom:.4rem">Gubelstrasse 12</div>
+          <div style="font-size:.95rem;color:var(--tl);margin-bottom:1.4rem">CH-6300 Zug, Schweiz</div>
+          <a href="https://maps.google.com/?q=Gubelstrasse+12,+6300+Zug,+Schweiz" target="_blank" class="btn btn-white" style="display:inline-block">In Google Maps öffnen</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EDITORIAL / QUOTE -->
+<section style="background:linear-gradient(135deg,var(--f) 0%,#0e1a2e 100%);padding:6rem 2rem;text-align:center">
+  <div style="max-width:820px;margin:0 auto">
+    <div class="section-tag reveal" style="border-color:rgba(212,185,118,.3);color:var(--el)">Unser Versprechen</div>
+    <blockquote class="reveal" style="font-family:'Lora',serif;font-size:clamp(1.4rem,3vw,2.1rem);color:#fff;line-height:1.55;font-style:italic;margin:1.8rem 0 1.4rem;border:none;padding:0">
+      „Antwort innerhalb eines Werktags.<br><em style="color:var(--el)">Vertraulichkeit selbstverständlich.</em>"
+    </blockquote>
+    <div class="reveal" style="font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.35);font-weight:700">BSF Consulting AG · Zug · seit 1998</div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section style="padding:5rem 2rem;text-align:center;background:#fff">
+  <div style="max-width:700px;margin:0 auto">
+    <div class="section-tag reveal">Jetzt handeln</div>
+    <h2 class="section-title reveal">Rufen Sie uns<br><em>direkt an</em></h2>
+    <p class="section-sub reveal" style="margin:0 auto 2.5rem">Persönlich, diskret, ohne Warteschleife. Wir freuen uns auf Ihr Anliegen.</p>
+    <div class="reveal" style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap">
+      <a href="tel:+41417603616" class="btn btn-green">📞 +41 41 760 36 16</a>
+      <a href="#" onclick="openBooking();return false;" class="btn btn-outline">→ Erstgespräch anfragen</a>
+    </div>
+  </div>
+</section>
+
 <footer>
   <div class="footer-top">
     <div class="footer-brand">
@@ -175,13 +285,12 @@ window.openBooking=function(){var m=document.getElementById('bookingModal');if(m
       <li><a href="preise.html">Honorar</a></li>
       <li><a href="freizeit.html">Methode</a></li>
       <li><a href="transaktionsuhr.html">Transaktionsuhr</a></li>
-      <li><a href="anreise.html">Standort</a></li>
       <li><a href="kontakt.html">Kontakt</a></li>
     </ul></div>
     <div class="fc"><h4>Kontakt</h4><ul>
       <li><a href="tel:+41417603616">+41 41 760 36 16</a></li>
       <li><a href="mailto:info@bsfconsulting.ch">info@bsfconsulting.ch</a></li>
-      <li><a href="anreise.html">Gubelstrasse 12, Zug</a></li>
+      <li><a href="kontakt.html#standort">Gubelstrasse 12, Zug</a></li>
     </ul></div>
     <div class="fc"><h4>Rechtliches</h4><ul>
       <li><a href="#">Impressum</a></li>
