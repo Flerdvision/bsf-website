@@ -1,6 +1,7 @@
 /**
  * subpage.js – BSF Consulting AG: central JS for all subpages.
- * Handles: scroll progress, nav scroll state, hero entrance, scroll reveal.
+ * Handles: scroll progress, nav scroll state, scroll reveal.
+ * Hero entrance is handled by CSS animation (heroIn keyframe).
  */
 (function () {
   'use strict';
@@ -22,28 +23,7 @@
     }, {passive: true});
   }
 
-  /* ── HERO ENTRANCE ─────────────────────────────────────────── */
-  function animateHero() {
-    var content = document.querySelector('.hero-content');
-    if (!content) return;
-    var children = content.children;
-    for (var i = 0; i < children.length; i++) {
-      (function (el, idx) {
-        el.style.opacity = '0';
-        el.style.transform = 'translateY(26px)';
-        el.style.transition = 'opacity .7s cubic-bezier(.22,1,.36,1), transform .7s cubic-bezier(.22,1,.36,1)';
-        el.style.transitionDelay = (idx * 0.12) + 's';
-        requestAnimationFrame(function () {
-          requestAnimationFrame(function () {
-            el.style.opacity = '1';
-            el.style.transform = 'none';
-          });
-        });
-      })(children[i], i);
-    }
-  }
-
-  /* ── RICH SCROLL REVEAL ────────────────────────────────────── */
+  /* ── SCROLL REVEAL ─────────────────────────────────────────── */
   function initReveal() {
     var SELECTORS = [
       '.spot-card', '.act-card', '.rev-card', '.route-card', '.ci-card',
@@ -69,9 +49,10 @@
 
     var globalIdx = 0;
     elements.forEach(function (el) {
-      if (el.classList.contains('reveal')) return;
-      el.classList.add('reveal');
-      el.style.transitionDelay = (globalIdx % 8 * 0.065) + 's';
+      if (!el.classList.contains('reveal')) {
+        el.classList.add('reveal');
+        el.style.transitionDelay = (globalIdx % 8 * 0.065) + 's';
+      }
       obs.observe(el);
       globalIdx++;
     });
@@ -86,13 +67,8 @@
 
   /* ── INIT ──────────────────────────────────────────────────── */
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', init);
+    document.addEventListener('DOMContentLoaded', initReveal);
   } else {
-    init();
-  }
-
-  function init() {
-    animateHero();
-    setTimeout(initReveal, 50);
+    initReveal();
   }
 })();
