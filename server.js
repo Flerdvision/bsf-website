@@ -49,6 +49,27 @@ db.exec(`
     message     TEXT,
     status      TEXT DEFAULT 'new'
   );
+  CREATE TABLE IF NOT EXISTS consultations (
+    id                INTEGER PRIMARY KEY AUTOINCREMENT,
+    ref               TEXT    UNIQUE,
+    created_at        TEXT,
+    mandate_type      TEXT,
+    timeframe         TEXT,
+    brief_description TEXT,
+    sector            TEXT,
+    country           TEXT,
+    revenue_range     TEXT,
+    employees_range   TEXT,
+    company_name      TEXT,
+    salutation        TEXT,
+    role              TEXT,
+    first_name        TEXT,
+    last_name         TEXT,
+    email             TEXT,
+    phone             TEXT,
+    preferred_contact TEXT,
+    status            TEXT DEFAULT 'new'
+  );
 `);
 
 // ─── E-Mail ───────────────────────────────────────────────────────────────────
@@ -330,6 +351,122 @@ app.post('/api/contact', async (req, res) => {
   }
 });
 
+// ─── POST /api/consultation (BSF Erstgespräch) ───────────────────────────────
+app.post('/api/consultation', async (req, res) => {
+  try {
+    const {
+      mandate_type, timeframe, brief_description,
+      sector, country, revenue_range, employees_range, company_name,
+      salutation, role, first_name, last_name, email, phone, preferred_contact,
+    } = req.body;
+
+    if (!mandate_type || !brief_description || !sector || !first_name || !last_name || !email || !role) {
+      return res.status(400).json({ ok: false, error: 'missing_required_fields' });
+    }
+
+    const ref = 'BSF-' + Date.now().toString(36).toUpperCase() + '-' + Math.random().toString(36).substring(2, 6).toUpperCase();
+    const createdAt = new Date().toISOString();
+
+    db.prepare(`
+      INSERT INTO consultations (
+        ref, created_at, mandate_type, timeframe, brief_description,
+        sector, country, revenue_range, employees_range, company_name,
+        salutation, role, first_name, last_name, email, phone, preferred_contact
+      ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+    `).run(
+      ref, createdAt, mandate_type, timeframe || '', brief_description,
+      sector, country || '', revenue_range || '', employees_range || '', company_name || '',
+      salutation || '', role, first_name, last_name, email, phone || '', preferred_contact || 'email'
+    );
+
+    const salLabel = salutation === 'herr' ? 'Herr' : salutation === 'frau' ? 'Frau' : '';
+    const createdFormatted = new Date(createdAt).toLocaleString('de-CH');
+
+    const mailToBsf = {
+      from: `"BSF Website" <${process.env.SMTP_USER}>`,
+      to: process.env.BSF_INBOX || 'info@bsfconsulting.ch',
+      replyTo: email,
+      subject: `Neue Erstgespräch-Anfrage [${ref}] — ${mandate_type}`,
+      html: `
+        <div style="font-family:Inter,Arial,sans-serif;color:#1a1a1a;max-width:640px;margin:0 auto">
+          <h2 style="font-family:Georgia,serif;color:#1a2b48;border-bottom:2px solid #D4B976;padding-bottom:10px">
+            Neue Erstgespräch-Anfrage
+          </h2>
+          <p style="color:#777">Referenz: <strong>${ref}</strong> · Eingegangen: ${createdFormatted}</p>
+          <h3 style="color:#1a2b48;margin-top:32px">Anliegen</h3>
+          <table style="width:100%;border-collapse:collapse">
+            ${row('Mandatsfeld', `<strong>${mandate_type}</strong>`)}
+            ${row('Zeithorizont', timeframe || '—')}
+          </table>
+          <p style="background:#f5f7fb;padding:16px;border-left:3px solid #D4B976;margin-top:16px">
+            ${(brief_description || '').replace(/\n/g, '<br>')}
+          </p>
+          <h3 style="color:#1a2b48;margin-top:32px">Unternehmen</h3>
+          <table style="width:100%;border-collapse:collapse">
+            ${row('Unternehmen', company_name || '— (nicht angegeben)')}
+            ${row('Branche', sector)}
+            ${row('Land', country || '—')}
+            ${row('Umsatz', revenue_range || '—')}
+            ${row('Mitarbeitende', employees_range || '—')}
+          </table>
+          <h3 style="color:#1a2b48;margin-top:32px">Kontakt</h3>
+          <table style="width:100%;border-collapse:collapse">
+            ${row('Name', `<strong>${salLabel} ${first_name} ${last_name}</strong>`)}
+            ${row('Funktion', role)}
+            ${row('E-Mail', `<a href="mailto:${email}">${email}</a>`)}
+            ${row('Telefon', phone || '—')}
+            ${row('Kontaktart', preferred_contact)}
+          </table>
+          <p style="color:#777;margin-top:32px;font-size:.88rem">
+            Reply-To dieser E-Mail führt direkt zum Anfrager.
+          </p>
+        </div>
+      `,
+    };
+
+    const mailToClient = {
+      from: `"BSF Consulting AG" <${process.env.SMTP_USER}>`,
+      to: email,
+      subject: `Ihre Anfrage bei BSF Consulting [${ref}]`,
+      html: `
+        <div style="font-family:Inter,Arial,sans-serif;color:#1a1a1a;max-width:600px;margin:0 auto;padding:20px">
+          <h2 style="font-family:Georgia,serif;color:#1a2b48;font-weight:400">
+            ${salutation === 'herr' ? 'Sehr geehrter Herr' : salutation === 'frau' ? 'Sehr geehrte Frau' : 'Guten Tag'} ${last_name},
+          </h2>
+          <p style="line-height:1.7;color:#444">
+            vielen Dank für Ihre Anfrage. Wir haben Ihre Nachricht erhalten und werden uns innerhalb eines Werktags persönlich bei Ihnen melden.
+          </p>
+          <p style="line-height:1.7;color:#444">
+            Ihre Anfrage ist unter der Referenz <strong>${ref}</strong> bei uns registriert. Alle übermittelten Informationen werden vertraulich behandelt.
+          </p>
+          <p style="line-height:1.7;color:#444;margin-top:32px">
+            Mit freundlichen Grüssen<br>
+            <strong>BSF Consulting AG</strong>
+          </p>
+          <div style="border-top:1px solid #e0ddd6;margin-top:32px;padding-top:16px;color:#777;font-size:.85rem;line-height:1.6">
+            BSF Consulting AG · Gubelstrasse 12 · CH-6300 Zug<br>
+            +41 41 760 36 16 · info@bsfconsulting.ch
+          </div>
+        </div>
+      `,
+    };
+
+    await Promise.all([
+      sendMail(mailToBsf),
+      sendMail(mailToClient),
+    ]);
+
+    res.json({
+      ok: true,
+      ref,
+      message: 'Vielen Dank. Wir melden uns innerhalb eines Werktags. Eine Bestätigung wurde an Ihre E-Mail-Adresse gesendet.',
+    });
+  } catch (err) {
+    console.error('Consultation error:', err);
+    res.status(500).json({ ok: false, error: 'server_error' });
+  }
+});
+
 // ─── Admin-Endpunkte ──────────────────────────────────────────────────────────
 function requireAdmin(req, res, next) {
   const expected = 'Basic ' + Buffer.from(`admin:${process.env.ADMIN_PASS || 'sulmsee2025'}`).toString('base64');
@@ -346,6 +483,10 @@ app.get('/api/bookings', requireAdmin, (req, res) => {
 
 app.get('/api/contacts', requireAdmin, (req, res) => {
   res.json(db.prepare('SELECT * FROM contacts ORDER BY created_at DESC').all());
+});
+
+app.get('/api/consultations', requireAdmin, (req, res) => {
+  res.json(db.prepare('SELECT * FROM consultations ORDER BY created_at DESC').all());
 });
 
 app.patch('/api/bookings/:ref', requireAdmin, (req, res) => {

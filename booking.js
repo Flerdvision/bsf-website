@@ -1,157 +1,217 @@
-/**
- * Camping Sulmsee – 5-Step Booking Wizard
- * Auto-injects modal into page, handles navigation & submission
- */
+// BSF Consulting AG – Erstgespräch-Wizard
+// 3 Schritte: Anliegen → Unternehmen → Kontakt
+// Architektur: Self-injecting modal, Step-Navigation, Validierung, /api/consultation
+
+// === Sulmsee Legacy (auskommentiert beim BSF-Rebrand — nicht löschen, Sulmsee-Basis) ===
+/*
+var BK_LEGACY = { adults: 2, kids: 0, spot: '', vehicle: 'Wohnmobil', extras: [] };
+function bkUpdateNights() { ... }
+function bkSelectSpot(el) { ... }
+function bkAdj(field, delta) { ... }
+function bkToggleExtra(el) { ... }
+function bkBuildSummary() { ... }
+*/
+
 (function () {
   'use strict';
 
-  /* ── State ─────────────────────────────────────────── */
-  var BK = { adults: 2, kids: 0, spot: '', vehicle: 'Wohnmobil', extras: [] };
   var currentStep = 1;
+  var TOTAL_STEPS = 3;
 
-  /* ── Modal HTML ─────────────────────────────────────── */
+  /* ── Modal HTML ─────────────────────────────────────────────────────── */
   var MODAL_HTML = [
     '<div class="modal-bg" id="bookingModal">',
     '<div class="modal bk-modal">',
 
     /* header */
     '<div class="modal-header">',
-    '<div><h2 class="bk-headline">Stellplatz anfragen</h2>',
-    '<p class="bk-subtitle">Camping Sulmsee &middot; Saison 2026</p></div>',
+    '<div><h2 class="bk-headline">Erstgespräch anfragen</h2>',
+    '<p class="bk-subtitle">Vertraulich · unverbindlich · innerhalb eines Werktags</p></div>',
     '<button class="modal-close" onclick="closeBooking()">&#x2715;</button>',
     '</div>',
 
     /* step progress */
     '<div class="bk-progress" id="bk-progress">',
     '<div class="bk-steps">',
-    '<div class="bk-step active" id="bkstep-1"><div class="bk-step-dot">1</div><div class="bk-step-lbl">Zeitraum</div></div>',
+    '<div class="bk-step active" id="bkstep-1"><div class="bk-step-dot">1</div><div class="bk-step-lbl">Anliegen</div></div>',
     '<div class="bk-step-line"></div>',
-    '<div class="bk-step" id="bkstep-2"><div class="bk-step-dot">2</div><div class="bk-step-lbl">Stellplatz</div></div>',
+    '<div class="bk-step" id="bkstep-2"><div class="bk-step-dot">2</div><div class="bk-step-lbl">Unternehmen</div></div>',
     '<div class="bk-step-line"></div>',
-    '<div class="bk-step" id="bkstep-3"><div class="bk-step-dot">3</div><div class="bk-step-lbl">Reisende</div></div>',
-    '<div class="bk-step-line"></div>',
-    '<div class="bk-step" id="bkstep-4"><div class="bk-step-dot">4</div><div class="bk-step-lbl">Kontakt</div></div>',
-    '<div class="bk-step-line"></div>',
-    '<div class="bk-step" id="bkstep-5"><div class="bk-step-dot">5</div><div class="bk-step-lbl">&Uuml;bersicht</div></div>',
+    '<div class="bk-step" id="bkstep-3"><div class="bk-step-dot">3</div><div class="bk-step-lbl">Kontakt</div></div>',
     '</div>',
     '</div>',
 
     /* body */
     '<div class="modal-body bk-body">',
 
-    /* ── STEP 1: Zeitraum ──────────────────── */
+    /* ── STEP 1: Anliegen ──────────────────── */
     '<div class="bk-panel active" id="bk-p1">',
-    '<h3 class="bk-ptitle">Wann m&ouml;chten Sie reisen?</h3>',
-    '<p class="bk-psub">W&auml;hlen Sie Ihren An- und Abreisetag f&uuml;r die Saison 2026.</p>',
-    '<div class="form-row">',
-    '<div class="form-group"><label>Anreise *</label>',
-    '<input type="date" id="bk-arrival" min="2026-04-17" max="2026-10-26" oninput="bkUpdateNights()"></div>',
-    '<div class="form-group"><label>Abreise *</label>',
-    '<input type="date" id="bk-departure" min="2026-04-18" max="2026-10-26" oninput="bkUpdateNights()"></div>',
+    '<h3 class="bk-ptitle">Womit können wir Ihnen helfen?</h3>',
+    '<p class="bk-psub">Keine sensiblen Details nötig — wir klären den Rahmen im persönlichen Gespräch.</p>',
+    '<div class="form-group">',
+    '<label>Mandatsfeld <span style="color:var(--el)">*</span></label>',
+    '<select id="bk-mandate-type" required>',
+    '<option value="">Bitte wählen…</option>',
+    '<option value="verkauf">Verkauf / Exit</option>',
+    '<option value="kauf">Kauf / Akquisition</option>',
+    '<option value="nachfolge">Nachfolgeregelung</option>',
+    '<option value="fusion">Fusion / Joint Venture</option>',
+    '<option value="restrukturierung">Restrukturierung</option>',
+    '<option value="andere">Andere / unsicher</option>',
+    '</select>',
     '</div>',
-    '<div id="bk-nights-badge" class="bk-nights-badge" style="display:none"></div>',
-    '<div class="season-hint" style="margin-top:1rem">',
-    '&#x1F331; Saison 17.&nbsp;April &ndash; 26.&nbsp;Oktober 2026 &middot; Mindestaufenthalt 2&nbsp;N&auml;chte',
+    '<div class="form-group">',
+    '<label>Zeitlicher Horizont</label>',
+    '<select id="bk-timeframe">',
+    '<option value="">Bitte wählen…</option>',
+    '<option value="akut">Akut (Entscheidung steht)</option>',
+    '<option value="kurz">In den nächsten 6 Monaten</option>',
+    '<option value="mittel">In 6–18 Monaten</option>',
+    '<option value="lang">Längerfristig / Vorbereitung</option>',
+    '<option value="orientierung">Orientierung / unverbindlich</option>',
+    '</select>',
+    '</div>',
+    '<div class="form-group">',
+    '<label>Kurze Beschreibung Ihres Anliegens <span style="color:var(--el)">*</span></label>',
+    '<textarea id="bk-brief" rows="4" placeholder="In wenigen Sätzen — worum geht es? Sie müssen keine sensiblen Details nennen." required></textarea>',
+    '<small style="color:var(--tl);font-size:.78rem;margin-top:6px;display:block">Vertraulich. Diese Information wird verschlüsselt übermittelt.</small>',
     '</div>',
     '</div>',
 
-    /* ── STEP 2: Stellplatz ────────────────── */
+    /* ── STEP 2: Unternehmen ───────────────── */
     '<div class="bk-panel" id="bk-p2">',
-    '<h3 class="bk-ptitle">Welchen Stellplatz bevorzugen Sie?</h3>',
-    '<p class="bk-psub">W&auml;hlen Sie aus unseren zwei Platzkategorien.</p>',
-    '<div class="spot-selector" id="bk-spot-opts">',
-    '<div class="spot-opt" data-spot="see" onclick="bkSelectSpot(this)">',
-    '<div class="bk-spot-icon">&#x1F30A;</div>',
-    '<div class="spot-opt-name">Sulmsee-Stellplatz</div>',
-    '<div class="spot-opt-desc">Direkt am Seeufer mit direktem Wasserzugang und Seeblick. Pl&auml;tze 1&ndash;24.</div>',
-    '<div class="spot-opt-price">ab &euro;&nbsp;36,&ndash; / Nacht</div>',
+    '<h3 class="bk-ptitle">Ihr Unternehmen</h3>',
+    '<p class="bk-psub">Helfen Sie uns, Ihre Situation besser einzuschätzen.</p>',
+    '<div class="form-row">',
+    '<div class="form-group">',
+    '<label>Branche <span style="color:var(--el)">*</span></label>',
+    '<select id="bk-sector" required>',
+    '<option value="">Bitte wählen…</option>',
+    '<option value="industrie">Industrie / Maschinenbau</option>',
+    '<option value="konsum">Konsumgüter / Handel</option>',
+    '<option value="dienstleistung">Dienstleistung / B2B</option>',
+    '<option value="technologie">Technologie / Software</option>',
+    '<option value="gesundheit">Gesundheitswesen</option>',
+    '<option value="energie">Energie / Versorgung</option>',
+    '<option value="immobilien">Immobilien / Bau</option>',
+    '<option value="finanz">Finanz / Versicherung</option>',
+    '<option value="andere">Andere</option>',
+    '</select>',
     '</div>',
-    '<div class="spot-opt" data-spot="silber" onclick="bkSelectSpot(this)">',
-    '<div class="bk-spot-icon">&#x1F33F;</div>',
-    '<div class="spot-opt-name">Silbersee-Stellplatz</div>',
-    '<div class="spot-opt-desc">Ruhige Lage im Gr&uuml;nen mit Blick in die Weinberge. Pl&auml;tze 25&ndash;88.</div>',
-    '<div class="spot-opt-price">ab &euro;&nbsp;28,&ndash; / Nacht</div>',
+    '<div class="form-group">',
+    '<label>Land</label>',
+    '<select id="bk-country">',
+    '<option value="CH">Schweiz</option>',
+    '<option value="DE">Deutschland</option>',
+    '<option value="AT">Österreich</option>',
+    '<option value="TR">Türkei</option>',
+    '<option value="other">Anderes</option>',
+    '</select>',
     '</div>',
+    '</div>',
+    '<div class="form-row">',
+    '<div class="form-group">',
+    '<label>Umsatz (ca.)</label>',
+    '<select id="bk-revenue">',
+    '<option value="">Möchte ich nicht angeben</option>',
+    '<option value="under_5m">Unter CHF 5 Mio.</option>',
+    '<option value="5_25m">CHF 5 – 25 Mio.</option>',
+    '<option value="25_100m">CHF 25 – 100 Mio.</option>',
+    '<option value="100_500m">CHF 100 – 500 Mio.</option>',
+    '<option value="over_500m">Über CHF 500 Mio.</option>',
+    '</select>',
+    '</div>',
+    '<div class="form-group">',
+    '<label>Mitarbeitende (ca.)</label>',
+    '<select id="bk-employees">',
+    '<option value="">Möchte ich nicht angeben</option>',
+    '<option value="under_10">Unter 10</option>',
+    '<option value="10_50">10 – 50</option>',
+    '<option value="50_250">50 – 250</option>',
+    '<option value="250_1000">250 – 1’000</option>',
+    '<option value="over_1000">Über 1’000</option>',
+    '</select>',
+    '</div>',
+    '</div>',
+    '<div class="form-group">',
+    '<label>Unternehmensname (optional)</label>',
+    '<input type="text" id="bk-company" placeholder="Falls Sie es bereits jetzt nennen möchten — vertraulich" />',
+    '<small style="color:var(--tl);font-size:.78rem;margin-top:6px;display:block">Sie können den Namen auch erst im persönlichen Gespräch nennen.</small>',
     '</div>',
     '</div>',
 
-    /* ── STEP 3: Reisende ──────────────────── */
+    /* ── STEP 3: Kontakt ───────────────────── */
     '<div class="bk-panel" id="bk-p3">',
-    '<h3 class="bk-ptitle">Wer reist mit?</h3>',
-    '<p class="bk-psub">Anzahl der Reisenden und Ihr Fahrzeug.</p>',
-    '<div class="form-row" style="margin-bottom:1.2rem">',
-    '<div class="form-group"><label>Erwachsene</label>',
-    '<div class="stepper">',
-    '<button class="stepper-btn" type="button" onclick="bkAdj(\'adults\',-1)">&#x2212;</button>',
-    '<div class="stepper-val" id="bk-adults-val">2</div>',
-    '<button class="stepper-btn" type="button" onclick="bkAdj(\'adults\',1)">+</button>',
-    '</div></div>',
-    '<div class="form-group"><label>Kinder (bis 14&nbsp;J.)</label>',
-    '<div class="stepper">',
-    '<button class="stepper-btn" type="button" onclick="bkAdj(\'kids\',-1)">&#x2212;</button>',
-    '<div class="stepper-val" id="bk-kids-val">0</div>',
-    '<button class="stepper-btn" type="button" onclick="bkAdj(\'kids\',1)">+</button>',
-    '</div></div>',
-    '</div>',
-    '<div class="form-group"><label>Fahrzeug / Unterkunft</label>',
-    '<select id="bk-vehicle">',
-    '<option value="Wohnmobil">Wohnmobil</option>',
-    '<option value="Caravan">Caravan / Wohnwagen</option>',
-    '<option value="Zelt">Zelt</option>',
-    '<option value="Motorrad">Motorrad</option>',
-    '<option value="PKW">PKW mit Dachzelt</option>',
-    '</select></div>',
-    '<div class="extras-grid">',
-    '<div class="extra-opt" data-extra="eBike-Verleih" onclick="bkToggleExtra(this)">',
-    '<div class="extra-icon">&#x1F6B2;</div>',
-    '<div><div class="extra-name">eBike-Verleih</div><div class="extra-price">&euro;&nbsp;25,&ndash; / Tag</div></div>',
-    '</div>',
-    '<div class="extra-opt" data-extra="Hund" onclick="bkToggleExtra(this)">',
-    '<div class="extra-icon">&#x1F415;</div>',
-    '<div><div class="extra-name">Hund mitbringen</div><div class="extra-price">&euro;&nbsp;3,&ndash; / Nacht</div></div>',
-    '</div>',
-    '</div>',
-    '</div>',
-
-    /* ── STEP 4: Kontakt ───────────────────── */
-    '<div class="bk-panel" id="bk-p4">',
     '<h3 class="bk-ptitle">Ihre Kontaktdaten</h3>',
-    '<p class="bk-psub">Damit wir Ihre Anfrage bearbeiten k&ouml;nnen.</p>',
+    '<p class="bk-psub">Damit wir einen Termin vereinbaren können.</p>',
     '<div class="form-row">',
-    '<div class="form-group"><label>Vorname *</label><input type="text" id="bk-fname" placeholder="Max" autocomplete="given-name"></div>',
-    '<div class="form-group"><label>Nachname *</label><input type="text" id="bk-lname" placeholder="Muster" autocomplete="family-name"></div>',
+    '<div class="form-group">',
+    '<label>Anrede</label>',
+    '<select id="bk-salutation">',
+    '<option value="herr">Herr</option>',
+    '<option value="frau">Frau</option>',
+    '<option value="none">Keine</option>',
+    '</select>',
+    '</div>',
+    '<div class="form-group">',
+    '<label>Funktion <span style="color:var(--el)">*</span></label>',
+    '<input type="text" id="bk-role" placeholder="z.B. Inhaber, Geschäftsführer, CFO" required />',
+    '</div>',
     '</div>',
     '<div class="form-row">',
-    '<div class="form-group"><label>E-Mail *</label><input type="email" id="bk-email" placeholder="max@beispiel.at" autocomplete="email"></div>',
-    '<div class="form-group"><label>Telefon</label><input type="tel" id="bk-phone" placeholder="+43 ..." autocomplete="tel"></div>',
+    '<div class="form-group">',
+    '<label>Vorname <span style="color:var(--el)">*</span></label>',
+    '<input type="text" id="bk-fname" autocomplete="given-name" required />',
     '</div>',
-    '<div class="form-group"><label>Nachricht / Sonderw&uuml;nsche</label>',
-    '<textarea id="bk-msg" style="min-height:90px" placeholder="Besondere W&uuml;nsche oder Fragen &hellip;"></textarea>',
+    '<div class="form-group">',
+    '<label>Nachname <span style="color:var(--el)">*</span></label>',
+    '<input type="text" id="bk-lname" autocomplete="family-name" required />',
     '</div>',
     '</div>',
-
-    /* ── STEP 5: Übersicht ─────────────────── */
-    '<div class="bk-panel" id="bk-p5">',
-    '<h3 class="bk-ptitle">Ihre Anfrage im &Uuml;berblick</h3>',
-    '<p class="bk-psub">Bitte &uuml;berpr&uuml;fen Sie Ihre Angaben.</p>',
-    '<div class="booking-summary" id="bk-summary"></div>',
-    '<p style="font-size:.75rem;color:var(--tl);text-align:center;margin-top:.5rem">* Best&auml;tigung innerhalb von 24&nbsp;Stunden per E-Mail</p>',
+    '<div class="form-row">',
+    '<div class="form-group">',
+    '<label>E-Mail <span style="color:var(--el)">*</span></label>',
+    '<input type="email" id="bk-email" autocomplete="email" required />',
+    '</div>',
+    '<div class="form-group">',
+    '<label>Telefon</label>',
+    '<input type="tel" id="bk-phone" placeholder="+41 …" autocomplete="tel" />',
+    '</div>',
+    '</div>',
+    '<div class="form-group">',
+    '<label>Bevorzugte Kontaktart</label>',
+    '<select id="bk-pref-contact">',
+    '<option value="email">E-Mail (für Terminvorschlag)</option>',
+    '<option value="phone">Telefonisch (Sie rufen mich an)</option>',
+    '<option value="any">Egal</option>',
+    '</select>',
+    '</div>',
+    '<div class="form-group">',
+    '<label style="display:flex;align-items:flex-start;gap:10px;font-weight:400;cursor:pointer">',
+    '<input type="checkbox" id="bk-consent" style="margin-top:4px;flex-shrink:0" />',
+    '<span style="font-size:.88rem;line-height:1.5;color:var(--tm)">',
+    'Ich nehme zur Kenntnis, dass meine Anfrage vertraulich behandelt wird. BSF Consulting AG verpflichtet sich, keine Informationen an Dritte weiterzugeben. <span style="color:var(--el)">*</span>',
+    '</span>',
+    '</label>',
+    '</div>',
     '</div>',
 
     /* ── Success screen ─────────────────────── */
     '<div class="bk-success-screen" id="bk-success" style="display:none">',
-    '<div style="font-size:3.5rem;margin-bottom:1rem">&#x2705;</div>',
-    '<h3 style="font-family:\'Lora\',serif;font-size:1.6rem;color:var(--f);margin-bottom:.5rem">Anfrage eingegangen!</h3>',
-    '<p style="color:var(--tm);line-height:1.8;max-width:380px;margin:0 auto 1.5rem">Vielen Dank, <strong id="bk-success-name"></strong>! Ihre Buchungsanfrage wurde gespeichert. Wir melden uns innerhalb von 24&nbsp;Stunden per E-Mail bei Ihnen.</p>',
-    '<button class="btn btn-green" onclick="closeBooking()">Schlie&szlig;en</button>',
+    '<div style="font-size:3rem;color:var(--el);margin-bottom:1rem">&#x2713;</div>',
+    '<h3 style="font-family:\'Lora\',serif;font-size:1.6rem;color:var(--f);margin-bottom:.5rem">Anfrage erhalten</h3>',
+    '<p style="color:var(--tm);line-height:1.8;max-width:400px;margin:0 auto 1.5rem" id="bk-success-msg">',
+    'Vielen Dank. Wir melden uns innerhalb eines Werktags persönlich bei Ihnen.</p>',
+    '<p style="color:var(--tl);font-size:.85rem;margin-bottom:2rem">Sie erhalten in Kürze eine Bestätigung per E-Mail.</p>',
+    '<button class="btn btn-green" onclick="closeBooking()">Schließen</button>',
     '</div>',
 
     '</div>', /* /bk-body */
 
     /* footer */
     '<div class="modal-footer" id="bk-footer">',
-    '<button class="modal-nav-btn" id="bk-back" onclick="bkPrev()" style="visibility:hidden">&#x2190; Zur&uuml;ck</button>',
-    '<span id="bk-step-count" style="font-size:.78rem;color:var(--tl);font-weight:600">Schritt 1 von 5</span>',
+    '<button class="modal-nav-btn" id="bk-back" onclick="bkPrev()" style="visibility:hidden">&#x2190; Zurück</button>',
+    '<span id="bk-step-count" style="font-size:.78rem;color:var(--tl);font-weight:600">Schritt 1 von 3</span>',
     '<button class="modal-next-btn" id="bk-next" onclick="bkNext()">Weiter &#x2192;</button>',
     '</div>',
 
@@ -159,7 +219,7 @@
     '</div>'  /* /modal-bg */
   ].join('\n');
 
-  /* ── Init ───────────────────────────────────────────── */
+  /* ── Init ────────────────────────────────────────────────────────────── */
   function init() {
     if (document.getElementById('bookingModal')) return;
     document.body.insertAdjacentHTML('afterbegin', MODAL_HTML);
@@ -174,7 +234,7 @@
     init();
   }
 
-  /* ── Public API ─────────────────────────────────────── */
+  /* ── Public API ──────────────────────────────────────────────────────── */
   window.openBooking = function () {
     init();
     resetBooking();
@@ -188,11 +248,10 @@
     document.body.style.overflow = '';
   };
 
-  /* ── Step Navigation ────────────────────────────────── */
+  /* ── Step Navigation ─────────────────────────────────────────────────── */
   window.bkNext = function () {
     if (!bkValidate(currentStep)) return;
-    if (currentStep === 4) bkBuildSummary();
-    if (currentStep < 5) {
+    if (currentStep < TOTAL_STEPS) {
       goToStep(currentStep + 1);
     } else {
       bkSubmit();
@@ -204,7 +263,7 @@
   };
 
   function goToStep(n) {
-    for (var i = 1; i <= 5; i++) {
+    for (var i = 1; i <= TOTAL_STEPS; i++) {
       var s = document.getElementById('bkstep-' + i);
       if (!s) continue;
       s.classList.remove('active', 'done');
@@ -219,14 +278,14 @@
     var next = document.getElementById('bk-next');
     var counter = document.getElementById('bk-step-count');
     if (back) back.style.visibility = n > 1 ? 'visible' : 'hidden';
-    if (counter) counter.textContent = 'Schritt ' + n + ' von 5';
+    if (counter) counter.textContent = 'Schritt ' + n + ' von ' + TOTAL_STEPS;
     if (next) {
       next.disabled = false;
-      if (n === 5) {
-        next.textContent = 'Anfrage absenden \u2713';
+      if (n === TOTAL_STEPS) {
+        next.textContent = 'Anfrage absenden ✓';
         next.style.background = 'var(--e)';
       } else {
-        next.textContent = 'Weiter \u2192';
+        next.textContent = 'Weiter →';
         next.style.background = '';
       }
     }
@@ -235,76 +294,52 @@
     if (modal) modal.scrollTop = 0;
   }
 
-  /* ── Spot selection ─────────────────────────────────── */
-  window.bkSelectSpot = function (el) {
-    document.querySelectorAll('#bk-spot-opts .spot-opt').forEach(function (o) { o.classList.remove('selected'); });
-    el.classList.add('selected');
-    BK.spot = el.getAttribute('data-spot');
-  };
-
-  /* ── Steppers ───────────────────────────────────────── */
-  window.bkAdj = function (field, delta) {
-    if (field === 'adults') {
-      BK.adults = Math.max(1, Math.min(8, BK.adults + delta));
-      var el = document.getElementById('bk-adults-val');
-      if (el) el.textContent = BK.adults;
-    } else if (field === 'kids') {
-      BK.kids = Math.max(0, Math.min(6, BK.kids + delta));
-      var el2 = document.getElementById('bk-kids-val');
-      if (el2) el2.textContent = BK.kids;
-    }
-  };
-
-  /* ── Extras ─────────────────────────────────────────── */
-  window.bkToggleExtra = function (el) {
-    el.classList.toggle('selected');
-    var name = el.getAttribute('data-extra');
-    var idx = BK.extras.indexOf(name);
-    if (idx > -1) BK.extras.splice(idx, 1);
-    else BK.extras.push(name);
-  };
-
-  /* ── Nights badge ───────────────────────────────────── */
-  window.bkUpdateNights = function () {
-    var a = document.getElementById('bk-arrival');
-    var d = document.getElementById('bk-departure');
-    var badge = document.getElementById('bk-nights-badge');
-    if (!a || !d || !badge) return;
-    if (a.value && d.value) {
-      var diff = Math.round((new Date(d.value) - new Date(a.value)) / 86400000);
-      if (diff > 0) {
-        var fmt = function (s) { return s.split('-').reverse().join('.'); };
-        badge.textContent = '\uD83C\uDF19 ' + diff + ' Nacht' + (diff !== 1 ? 'e' : '') +
-          ' \u00B7 ' + fmt(a.value) + ' bis ' + fmt(d.value);
-        badge.style.display = 'block';
-      } else {
-        badge.style.display = 'none';
-      }
-    } else {
-      badge.style.display = 'none';
-    }
-  };
-
-  /* ── Validation ─────────────────────────────────────── */
+  /* ── Validation ──────────────────────────────────────────────────────── */
   function bkValidate(step) {
     var alert = document.getElementById('bk-alert');
     if (alert) alert.remove();
+
     if (step === 1) {
-      var a = document.getElementById('bk-arrival');
-      var d = document.getElementById('bk-departure');
-      if (!a || !a.value || !d || !d.value) { bkAlert('Bitte An- und Abreisetag ausw\u00E4hlen.'); return false; }
-      if (new Date(d.value) <= new Date(a.value)) { bkAlert('Abreise muss nach Anreise liegen.'); return false; }
+      var mandate = document.getElementById('bk-mandate-type');
+      var brief = document.getElementById('bk-brief');
+      if (!mandate || !mandate.value) {
+        bkAlert('Bitte wählen Sie ein Mandatsfeld.');
+        return false;
+      }
+      if (!brief || brief.value.trim().length < 20) {
+        bkAlert('Bitte beschreiben Sie Ihr Anliegen in mindestens 20 Zeichen.');
+        return false;
+      }
     }
+
     if (step === 2) {
-      if (!BK.spot) { bkAlert('Bitte einen Stellplatz-Typ ausw\u00E4hlen.'); return false; }
+      var sector = document.getElementById('bk-sector');
+      if (!sector || !sector.value) {
+        bkAlert('Bitte wählen Sie eine Branche.');
+        return false;
+      }
     }
-    if (step === 4) {
-      var fn = document.getElementById('bk-fname');
-      var ln = document.getElementById('bk-lname');
-      var em = document.getElementById('bk-email');
-      if (!fn || !fn.value.trim() || !ln || !ln.value.trim()) { bkAlert('Bitte Vor- und Nachname eingeben.'); return false; }
-      if (!em || !em.value.trim() || em.value.indexOf('@') < 0) { bkAlert('Bitte eine g\u00FCltige E-Mail-Adresse eingeben.'); return false; }
+
+    if (step === 3) {
+      var fname = document.getElementById('bk-fname');
+      var lname = document.getElementById('bk-lname');
+      var email = document.getElementById('bk-email');
+      var role  = document.getElementById('bk-role');
+      var consent = document.getElementById('bk-consent');
+
+      if (!fname || !fname.value.trim()) { bkAlert('Bitte Vornamen angeben.'); return false; }
+      if (!lname || !lname.value.trim()) { bkAlert('Bitte Nachnamen angeben.'); return false; }
+      if (!role  || !role.value.trim())  { bkAlert('Bitte Ihre Funktion angeben.'); return false; }
+      if (!email || !email.value.trim() || email.value.indexOf('@') < 0 || email.value.indexOf('.') < 0) {
+        bkAlert('Bitte gültige E-Mail-Adresse angeben.');
+        return false;
+      }
+      if (!consent || !consent.checked) {
+        bkAlert('Bitte bestätigen Sie die Vertraulichkeitsklausel.');
+        return false;
+      }
     }
+
     return true;
   }
 
@@ -315,87 +350,60 @@
     el.innerHTML = '&#x26A0; ' + msg;
     var panel = document.querySelector('.bk-panel.active');
     if (panel) panel.insertBefore(el, panel.firstChild);
-    setTimeout(function () { if (el.parentNode) el.remove(); }, 4000);
+    setTimeout(function () { if (el.parentNode) el.remove(); }, 4500);
   }
 
-  /* ── Summary ────────────────────────────────────────── */
-  function bkBuildSummary() {
-    var a  = document.getElementById('bk-arrival');
-    var d  = document.getElementById('bk-departure');
-    var fn = document.getElementById('bk-fname');
-    var ln = document.getElementById('bk-lname');
-    var em = document.getElementById('bk-email');
-    var ph = document.getElementById('bk-phone');
-    var veh = document.getElementById('bk-vehicle');
-    var msg = document.getElementById('bk-msg');
-
-    var nights = (a && d && a.value && d.value)
-      ? Math.round((new Date(d.value) - new Date(a.value)) / 86400000) : 0;
-    var spotLabel = BK.spot === 'see' ? 'Sulmsee-Stellplatz (am Wasser)' : 'Silbersee-Stellplatz (im Gr\u00FCnen)';
-    var basePrice = BK.spot === 'see' ? 36 : 28;
-    var fmt = function (s) { return s ? s.split('-').reverse().join('.') : '\u2013'; };
-
-    var rows = [
-      ['Zeitraum', fmt(a && a.value) + ' \u2013 ' + fmt(d && d.value) + ' (' + nights + ' N\u00E4chte)'],
-      ['Stellplatz', spotLabel],
-      ['Reisende', BK.adults + ' Erwachsene' + (BK.kids ? ', ' + BK.kids + ' Kind' + (BK.kids > 1 ? 'er' : '') : '')],
-      ['Fahrzeug', veh ? veh.value : '\u2013']
-    ];
-    if (BK.extras.length) rows.push(['Extras', BK.extras.join(', ')]);
-    rows.push(['Name', (fn ? fn.value : '') + ' ' + (ln ? ln.value : '')]);
-    rows.push(['E-Mail', em ? em.value : '']);
-    if (ph && ph.value) rows.push(['Telefon', ph.value]);
-    if (msg && msg.value.trim()) rows.push(['Nachricht', msg.value.trim()]);
-    rows.push(['Gesch\u00E4tzte Kosten', 'ab \u20AC\u00A0' + (nights * basePrice) + ',\u2013']);
-
-    var html = '<div class="bs-title">Buchungsdetails</div>';
-    rows.forEach(function (r) {
-      html += '<div class="bs-row"><span>' + r[0] + '</span><span style="text-align:right;max-width:55%">' + r[1] + '</span></div>';
-    });
-    var s = document.getElementById('bk-summary');
-    if (s) s.innerHTML = html;
-  }
-
-  /* ── Submit ─────────────────────────────────────────── */
+  /* ── Submit ──────────────────────────────────────────────────────────── */
   function bkSubmit() {
     var next = document.getElementById('bk-next');
-    if (next) { next.disabled = true; next.textContent = 'Wird gesendet \u2026'; }
+    if (next) { next.disabled = true; next.textContent = 'Wird gesendet …'; }
 
-    var g = function (id) { var el = document.getElementById(id); return el ? el.value.trim() : ''; };
-    var data = {
-      fname: g('bk-fname'), lname: g('bk-lname'),
-      email: g('bk-email'), phone: g('bk-phone'),
-      arrival: g('bk-arrival'), departure: g('bk-departure'),
-      spot: BK.spot, adults: BK.adults, kids: BK.kids,
-      vehicle: g('bk-vehicle'),
-      extras: BK.extras.join(', '),
-      message: g('bk-msg')
+    var g = function (id) { var el = document.getElementById(id); return el ? (el.value || '').trim() : ''; };
+    var formData = {
+      mandate_type:      g('bk-mandate-type'),
+      timeframe:         g('bk-timeframe'),
+      brief_description: g('bk-brief'),
+      sector:            g('bk-sector'),
+      country:           g('bk-country'),
+      revenue_range:     g('bk-revenue'),
+      employees_range:   g('bk-employees'),
+      company_name:      g('bk-company'),
+      salutation:        g('bk-salutation'),
+      role:              g('bk-role'),
+      first_name:        g('bk-fname'),
+      last_name:         g('bk-lname'),
+      email:             g('bk-email'),
+      phone:             g('bk-phone'),
+      preferred_contact: g('bk-pref-contact'),
     };
 
-    fetch('/api/booking', {
+    fetch('/api/consultation', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(data)
+      body: JSON.stringify(formData),
     })
       .then(function (r) { if (!r.ok) throw new Error('srv'); return r.json(); })
-      .then(function () { bkShowSuccess(data.fname); })
+      .then(function (result) { bkShowSuccess(result.message || 'Vielen Dank. Wir melden uns innerhalb eines Werktags.'); })
       .catch(function () {
-        var subj = 'Buchungsanfrage Camping Sulmsee \u2013 ' + data.fname + ' ' + data.lname;
-        var body = 'Name: ' + data.fname + ' ' + data.lname + '\n' +
-          'E-Mail: ' + data.email + '\n' +
-          'Telefon: ' + (data.phone || '\u2013') + '\n\n' +
-          'Anreise: ' + data.arrival + '\nAbreise: ' + data.departure + '\n' +
-          'Stellplatz: ' + (data.spot === 'see' ? 'Sulmsee' : 'Silbersee') + '\n' +
-          'Erwachsene: ' + data.adults + ', Kinder: ' + data.kids + '\n' +
-          'Fahrzeug: ' + (data.vehicle || '\u2013') + '\n' +
-          'Extras: ' + (data.extras || '\u2013') + '\n\nNachricht:\n' + (data.message || '\u2013');
-        window.location.href = 'mailto:info@flerdvision.com?subject=' +
+        // Fallback: mailto
+        var sal = formData.salutation === 'herr' ? 'Herr' : formData.salutation === 'frau' ? 'Frau' : '';
+        var subj = 'Erstgespräch-Anfrage BSF Consulting – ' + formData.first_name + ' ' + formData.last_name;
+        var body = 'Mandatsfeld: ' + formData.mandate_type + '\n' +
+          'Zeithorizont: ' + (formData.timeframe || '–') + '\n' +
+          'Anliegen: ' + formData.brief_description + '\n\n' +
+          'Branche: ' + formData.sector + '\n' +
+          'Unternehmen: ' + (formData.company_name || '–') + '\n\n' +
+          'Name: ' + sal + ' ' + formData.first_name + ' ' + formData.last_name + '\n' +
+          'Funktion: ' + formData.role + '\n' +
+          'E-Mail: ' + formData.email + '\n' +
+          'Telefon: ' + (formData.phone || '–');
+        window.location.href = 'mailto:info@bsfconsulting.ch?subject=' +
           encodeURIComponent(subj) + '&body=' + encodeURIComponent(body);
-        bkShowSuccess(data.fname);
+        bkShowSuccess('Vielen Dank. Wir melden uns innerhalb eines Werktags bei Ihnen.');
       });
   }
 
-  function bkShowSuccess(name) {
+  function bkShowSuccess(message) {
     document.querySelectorAll('.bk-panel').forEach(function (p) { p.classList.remove('active'); });
     var prog = document.getElementById('bk-progress');
     if (prog) prog.style.display = 'none';
@@ -403,42 +411,43 @@
     if (footer) footer.style.display = 'none';
     var suc = document.getElementById('bk-success');
     if (suc) suc.style.display = 'block';
-    var sn = document.getElementById('bk-success-name');
-    if (sn) sn.textContent = name;
+    var msg = document.getElementById('bk-success-msg');
+    if (msg) msg.textContent = message;
   }
 
-  /* ── Reset ──────────────────────────────────────────── */
+  /* ── Reset ───────────────────────────────────────────────────────────── */
   function resetBooking() {
-    BK = { adults: 2, kids: 0, spot: '', vehicle: 'Wohnmobil', extras: [] };
     currentStep = 1;
-    ['bk-arrival', 'bk-departure', 'bk-fname', 'bk-lname', 'bk-email', 'bk-phone', 'bk-msg'].forEach(function (id) {
-      var el = document.getElementById(id); if (el) el.value = '';
+    var ids = ['bk-mandate-type','bk-timeframe','bk-brief','bk-sector','bk-country',
+               'bk-revenue','bk-employees','bk-company','bk-salutation','bk-role',
+               'bk-fname','bk-lname','bk-email','bk-phone','bk-pref-contact'];
+    ids.forEach(function (id) {
+      var el = document.getElementById(id);
+      if (!el) return;
+      if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') el.value = '';
+      // selects keep their first option (default)
     });
-    var veh = document.getElementById('bk-vehicle'); if (veh) veh.value = 'Wohnmobil';
-    var av = document.getElementById('bk-adults-val'); if (av) av.textContent = '2';
-    var kv = document.getElementById('bk-kids-val'); if (kv) kv.textContent = '0';
-    document.querySelectorAll('.spot-opt,.extra-opt').forEach(function (o) { o.classList.remove('selected'); });
-    var badge = document.getElementById('bk-nights-badge'); if (badge) badge.style.display = 'none';
+    var consent = document.getElementById('bk-consent');
+    if (consent) consent.checked = false;
     var al = document.getElementById('bk-alert'); if (al) al.remove();
     document.querySelectorAll('.bk-panel').forEach(function (p) { p.classList.remove('active'); });
     var p1 = document.getElementById('bk-p1'); if (p1) p1.classList.add('active');
     var suc = document.getElementById('bk-success'); if (suc) suc.style.display = 'none';
     var prog = document.getElementById('bk-progress'); if (prog) prog.style.display = '';
     var ftr = document.getElementById('bk-footer'); if (ftr) ftr.style.display = '';
-    for (var i = 1; i <= 5; i++) {
+    for (var i = 1; i <= TOTAL_STEPS; i++) {
       var s = document.getElementById('bkstep-' + i);
       if (s) { s.classList.remove('active', 'done'); if (i === 1) s.classList.add('active'); }
     }
     var back = document.getElementById('bk-back'); if (back) back.style.visibility = 'hidden';
     var next = document.getElementById('bk-next');
-    if (next) { next.disabled = false; next.textContent = 'Weiter \u2192'; next.style.background = ''; }
-    var cnt = document.getElementById('bk-step-count'); if (cnt) cnt.textContent = 'Schritt 1 von 5';
+    if (next) { next.disabled = false; next.textContent = 'Weiter →'; next.style.background = ''; }
+    var cnt = document.getElementById('bk-step-count'); if (cnt) cnt.textContent = 'Schritt 1 von ' + TOTAL_STEPS;
   }
 
-  /* ── Page Transitions ───────────────────────────────── */
+  /* ── Page Transitions ────────────────────────────────────────────────── */
   (function () {
     var TR = 'opacity .15s ease, filter .15s ease';
-    // Fade + blur in on load (skip if page-loader present – index.html handles it)
     if (!document.getElementById('page-loader')) {
       document.body.style.cssText += ';opacity:0;filter:blur(6px);transition:none';
       var doIn = function () {
@@ -451,7 +460,6 @@
       if (document.readyState === 'complete') { setTimeout(doIn, 10); }
       else { window.addEventListener('load', function () { setTimeout(doIn, 10); }); }
     }
-    // Blur + fade out on navigation
     document.addEventListener('click', function (e) {
       var a = e.target.closest('a');
       if (!a) return;
