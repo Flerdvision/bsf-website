@@ -576,7 +576,7 @@ document.getElementById('mobMenuClose').addEventListener('click', closeMobMenu);
 (function(){
   const WI={0:'☀️',1:'🌤',2:'⛅',3:'☁️',45:'🌫',48:'🌫',51:'🌦',53:'🌦',55:'🌧',61:'🌧',63:'🌧',65:'🌧',71:'🌨',73:'🌨',75:'🌨',80:'🌦',81:'🌧',82:'🌧',95:'⛈',96:'⛈',99:'⛈'};
   const WD={0:'Klar',1:'Meist klar',2:'Teils bewölkt',3:'Bedeckt',45:'Nebel',48:'Raureif',51:'Nieselregen',53:'Nieselregen',55:'Nieselregen',61:'Leichter Regen',63:'Regen',65:'Starkregen',71:'Leichter Schnee',73:'Schnee',75:'Starker Schnee',80:'Regenschauer',81:'Regenschauer',82:'Starke Schauer',95:'Gewitter',96:'Gewitter',99:'Gewitter'};
-  fetch('https://api.open-meteo.com/v1/forecast?latitude=46.78&longitude=15.54&current=temperature_2m,weathercode,windspeed_10m&timezone=Europe%2FVienna')
+  fetch('https://api.open-meteo.com/v1/forecast?latitude=47.17&longitude=8.52&current=temperature_2m,weathercode,windspeed_10m&timezone=Europe%2FZurich')
     .then(r=>r.json())
     .then(d=>{
       const c=d.current;
