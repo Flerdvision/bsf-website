@@ -432,31 +432,31 @@ window.openBooking=function(){var m=document.getElementById('bookingModal');if(m
 
 <!-- Floating CTA -->
 <div class="fcta" id="fcta">
-  <button class="fcta-btn fcta-primary" onclick="openBooking()">🗓 Jetzt buchen</button>
-  <a href="tel:004334528286"><button class="fcta-btn fcta-phone">📞 Anrufen</button></a>
+  <button class="fcta-btn fcta-primary" onclick="openBooking()">→ Erstgespräch</button>
+  <a href="tel:+41417603616"><button class="fcta-btn fcta-phone">Anrufen</button></a>
 </div>
 
 <!-- Footer -->
 <footer>
   <div class="footer-top">
     <div class="footer-brand">
-      <a href="index.html" style="text-decoration:none"><div class="fb-logo">Camping <span>Sulmsee</span></div></a>
-      <p>Ihr Familienparadies in der südsteirischen Weinlandschaft. Herzlich, naturnah und unvergesslich.</p>
-      <div style="font-size:.82rem;color:rgba(255,255,255,.32)">Gastgewerbliche Betriebe Prasser KG<br>Sulmsee 1, 8430 Leibnitz, Österreich</div>
+      <a href="index.html" style="text-decoration:none"><div class="fb-logo">BSF <span>Consulting AG</span></div></a>
+      <p>Schweizer M&amp;A-Boutique mit Sitz in Zug. Diskret, strukturiert, mit Erfahrung seit 1998.</p>
+      <div style="font-size:.82rem;color:rgba(255,255,255,.32)">BSF Consulting AG<br>Gubelstrasse 12, CH-6300 Zug<br>+41 41 760 36 16<br>info@bsfconsulting.ch</div>
     </div>
     <div class="fc"><h4>Navigation</h4><ul>
       <li><a href="index.html">Startseite</a></li>
-      <li><a href="stellplaetze.html">Stellplätze</a></li>
-      <li><a href="preise.html">Preise 2026</a></li>
-      <li><a href="freizeit.html">Freizeitangebot</a></li>
-      <li><a href="anreise.html">Anreise</a></li>
+      <li><a href="stellplaetze.html">Mandate</a></li>
+      <li><a href="preise.html">Honorar</a></li>
+      <li><a href="freizeit.html">Methode</a></li>
+      <li><a href="anreise.html">Standort</a></li>
       <li><a href="kontakt.html">Kontakt</a></li>
     </ul></div>
-    <div class="fc"><h4>Freizeit</h4><ul>
-      <li><a href="freizeit.html">eBike Service</a></li>
-      <li><a href="freizeit.html">Radtouren</a></li>
-      <li><a href="freizeit.html">Wandern</a></li>
-      <li><a href="freizeit.html">Buschenschanken</a></li>
+    <div class="fc"><h4>Leistungen</h4><ul>
+      <li><a href="stellplaetze.html">Unternehmensverkauf</a></li>
+      <li><a href="stellplaetze.html">Unternehmenskauf</a></li>
+      <li><a href="stellplaetze.html">Nachfolge</a></li>
+      <li><a href="stellplaetze.html">Restrukturierung</a></li>
     </ul></div>
     <div class="fc"><h4>Rechtliches</h4><ul>
       <li><a href="#">Impressum</a></li>
@@ -465,12 +465,29 @@ window.openBooking=function(){var m=document.getElementById('bookingModal');if(m
     </ul></div>
   </div>
   <div class="footer-bottom">
-    <div class="footer-copy">© 2026 Gastgewerbliche Betriebe Prasser KG · Camping Sulmsee</div>
+    <div class="footer-copy">© 2026 BSF Consulting AG · Zug · Schweiz</div>
     <div class="footer-legal"><a href="#">Impressum</a><a href="#">Datenschutz</a><a href="#">AGB</a></div>
   </div>
 </footer>
 
 <script src="booking.js"></script>
+<script>
+// BSF rebrand: Modal-Header und Chatbot-Header umtexten nachdem JS-Module injiziert haben
+document.addEventListener('DOMContentLoaded', function() {
+  try {
+    var h = document.querySelector('#bookingModal .bk-headline');
+    var s = document.querySelector('#bookingModal .bk-subtitle');
+    if (h) h.textContent = 'Erstgespräch anfragen';
+    if (s) s.textContent = 'Vertraulich, unverbindlich, innerhalb eines Werktags';
+    // TODO: Modal-Felder im nächsten Schritt von Buchung auf Mandate-Anfrage umbauen
+  } catch(e) {}
+  try {
+    var cn = document.getElementById('cb-head-name');
+    if (cn) cn.textContent = 'BSF Concierge';
+    // Chatbot-Logik bleibt unverändert — vollständiger Umbau folgt in späterem Schritt
+  } catch(e) {}
+}, false);
+</script>
 <script src="chatbot.js"></script>
 <script>
 // Page loader
@@ -544,20 +561,16 @@ document.getElementById('mobMenuClose').addEventListener('click', closeMobMenu);
   fcta.style.opacity='0';
   fcta.style.transition='opacity .4s,transform .4s';
 })();
-// Countdown to season start
+// Countdown deaktiviert (BSF: kein Saisonstart-Badge)
 (function(){
-  const start=new Date('2026-04-17');
-  const today=new Date();today.setHours(0,0,0,0);
-  const diff=Math.ceil((start-today)/86400000);
-  const badge=document.getElementById('hero-season-badge');
-  const span=document.getElementById('days-until');
-  if(diff<=0){
-    if(badge)badge.innerHTML='🌱 Saison 2026 geöffnet';
-    const nb=document.getElementById('nav-season-badge');
-    if(nb)nb.textContent='🌱 Saison 2026 geöffnet';
-  } else {
-    if(span)span.textContent=diff;
-  }
+  try {
+    const span=document.getElementById('days-until');
+    if(!span) return;
+    const start=new Date('2026-04-17');
+    const today=new Date();today.setHours(0,0,0,0);
+    const diff=Math.ceil((start-today)/86400000);
+    if(diff>0) span.textContent=diff;
+  } catch(e) {}
 })();
 // Weather widget – Open-Meteo, Leibnitz/Sulmsee
 (function(){
