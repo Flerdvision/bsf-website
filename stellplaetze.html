@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Unsere 88 Stellplätze am Sulmsee – direkt am Wasser oder im grünen Herz des Platzes.">
+<title>Stellplätze – Camping Sulmsee</title>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400;1,600&family=Nunito:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script>
+function openMobMenu(){var m=document.getElementById('mobMenu'),h=document.getElementById('hamBtn');if(m)m.classList.add('open');if(h)h.classList.add('open');document.body.style.overflow='hidden';}
+function closeMobMenu(){var m=document.getElementById('mobMenu'),h=document.getElementById('hamBtn');if(m)m.classList.remove('open');if(h)h.classList.remove('open');document.body.style.overflow='';}
+window.openBooking=function(){var m=document.getElementById('bookingModal');if(m){m.classList.add('open');document.body.style.overflow='hidden';}else{document.addEventListener('DOMContentLoaded',function(){var m2=document.getElementById('bookingModal');if(m2){m2.classList.add('open');document.body.style.overflow='hidden';}});}};
+</script>
+<style>
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .55s cubic-bezier(.22,1,.36,1),transform .55s cubic-bezier(.22,1,.36,1)}
+.reveal.visible{opacity:1!important;transform:none!important}
+/* Stats strip */
+.stell-stats{background:var(--f);padding:2.8rem 2rem}
+.stell-stats-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:0;text-align:center}
+.stell-stat{padding:1rem 0;border-right:1px solid rgba(255,255,255,.12)}
+.stell-stat:last-child{border-right:none}
+.stell-stat-num{font-family:'Lora',serif;font-size:2.4rem;color:#fff;font-weight:600;line-height:1;margin-bottom:.25rem}
+.stell-stat-num em{color:var(--el);font-style:normal}
+.stell-stat-lbl{font-size:.72rem;color:rgba(255,255,255,.52);text-transform:uppercase;letter-spacing:.14em;font-weight:700}
+@media(max-width:700px){.stell-stats-inner{grid-template-columns:1fr 1fr}.stell-stat{border-right:none;border-bottom:1px solid rgba(255,255,255,.1)}.stell-stat:nth-child(odd){border-right:1px solid rgba(255,255,255,.1)}}
+/* Premium amenities */
+.amenities-premium{background:linear-gradient(135deg,#0e2a1e 0%,#1a4030 60%,#0d2218 100%);padding:6rem 2rem}
+.amenities-premium-inner{max-width:1200px;margin:0 auto}
+.am-prem-header{text-align:center;margin-bottom:3.5rem}
+.am-prem-header .section-tag{color:var(--el)}
+.am-prem-header .section-tag::before{background:var(--el)}
+.am-prem-header h2{font-family:'Lora',serif;font-size:clamp(1.8rem,3vw,2.6rem);color:#fff;margin-bottom:.6rem;line-height:1.2}
+.am-prem-header p{color:rgba(255,255,255,.58);font-size:.97rem;max-width:520px;margin:0 auto;line-height:1.8}
+.am-prem-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem}
+.am-feat{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.1);border-radius:20px;padding:2rem 1.8rem;transition:all .3s cubic-bezier(.22,1,.36,1);position:relative;overflow:hidden}
+.am-feat::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(196,154,108,.06),transparent);opacity:0;transition:opacity .3s}
+.am-feat:hover{background:rgba(255,255,255,.12);transform:translateY(-6px);box-shadow:0 20px 50px rgba(0,0,0,.25)}
+.am-feat:hover::before{opacity:1}
+.am-feat-icon{font-size:2.4rem;margin-bottom:1rem;display:block;line-height:1}
+.am-feat-title{font-family:'Lora',serif;font-size:1.05rem;color:#fff;font-weight:600;margin-bottom:.4rem}
+.am-feat-desc{font-size:.84rem;color:rgba(255,255,255,.62);line-height:1.7}
+@media(max-width:900px){.am-prem-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:580px){.am-prem-grid{grid-template-columns:1fr}}
+/* Spot card upgrade */
+.spot-card{border-radius:24px}
+.spot-illus img{height:100%;width:100%;object-fit:cover}
+</style>
+</head>
+<body>
+<div id="scroll-progress"></div>
+<div id="page-loader" style="display:none;visibility:hidden;pointer-events:none"></div>
+<div class="mob-menu" id="mobMenu">
+  <button class="mob-menu-close" id="mobMenuClose">✕</button>
+  <a href="index.html" onclick="closeMobMenu()">Startseite</a>
+  <a href="stellplaetze.html" onclick="closeMobMenu()">Stellplätze</a>
+  <a href="preise.html" onclick="closeMobMenu()">Preise</a>
+  <a href="freizeit.html" onclick="closeMobMenu()">Freizeit</a>
+  <a href="anreise.html" onclick="closeMobMenu()">Anreise</a>
+  <a href="kontakt.html" onclick="closeMobMenu()">Kontakt</a>
+  <a href="#" onclick="closeMobMenu();openBooking();return false;" style="color:var(--e)">🗓 Jetzt buchen</a>
+</div>
+<nav id="mainNav">
+  <div class="nav-inner">
+    <a class="nav-logo" href="index.html">
+      <img src="campingsulmsee.png" class="nav-logo-icon" alt="Logo">
+      <span class="nav-logo-text">Camping <span>Sulmsee</span></span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Startseite</a></li>
+      <li><a href="stellplaetze.html" class="nav-active">Stellplätze</a></li>
+      <li><a href="preise.html">Preise</a></li>
+      <li><a href="freizeit.html">Freizeit</a></li>
+      <li><a href="anreise.html">Anreise</a></li>
+      <li><a href="kontakt.html">Kontakt</a></li>
+      <li><a href="#" onclick="openBooking();return false;" class="nav-book">🗓 Jetzt buchen</a></li>
+    </ul>
+    <div class="nav-right">
+      <div class="nav-badge">🌱 Saison ab 17. April 2026</div>
+      <button class="ham-btn" id="hamBtn" onclick="openMobMenu()"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="page-hero-photo">
+  <div class="ph-bg" style="background-image:url('Campingplatz2.jpg');background-position:center 60%"></div>
+  <div class="ph-overlay"></div>
+  <div class="ph-content">
+    <div class="section-tag">Unsere Stellplätze</div>
+    <h1>Zwei Lagen –<br><em>ein Traumort</em></h1>
+    <p>Alle 88 Stellplätze bieten 100–150 m² Fläche, kostenfreies WLAN und liebevoll gepflegte Rasenflächen.</p>
+    <div class="page-hero-btns">
+      <button class="btn btn-green" onclick="openBooking()">🗓 Jetzt buchen</button>
+      <a href="preise.html" class="btn btn-outline">Preise ansehen</a>
+    </div>
+  </div>
+</div>
+
+<!-- STATS COUNTER (same style as homepage) -->
+<div class="count-section">
+  <div class="count-inner">
+    <div class="count-item reveal">
+      <div class="count-num"><span class="counter" data-target="88">0</span></div>
+      <div class="count-divider"></div>
+      <div class="count-label">Stellplätze gesamt</div>
+    </div>
+    <div class="count-item reveal">
+      <div class="count-num"><span class="counter" data-target="24">0</span></div>
+      <div class="count-divider"></div>
+      <div class="count-label">Seeufer-Plätze</div>
+    </div>
+    <div class="count-item reveal">
+      <div class="count-num"><span class="counter" data-target="150">0</span><span class="count-suffix" style="font-size:1.6rem">m²</span></div>
+      <div class="count-divider"></div>
+      <div class="count-label">Maximale Stellplatzgröße</div>
+    </div>
+    <div class="count-item reveal">
+      <div class="count-num"><span class="counter" data-target="6">0</span><span class="count-suffix" style="font-size:1.6rem">Mo</span></div>
+      <div class="count-divider"></div>
+      <div class="count-label">Saison 2026</div>
+    </div>
+  </div>
+</div>
+
+<!-- STELLPLÄTZE CARDS (1:1 Startseite) -->
+<section class="spots-prev" id="stellplaetze">
+  <div class="spots-prev-inner">
+    <div class="sp-header">
+      <div class="section-tag reveal">Unsere Stellplätze</div>
+      <h2 class="section-title reveal">Ihr Platz am See</h2>
+      <p class="section-sub reveal" style="margin:0 auto">Wählen Sie Ihren Lieblingsplatz – direkt am Ufer oder ruhig im Grünen.</p>
+    </div>
+    <div class="sp-grid">
+      <div class="sp-card reveal">
+        <div class="sp-img">
+          <img src="Stehplaetze.jpg" alt="Sulmsee-Stellplatz direkt am Wasser" loading="lazy">
+          <div class="sp-badge">Empfohlen</div>
+        </div>
+        <div class="sp-body">
+          <h3>Sulmsee-Stellplatz</h3>
+          <p>Direkt am Seeufer mit eigenem Wasserzugang, Seeblick und dem beruhigenden Klang der Wellen. Unsere premiumsten Plätze für unvergessliche Morgende.</p>
+          <div class="sp-tags">
+            <span class="sp-tag">🌊 Direkter Seezugang</span>
+            <span class="sp-tag">🌅 Seeblick</span>
+            <span class="sp-tag">Plätze 1–24</span>
+            <span class="sp-tag">100–150 m²</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:center">
+            <span class="sp-price">ab € 36,– / Nacht</span>
+            <button class="btn btn-green" onclick="openBooking()" style="padding:.6rem 1.3rem;font-size:.82rem">Anfragen</button>
+          </div>
+        </div>
+      </div>
+      <div class="sp-card reveal">
+        <div class="sp-img">
+          <img src="Campingplatz.jpg" alt="Silbersee-Stellplatz im Grünen" loading="lazy">
+          <div class="sp-badge" style="background:var(--fp);color:var(--f)">Familienbeliebt</div>
+        </div>
+        <div class="sp-body">
+          <h3>Silbersee-Stellplatz</h3>
+          <p>Ruhig eingebettet im Grünen, umgeben von Natur. Großzügige Stellflächen mit Weinbergblick – ideal für Familien, die Ruhe und Abstand schätzen.</p>
+          <div class="sp-tags">
+            <span class="sp-tag">🌿 Ruhige Lage</span>
+            <span class="sp-tag">🍷 Weinbergblick</span>
+            <span class="sp-tag">Plätze 25–88</span>
+            <span class="sp-tag">100–150 m²</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:center">
+            <span class="sp-price">ab € 28,– / Nacht</span>
+            <button class="btn btn-green" onclick="openBooking()" style="padding:.6rem 1.3rem;font-size:.82rem">Anfragen</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:2.5rem">
+      <a href="preise.html" class="btn btn-white">Alle Preise ansehen →</a>
+    </div>
+  </div>
+</section>
+
+<!-- PHOTO STRIP -->
+<div class="photo-strip" style="border-radius:0;overflow:hidden">
+  <div class="ps-item"><img src="sanitaeranlagen-011k.jpg" alt="Moderne Sanitäranlagen" loading="lazy"></div>
+  <div class="ps-item"><img src="20240419_151743-scaled.jpg" alt="Sanitärgebäude" loading="lazy"></div>
+  <div class="ps-item"><img src="sulmsee_sommer21-3.jpg" alt="Sulmsee Morgen" loading="lazy"></div>
+</div>
+
+<!-- PREMIUM AMENITIES -->
+<div class="amenities-premium">
+  <div class="amenities-premium-inner">
+    <div class="am-prem-header">
+      <div class="section-tag reveal">Inklusive für alle Gäste</div>
+      <h2 class="reveal">Alles, was Sie brauchen –<br><em style="color:#c49a6c;font-style:italic">von Anfang an dabei</em></h2>
+      <p class="reveal">Kein versteckter Aufpreis. Was im Stellplatzpreis enthalten ist, ist wirklich enthalten.</p>
+    </div>
+    <div class="am-prem-grid">
+      <div class="am-feat reveal"><span class="am-feat-icon">🚿</span><div class="am-feat-title">Moderne Sanitäranlagen</div><div class="am-feat-desc">Täglich gereinigte Duschen und WCs, immer warm und gepflegt. Barrierefrei zugänglich.</div></div>
+      <div class="am-feat reveal"><span class="am-feat-icon">📶</span><div class="am-feat-title">Kostenfreies WLAN</div><div class="am-feat-desc">Schnelles Internet überall auf dem Gelände – auch direkt am Seeufer und auf der Liegewiese.</div></div>
+      <div class="am-feat reveal"><span class="am-feat-icon">💧</span><div class="am-feat-title">Frischwasser & Grauwasser</div><div class="am-feat-desc">Frischwasseranschluss am Platz (Sulmsee) oder zentral. Grauwasserentleerung inklusive.</div></div>
+      <div class="am-feat reveal"><span class="am-feat-icon">🚗</span><div class="am-feat-title">Fahrzeugstellplatz</div><div class="am-feat-desc">Ein Fahrzeug pro Stellplatz ist im Preis inklusive. Zusätzliche PKWs möglich.</div></div>
+      <div class="am-feat reveal"><span class="am-feat-icon">🌿</span><div class="am-feat-title">Rasenpflege</div><div class="am-feat-desc">Ihr Stellplatz wird regelmäßig gemäht und gepflegt – damit Sie entspannen können.</div></div>
+      <div class="am-feat reveal"><span class="am-feat-icon">🍽️</span><div class="am-feat-title">Restaurant ab 1. Mai</div><div class="am-feat-desc">Direkt am Platz: regionale Küche, frische Zutaten, gemütliche Atmosphäre mit Seeblick.</div></div>
+      <div class="am-feat reveal"><span class="am-feat-icon">🛒</span><div class="am-feat-title">Campingshop</div><div class="am-feat-desc">Grundlegende Camping-Artikel, lokale Produkte und Getränke im kleinen Shop auf dem Gelände.</div></div>
+      <div class="am-feat reveal"><span class="am-feat-icon">🔥</span><div class="am-feat-title">Grillplätze</div><div class="am-feat-desc">Mehrere gepflegte Gemeinschaftsgrillplätze mit Feuerstellen – für gesellige Abende.</div></div>
+      <div class="am-feat reveal"><span class="am-feat-icon">♿</span><div class="am-feat-title">Barrierefreiheit</div><div class="am-feat-desc">Sanitäranlagen und Wege sind barrierefrei gestaltet. Wir heißen alle Gäste willkommen.</div></div>
+    </div>
+    <div style="text-align:center;margin-top:3rem">
+      <button class="btn btn-green" onclick="openBooking()" style="font-size:.95rem;padding:.9rem 2.2rem">🗓 Stellplatz jetzt reservieren</button>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <a href="index.html" style="text-decoration:none"><div class="fb-logo">Camping <span>Sulmsee</span></div></a>
+      <p>Ihr Ferienparadies in der südsteirischen Weinlandschaft. Herzlich, naturnah und unvergesslich.</p>
+      <div style="font-size:.82rem;color:rgba(255,255,255,.32)">Gastgewerbliche Betriebe Prasser KG<br>Sulmsee 1, 8430 Leibnitz, Österreich</div>
+    </div>
+    <div class="fc"><h4>Navigation</h4><ul>
+      <li><a href="index.html">Startseite</a></li>
+      <li><a href="stellplaetze.html">Stellplätze</a></li>
+      <li><a href="preise.html">Preise 2026</a></li>
+      <li><a href="freizeit.html">Freizeitangebot</a></li>
+      <li><a href="anreise.html">Anreise</a></li>
+      <li><a href="kontakt.html">Kontakt</a></li>
+    </ul></div>
+    <div class="fc"><h4>Freizeit</h4><ul>
+      <li><a href="freizeit.html">eBike Service</a></li>
+      <li><a href="freizeit.html">Radtouren</a></li>
+      <li><a href="freizeit.html">Wandern</a></li>
+      <li><a href="freizeit.html">Buschenschanken</a></li>
+    </ul></div>
+    <div class="fc"><h4>Rechtliches</h4><ul>
+      <li><a href="#">Impressum</a></li>
+      <li><a href="#">Datenschutz</a></li>
+      <li><a href="#">AGB</a></li>
+    </ul></div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-copy">© 2026 Gastgewerbliche Betriebe Prasser KG · Camping Sulmsee</div>
+    <div class="footer-legal"><a href="#">Impressum</a><a href="#">Datenschutz</a><a href="#">AGB</a></div>
+  </div>
+</footer>
+
+<script src="booking.js"></script>
+<script src="chatbot.js"></script>
+<script src="subpage.js"></script>
+<script>
+document.getElementById('hamBtn').addEventListener('click', openMobMenu);
+document.getElementById('mobMenuClose').addEventListener('click', closeMobMenu);
+// Counter animation (same as homepage)
+(function(){
+  var counters=document.querySelectorAll('.counter');
+  if(!counters.length)return;
+  var obs=new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(!entry.isIntersecting)return;
+      var el=entry.target;
+      var target=+el.getAttribute('data-target');
+      var duration=1600;
+      var step=target/60;
+      var current=0;
+      var timer=setInterval(function(){
+        current+=step;
+        if(current>=target){current=target;clearInterval(timer);}
+        el.textContent=Math.round(current);
+      },duration/60);
+      obs.unobserve(el);
+    });
+  },{threshold:.5});
+  counters.forEach(function(c){obs.observe(c);});
+})();
+// Staggered reveal for .reveal elements already in HTML
+(function(){
+  var obs=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}});
+  },{threshold:.06,rootMargin:'0px 0px 60px 0px'});
+  document.querySelectorAll('.reveal').forEach(function(el,i){
+    if(!el.style.transitionDelay)el.style.transitionDelay=(i%7*.07)+'s';
+    obs.observe(el);
+  });
+  setTimeout(function(){
+    document.querySelectorAll('.reveal:not(.visible)').forEach(function(el){
+      if(el.getBoundingClientRect().top<window.innerHeight)el.classList.add('visible');
+    });
+  },120);
+})();
+</script>
+</body>
+</html>

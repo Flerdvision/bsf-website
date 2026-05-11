@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Radtouren, Baden, Weinberge – Freizeitangebot rund um den Sulmsee.">
+<title>Freizeitangebot – Camping Sulmsee</title>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400;1,600&family=Nunito:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script>
+function openMobMenu(){var m=document.getElementById('mobMenu'),h=document.getElementById('hamBtn');if(m)m.classList.add('open');if(h)h.classList.add('open');document.body.style.overflow='hidden';}
+function closeMobMenu(){var m=document.getElementById('mobMenu'),h=document.getElementById('hamBtn');if(m)m.classList.remove('open');if(h)h.classList.remove('open');document.body.style.overflow='';}
+window.openBooking=function(){var m=document.getElementById('bookingModal');if(m){m.classList.add('open');document.body.style.overflow='hidden';}else{document.addEventListener('DOMContentLoaded',function(){var m2=document.getElementById('bookingModal');if(m2){m2.classList.add('open');document.body.style.overflow='hidden';}});}};
+</script>
+<style>
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .55s cubic-bezier(.22,1,.36,1),transform .55s cubic-bezier(.22,1,.36,1)}
+.reveal.visible{opacity:1!important;transform:none!important}
+/* Act card upgrade */
+.act-illus{height:240px}
+.act-illus img{width:100%;height:100%;object-fit:cover;transition:transform .65s cubic-bezier(.22,1,.36,1)}
+.act-card:hover .act-illus img{transform:scale(1.07)}
+.act-tag{display:inline-block;background:var(--fp);color:var(--f);font-size:.65rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;padding:3px 10px;border-radius:50px;border:1px solid rgba(61,122,92,.2);margin-bottom:.5rem}
+/* Highlight features */
+.freizeit-highlights{background:var(--f);padding:3rem 2rem;margin-top:0}
+.fh-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;text-align:center}
+.fh-item{padding:1rem}
+.fh-icon{font-size:2.2rem;margin-bottom:.6rem;display:block}
+.fh-title{font-family:'Lora',serif;font-size:1rem;color:#fff;font-weight:600;margin-bottom:.2rem}
+.fh-sub{font-size:.8rem;color:rgba(255,255,255,.52);line-height:1.5}
+@media(max-width:800px){.fh-inner{grid-template-columns:1fr 1fr}}
+@media(max-width:500px){.fh-inner{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div id="scroll-progress"></div>
+<div id="page-loader" style="display:none;visibility:hidden;pointer-events:none"></div>
+<div class="mob-menu" id="mobMenu">
+  <button class="mob-menu-close" id="mobMenuClose">✕</button>
+  <a href="index.html" onclick="closeMobMenu()">Startseite</a>
+  <a href="stellplaetze.html" onclick="closeMobMenu()">Stellplätze</a>
+  <a href="preise.html" onclick="closeMobMenu()">Preise</a>
+  <a href="freizeit.html" onclick="closeMobMenu()">Freizeit</a>
+  <a href="anreise.html" onclick="closeMobMenu()">Anreise</a>
+  <a href="kontakt.html" onclick="closeMobMenu()">Kontakt</a>
+  <a href="#" onclick="closeMobMenu();openBooking();return false;" style="color:var(--e)">🗓 Jetzt buchen</a>
+</div>
+<nav id="mainNav">
+  <div class="nav-inner">
+    <a class="nav-logo" href="index.html">
+      <img src="campingsulmsee.png" class="nav-logo-icon" alt="Logo">
+      <span class="nav-logo-text">Camping <span>Sulmsee</span></span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Startseite</a></li>
+      <li><a href="stellplaetze.html">Stellplätze</a></li>
+      <li><a href="preise.html">Preise</a></li>
+      <li><a href="freizeit.html" class="nav-active">Freizeit</a></li>
+      <li><a href="anreise.html">Anreise</a></li>
+      <li><a href="kontakt.html">Kontakt</a></li>
+      <li><a href="#" onclick="openBooking();return false;" class="nav-book">🗓 Jetzt buchen</a></li>
+    </ul>
+    <div class="nav-right">
+      <div class="nav-badge">🌱 Saison ab 17. April 2026</div>
+      <button class="ham-btn" id="hamBtn" onclick="openMobMenu()"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="page-hero-photo">
+  <div class="ph-bg" style="background-image:url('Freizeit.jpg');background-position:center 40%"></div>
+  <div class="ph-overlay"></div>
+  <div class="ph-content">
+    <div class="section-tag">Freizeitangebot</div>
+    <h1>Die Südsteiermark<br><em>entdecken</em></h1>
+    <p>Vom Seeufer bis in die Weinberge – rund um den Sulmsee gibt es immer etwas zu erleben.</p>
+    <div class="page-hero-btns">
+      <button class="btn btn-green" onclick="openBooking()">🗓 Jetzt buchen</button>
+      <a href="anreise.html" class="btn btn-outline">So kommen Sie hin</a>
+    </div>
+  </div>
+</div>
+
+<!-- HIGHLIGHTS STRIP -->
+<div class="count-section">
+  <div class="count-inner">
+    <div class="count-item reveal"><div class="count-num"><span class="counter" data-target="20">0</span>+</div><div class="count-divider"></div><div class="count-label">Buschenschanken in der Nähe</div></div>
+    <div class="count-item reveal"><div class="count-num"><span class="counter" data-target="50">0</span> km</div><div class="count-divider"></div><div class="count-label">Rad- &amp; Wanderwege</div></div>
+    <div class="count-item reveal"><div class="count-num">1 Schritt</div><div class="count-divider"></div><div class="count-label">Bis zum See</div></div>
+    <div class="count-item reveal"><div class="count-num">4 Saison</div><div class="count-divider"></div><div class="count-label">Erlebnisse das ganze Jahr</div></div>
+  </div>
+</div>
+
+<!-- ACTIVITY CARDS -->
+<section class="freizeit" id="freizeit" style="padding:5rem 2rem 6rem">
+  <div class="freizeit-inner">
+    <div style="text-align:center;margin-bottom:3rem">
+      <div class="section-tag reveal">Aktivitäten &amp; Erlebnisse</div>
+      <h2 class="section-title reveal">Ihr Urlaub,<br><em style="font-style:italic;color:var(--el)">Ihre Abenteuer</em></h2>
+      <p class="section-sub reveal" style="margin:0 auto">Von sportlich bis entspannt – für jeden ist etwas dabei.</p>
+    </div>
+    <div class="act-grid">
+      <div class="act-card reveal">
+        <div class="act-illus"><img src="eBike.jpg" alt="eBike-Verleih in den Weinbergen" loading="lazy"></div>
+        <div class="act-body">
+          <div class="act-tag">Sport &amp; Aktiv</div>
+          <h3>Radtouren &amp; eBike Service</h3>
+          <p>Erkunden Sie die malerische Weinstraße per Rad. Leih-eBikes direkt am Campingplatz – ideal für alle Fitnessstufen. Geführte Routen auf Anfrage verfügbar.</p>
+          <span class="act-link">Strecken entdecken</span>
+        </div>
+      </div>
+      <div class="act-card reveal">
+        <div class="act-illus"><img src="sulmsee_sommer21-44.jpg" alt="Wandern mit Hunden am Sulmsee" loading="lazy"></div>
+        <div class="act-body">
+          <div class="act-tag">Natur &amp; Wandern</div>
+          <h3>Wandern durch Weinberge</h3>
+          <p>Traumhafte Wanderwege durch die südsteirische Hügellandschaft. Moderates Gelände, herrliche Ausblicke auf Weinreben und den Sulmsee – hundefreundlich.</p>
+          <span class="act-link">Routen ansehen</span>
+        </div>
+      </div>
+      <div class="act-card reveal">
+        <div class="act-illus"><img src="Campingplatz2.jpg" alt="Baden und Paddeln am Sulmsee" loading="lazy"></div>
+        <div class="act-body">
+          <div class="act-tag">Wasser &amp; Erholung</div>
+          <h3>Baden am Sulmsee</h3>
+          <p>Direkter Seezugang für alle Gäste. Kristallklares Wasser, gepflegte Liegewiesen und ein Holzsteg – Ihr persönlicher Badespaß direkt vor dem Stellplatz.</p>
+          <span class="act-link">Mehr entdecken</span>
+        </div>
+      </div>
+      <div class="act-card reveal">
+        <div class="act-illus"><img id="wein-photo" src="Sulmsee_Fj_21-014.jpg" alt="Buschenschank in den Weinbergen" loading="lazy"></div>
+        <div class="act-body">
+          <div class="act-tag">Kulinarik &amp; Genuss</div>
+          <h3>Buschenschank &amp; Wein</h3>
+          <p>Die Südsteiermark ist Weinland pur. Besuchen Sie urige Buschenschanken in den Weinbergen, genießen Sie lokale Weine und steirische Spezialitäten.</p>
+          <span class="act-link">Ausflugstipps anfragen</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Wine band -->
+    <div class="wine-band reveal" style="margin-top:3.5rem">
+      <div class="wine-band-t">
+        <h3>Weinstraße Südsteiermark</h3>
+        <p>Direkt vor Ihrer Haustür: eine der schönsten Weinregionen Österreichs mit über 20 ausgezeichneten Buschenschanken und unvergesslichen Panoramablicken.</p>
+      </div>
+      <a href="kontakt.html" class="btn btn-white">Ausflugstipps anfragen</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <a href="index.html" style="text-decoration:none"><div class="fb-logo">Camping <span>Sulmsee</span></div></a>
+      <p>Ihr Ferienparadies in der südsteirischen Weinlandschaft. Herzlich, naturnah und unvergesslich.</p>
+      <div style="font-size:.82rem;color:rgba(255,255,255,.32)">Gastgewerbliche Betriebe Prasser KG<br>Sulmsee 1, 8430 Leibnitz, Österreich</div>
+    </div>
+    <div class="fc"><h4>Navigation</h4><ul>
+      <li><a href="index.html">Startseite</a></li>
+      <li><a href="stellplaetze.html">Stellplätze</a></li>
+      <li><a href="preise.html">Preise 2026</a></li>
+      <li><a href="freizeit.html">Freizeitangebot</a></li>
+      <li><a href="anreise.html">Anreise</a></li>
+      <li><a href="kontakt.html">Kontakt</a></li>
+    </ul></div>
+    <div class="fc"><h4>Freizeit</h4><ul>
+      <li><a href="freizeit.html">eBike Service</a></li>
+      <li><a href="freizeit.html">Radtouren</a></li>
+      <li><a href="freizeit.html">Wandern</a></li>
+      <li><a href="freizeit.html">Buschenschanken</a></li>
+    </ul></div>
+    <div class="fc"><h4>Rechtliches</h4><ul>
+      <li><a href="#">Impressum</a></li>
+      <li><a href="#">Datenschutz</a></li>
+      <li><a href="#">AGB</a></li>
+    </ul></div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-copy">© 2026 Gastgewerbliche Betriebe Prasser KG · Camping Sulmsee</div>
+    <div class="footer-legal"><a href="#">Impressum</a><a href="#">Datenschutz</a><a href="#">AGB</a></div>
+  </div>
+</footer>
+
+<script src="booking.js"></script>
+<script src="chatbot.js"></script>
+<script src="subpage.js"></script>
+<script>
+document.getElementById('hamBtn').addEventListener('click', openMobMenu);
+document.getElementById('mobMenuClose').addEventListener('click', closeMobMenu);
+// Counter animation
+(function(){
+  var counters=document.querySelectorAll('.counter');
+  if(!counters.length)return;
+  var obs=new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(!entry.isIntersecting)return;
+      var el=entry.target;
+      var target=+el.getAttribute('data-target');
+      var step=target/60,current=0;
+      var timer=setInterval(function(){
+        current+=step;
+        if(current>=target){current=target;clearInterval(timer);}
+        el.textContent=Math.round(current);
+      },1600/60);
+      obs.unobserve(el);
+    });
+  },{threshold:.5});
+  counters.forEach(function(c){obs.observe(c);});
+})();
+// Random wine photo
+(function(){
+  var photos=['Sulmsee_Fj_21-011.jpg','Sulmsee_Fj_21-012.jpg','Sulmsee_Fj_21-014.jpg','2051960_sulmsse_herbst-008-klein1.jpg','2051960_sulmsse_herbst-025-klein1.jpg','2051960_sulmsse_herbst-029klein1.jpg'];
+  var img=document.getElementById('wein-photo');
+  if(img)img.src=photos[Math.floor(Math.random()*photos.length)];
+})();
+(function(){
+  var obs=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}});
+  },{threshold:.06,rootMargin:'0px 0px 60px 0px'});
+  document.querySelectorAll('.reveal').forEach(function(el,i){
+    if(!el.style.transitionDelay)el.style.transitionDelay=(i%7*.07)+'s';
+    obs.observe(el);
+  });
+  setTimeout(function(){
+    document.querySelectorAll('.reveal:not(.visible)').forEach(function(el){
+      if(el.getBoundingClientRect().top<window.innerHeight)el.classList.add('visible');
+    });
+  },120);
+})();
+</script>
+</body>
+</html>

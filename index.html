@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Camping Sulmsee – Familienurlaub direkt am See in der Südsteiermark. 88 Stellplätze, eBike, Hunde willkommen. Saison April – Oktober 2026.">
+<title>Camping Sulmsee – Familienurlaub in der Südsteiermark</title>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400;1,600&family=Nunito:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script>
+/* Critical UI – defined early so onclick attributes always work */
+function openMobMenu(){var m=document.getElementById('mobMenu'),h=document.getElementById('hamBtn');if(m)m.classList.add('open');if(h)h.classList.add('open');document.body.style.overflow='hidden';}
+function closeMobMenu(){var m=document.getElementById('mobMenu'),h=document.getElementById('hamBtn');if(m)m.classList.remove('open');if(h)h.classList.remove('open');document.body.style.overflow='';}
+window.openBooking=function(){var m=document.getElementById('bookingModal');if(m){m.classList.add('open');document.body.style.overflow='hidden';}else{document.addEventListener('DOMContentLoaded',function(){var m2=document.getElementById('bookingModal');if(m2){m2.classList.add('open');document.body.style.overflow='hidden';}});}};
+</script>
+<style>
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s ease}
+.reveal.visible{opacity:1!important;transform:none!important}
+.reveal.from-left{transform:translateX(-28px)}
+.reveal.from-right{transform:translateX(28px)}
+.reveal.from-left.visible,.reveal.from-right.visible{transform:none!important}
+.fb-logo{font-family:'Lora',serif;font-size:1.3rem;font-weight:700;color:#fff}
+.fb-logo span{color:var(--el);font-style:italic}
+.stat-label{font-size:.7rem;color:rgba(255,255,255,.5);text-transform:uppercase;letter-spacing:.1em;margin-top:4px}
+.hf-label{font-size:.62rem;text-transform:uppercase;letter-spacing:.12em;color:rgba(255,255,255,.55);margin-bottom:5px;font-weight:700}
+.hf-val{font-family:'Lora',serif;font-size:1.15rem;color:#fff;font-weight:600}
+.hf-sub{font-size:.76rem;color:rgba(255,255,255,.5);margin-top:3px}
+@media(max-width:620px){.hbadge-date{display:none}}
+@media(max-width:1024px){.hero-float{display:none}}
+</style>
+</head>
+<body>
+<div id="scroll-progress"></div>
+<div id="page-loader">
+  <div class="ld-logo">Camping <span style="color:var(--el)">Sulmsee</span></div>
+  <div class="ld-bar"><div class="ld-fill"></div></div>
+</div>
+
+<!-- Mobile Menu -->
+<div class="mob-menu" id="mobMenu">
+  <button class="mob-menu-close" id="mobMenuClose">✕</button>
+  <a href="index.html" onclick="closeMobMenu()">Startseite</a>
+  <a href="stellplaetze.html" onclick="closeMobMenu()">Stellplätze</a>
+  <a href="preise.html" onclick="closeMobMenu()">Preise</a>
+  <a href="freizeit.html" onclick="closeMobMenu()">Freizeit</a>
+  <a href="anreise.html" onclick="closeMobMenu()">Anreise</a>
+  <a href="kontakt.html" onclick="closeMobMenu()">Kontakt</a>
+  <a href="#" onclick="closeMobMenu();openBooking();return false;" style="color:var(--el)">🗓 Jetzt buchen</a>
+</div>
+
+<!-- Nav -->
+<nav id="mainNav">
+  <div class="nav-inner">
+    <a class="nav-logo" href="index.html" style="text-decoration:none">
+      <img src="campingsulmsee.png" class="nav-logo-icon" alt="Camping Sulmsee Logo">
+      <span class="nav-logo-text">Camping <span>Sulmsee</span></span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html" class="nav-active">Startseite</a></li>
+      <li><a href="stellplaetze.html">Stellplätze</a></li>
+      <li><a href="preise.html">Preise</a></li>
+      <li><a href="freizeit.html">Freizeit</a></li>
+      <li><a href="anreise.html">Anreise</a></li>
+      <li><a href="kontakt.html">Kontakt</a></li>
+      <li><a href="#" onclick="openBooking();return false;" class="nav-book">🗓 Jetzt buchen</a></li>
+    </ul>
+    <div class="nav-right">
+      <div class="nav-badge" id="nav-season-badge">🌱 Saison ab 17. April 2026</div>
+      <button class="ham-btn" id="hamBtn" onclick="openMobMenu()"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+
+<!-- ═══════════════ HERO ═══════════════ -->
+<section class="hero">
+  <div class="hero-bg" style="background-image:url('sulmsee_sommer21-25.jpg')"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-left">
+    <div class="hero-badge-row">
+      <span class="hbadge hbadge-pulse" id="hero-season-badge">🌱 Saisonstart in <span id="days-until">15</span> Tagen</span>
+      <span class="hbadge hbadge-date">17. April – 26. Oktober 2026</span>
+      <span class="hbadge">⭐ 4,8 Sterne Bewertung</span>
+    </div>
+    <h1>Urlaub, den Ihre<br>Familie <em>nie vergisst</em></h1>
+    <p class="hero-desc">88 Stellplätze direkt am Sulmsee, umgeben von den Weinbergen der Südsteiermark. Platz für Ihre Familie, Ihre Hunde und unvergessliche Sommermomente.</p>
+    <div class="hero-actions">
+      <button class="btn btn-green" onclick="openBooking()" style="font-size:.95rem;padding:.9rem 2.2rem">🗓 Jetzt Stellplatz anfragen</button>
+      <a href="stellplaetze.html" class="btn btn-outline">Stellplätze entdecken</a>
+    </div>
+    <div class="hero-stats">
+      <div><div class="stat-num">88</div><div class="stat-label">Stellplätze</div></div>
+      <div class="stat-sep"></div>
+      <div><div class="stat-num">150m²</div><div class="stat-label">pro Platz</div></div>
+      <div class="stat-sep"></div>
+      <div><div class="stat-num">4,8 ★</div><div class="stat-label">Bewertung</div></div>
+      <div class="stat-sep"></div>
+      <div><div class="stat-num">10+</div><div class="stat-label">Jahre</div></div>
+    </div>
+  </div>
+  <div class="hero-float">
+    <div class="hf-label">Nächste Saison</div>
+    <div class="hf-val">17. April 2026</div>
+    <div class="hf-sub">Buchungen jetzt offen</div>
+  </div>
+  <div class="hero-weather" id="hero-weather" style="display:none">
+    <div class="hw-label">Wetter am Sulmsee</div>
+    <div class="hw-main">
+      <div class="hw-icon" id="hw-icon">–</div>
+      <div class="hw-temp" id="hw-temp">–</div>
+    </div>
+    <div class="hw-sub" id="hw-desc">–</div>
+  </div>
+  <div class="hero-scroll-hint">
+    <div class="hs-line"></div>
+    <span style="font-size:.58rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.45)">Entdecken</span>
+  </div>
+</section>
+
+<!-- ═══════════════ TICKER ═══════════════ -->
+<div class="ticker"><div class="ticker-track">
+  <span class="ticker-item"><span class="tdot"></span>88 Stellplätze direkt am See</span>
+  <span class="ticker-item"><span class="tdot"></span>24 Seeufer-Plätze · Direkter Wasserzugang</span>
+  <span class="ticker-item"><span class="tdot"></span>Perfekt für Familien mit Kindern &amp; Hunden</span>
+  <span class="ticker-item"><span class="tdot"></span>Saison: 17. April – 26. Oktober 2026</span>
+  <span class="ticker-item"><span class="tdot"></span>Kostenfreies WLAN · Moderne Sanitäranlagen</span>
+  <span class="ticker-item"><span class="tdot"></span>eBike-Verleih · Weinberge · Buschenschanken</span>
+  <span class="ticker-item"><span class="tdot"></span>88 Stellplätze direkt am See</span>
+  <span class="ticker-item"><span class="tdot"></span>24 Seeufer-Plätze · Direkter Wasserzugang</span>
+  <span class="ticker-item"><span class="tdot"></span>Perfekt für Familien mit Kindern &amp; Hunden</span>
+  <span class="ticker-item"><span class="tdot"></span>Saison: 17. April – 26. Oktober 2026</span>
+  <span class="ticker-item"><span class="tdot"></span>Kostenfreies WLAN · Moderne Sanitäranlagen</span>
+  <span class="ticker-item"><span class="tdot"></span>eBike-Verleih · Weinberge · Buschenschanken</span>
+</div></div>
+
+<!-- ═══════════════ FAMILY USP ═══════════════ -->
+<section class="fam-usp">
+  <div class="fam-usp-inner">
+    <div class="fam-usp-header">
+      <div class="section-tag reveal">Für Ihre Familie</div>
+      <h2 class="section-title reveal">Alles, was Familienurlaub<br>braucht</h2>
+      <p class="section-sub reveal" style="margin:0 auto">Vom kühlen See bis zu den Weinbergen – hier findet jedes Familienmitglied sein Glück.</p>
+    </div>
+    <div class="fam-grid">
+      <div class="fam-card reveal">
+        <div class="fam-card-bg" style="background-image:url('sulmsee_sommer21-3.jpg')"></div>
+        <div class="fam-card-overlay"></div>
+        <div class="fam-card-body">
+          <div class="fam-card-title">Direkt am See</div>
+          <div class="fam-card-sub">Kristallklares Wasser, Liegewiesen und eigener Badesteg für unsere Gäste</div>
+        </div>
+      </div>
+      <div class="fam-card reveal">
+        <div class="fam-card-bg" style="background-image:url('Campingplatz.jpg')"></div>
+        <div class="fam-card-overlay"></div>
+        <div class="fam-card-body">
+          <div class="fam-card-title">Großzügige Stellplätze</div>
+          <div class="fam-card-sub">100–150 m² pro Platz – genug Raum für die ganze Familie und ihr Gepäck</div>
+        </div>
+      </div>
+      <div class="fam-card reveal">
+        <div class="fam-card-bg" style="background-image:url('sulmsee_sommer21-44.jpg');background-position:center 30%"></div>
+        <div class="fam-card-overlay"></div>
+        <div class="fam-card-body">
+          <div class="fam-card-title">Hunde willkommen</div>
+          <div class="fam-card-sub">Vierbeiner sind bei uns herzlich willkommen – am ganzen Gelände und am See</div>
+        </div>
+      </div>
+      <div class="fam-card reveal">
+        <div class="fam-card-bg" style="background-image:url('eBike.jpg')"></div>
+        <div class="fam-card-overlay"></div>
+        <div class="fam-card-body">
+          <div class="fam-card-title">Aktiv &amp; Abenteuer</div>
+          <div class="fam-card-sub">eBike-Verleih, Radtouren durch Weinberge, Wanderwege direkt ab Campingplatz</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ PHOTO STRIP 5 ═══════════════ -->
+<div class="strip-5">
+  <div class="s5-item"><img src="Stehplaetze.jpg" alt="Stellplätze am Sulmsee" loading="lazy"></div>
+  <div class="s5-item"><img src="2051960_sulmsse_herbst-025-klein1.jpg" alt="Sulmsee Herbstpanorama" loading="lazy"></div>
+  <div class="s5-item"><img src="sanitaeranlagen-011k.jpg" alt="Moderne Sanitäranlagen" loading="lazy"></div>
+  <div class="s5-item"><img src="Sulmsee_Fj_21-014.jpg" alt="Weinberge Südsteiermark" loading="lazy"></div>
+  <div class="s5-item"><img src="Campingplatz2.jpg" alt="Am Sulmsee" loading="lazy"></div>
+</div>
+
+<!-- ═══════════════ ABOUT ═══════════════ -->
+<section class="about-v2">
+  <div class="about-v2-inner">
+    <div class="about-v2-imgs reveal from-left">
+      <div class="av2-main"><img src="2051960_sulmsse_herbst-008-klein1.jpg" alt="Luftaufnahme Sulmsee" loading="lazy"></div>
+      <div class="av2-sm"><img src="Freizeit.jpg" alt="Entspannung am See" loading="lazy"></div>
+      <div class="av2-sm"><img src="20240419_151743-scaled.jpg" alt="Campingplatz Sulmsee" loading="lazy"></div>
+    </div>
+    <div class="about-v2-text">
+      <div class="section-tag reveal">Über uns</div>
+      <h2 class="section-title reveal">Familiengeführt.<br>Herzlich. <em style="color:var(--e)">Unvergesslich.</em></h2>
+      <p class="section-sub reveal">Seit über 10 Jahren begrüßen wir Familien aus ganz Europa am malerischen Sulmsee in der Südsteiermark. Unser Campingplatz verbindet echtes Naturerlebnis mit modernem Komfort.</p>
+      <div class="highlight-box reveal">
+        <p>„Wir leben Camping – und das merken Sie vom ersten Moment an. Jeder Gast ist bei uns wie ein Freund der Familie."</p>
+      </div>
+      <div class="feat-pills reveal">
+        <span class="feat-pill"><span class="feat-pill-icon">🌊</span>Direkter Seezugang</span>
+        <span class="feat-pill"><span class="feat-pill-icon">🐕</span>Hunde willkommen</span>
+        <span class="feat-pill"><span class="feat-pill-icon">📶</span>Gratis WLAN</span>
+        <span class="feat-pill"><span class="feat-pill-icon">🚲</span>eBike-Verleih</span>
+        <span class="feat-pill"><span class="feat-pill-icon">🧹</span>Top Sanitäranlagen</span>
+        <span class="feat-pill"><span class="feat-pill-icon">🍷</span>Weinberge nebenan</span>
+        <span class="feat-pill"><span class="feat-pill-icon">🏕</span>88 Stellplätze</span>
+        <span class="feat-pill"><span class="feat-pill-icon">👨‍👩‍👧‍👦</span>Familienfreundlich</span>
+      </div>
+      <div class="reveal" style="margin-top:2rem;display:flex;gap:.8rem;flex-wrap:wrap">
+        <a href="stellplaetze.html" class="btn btn-green">Stellplätze ansehen</a>
+        <a href="kontakt.html" class="btn btn-white">Kontakt aufnehmen</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ STATS COUNTER ═══════════════ -->
+<section class="count-section">
+  <div class="count-inner">
+    <div class="count-item reveal">
+      <div class="count-num"><span class="counter" data-target="88">0</span></div>
+      <div class="count-divider"></div>
+      <div class="count-label">Stellplätze</div>
+    </div>
+    <div class="count-item reveal">
+      <div class="count-num"><span class="counter" data-target="150">0</span><span class="count-suffix">m²</span></div>
+      <div class="count-divider"></div>
+      <div class="count-label">pro Stellplatz</div>
+    </div>
+    <div class="count-item reveal">
+      <div class="count-num"><span class="counter" data-target="500">0</span><span class="count-suffix">+</span></div>
+      <div class="count-divider"></div>
+      <div class="count-label">Gäste pro Jahr</div>
+    </div>
+    <div class="count-item reveal">
+      <div class="count-num"><span class="counter" data-target="10">0</span><span class="count-suffix">+</span></div>
+      <div class="count-divider"></div>
+      <div class="count-label">Jahre Erfahrung</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ STELLPLÄTZE PREVIEW ═══════════════ -->
+<section class="spots-prev">
+  <div class="spots-prev-inner">
+    <div class="sp-header">
+      <div class="section-tag reveal">Unsere Stellplätze</div>
+      <h2 class="section-title reveal">Ihr Platz am See</h2>
+      <p class="section-sub reveal" style="margin:0 auto">Wählen Sie Ihren Lieblingsplatz – direkt am Ufer oder ruhig im Grünen.</p>
+    </div>
+    <div class="sp-grid">
+      <div class="sp-card reveal">
+        <div class="sp-img">
+          <img src="Stehplaetze.jpg" alt="Sulmsee-Stellplatz direkt am Wasser" loading="lazy">
+          <div class="sp-badge">Empfohlen</div>
+        </div>
+        <div class="sp-body">
+          <h3>Sulmsee-Stellplatz</h3>
+          <p>Direkt am Seeufer mit eigenem Wasserzugang, Seeblick und dem beruhigenden Klang der Wellen. Unsere premiumsten Plätze für unvergessliche Morgende.</p>
+          <div class="sp-tags">
+            <span class="sp-tag">🌊 Direkter Seezugang</span>
+            <span class="sp-tag">🌅 Seeblick</span>
+            <span class="sp-tag">Plätze 1–24</span>
+            <span class="sp-tag">100–150 m²</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:center">
+            <span class="sp-price">ab € 36,– / Nacht</span>
+            <button class="btn btn-green" onclick="openBooking()" style="padding:.6rem 1.3rem;font-size:.82rem">Anfragen</button>
+          </div>
+        </div>
+      </div>
+      <div class="sp-card reveal">
+        <div class="sp-img">
+          <img src="Campingplatz.jpg" alt="Silbersee-Stellplatz im Grünen" loading="lazy">
+          <div class="sp-badge" style="background:var(--fp);color:var(--f)">Familienbeliebt</div>
+        </div>
+        <div class="sp-body">
+          <h3>Silbersee-Stellplatz</h3>
+          <p>Ruhig eingebettet im Grünen, umgeben von Natur. Großzügige Stellflächen mit Weinbergblick – ideal für Familien, die Ruhe und Abstand schätzen.</p>
+          <div class="sp-tags">
+            <span class="sp-tag">🌿 Ruhige Lage</span>
+            <span class="sp-tag">🍷 Weinbergblick</span>
+            <span class="sp-tag">Plätze 25–88</span>
+            <span class="sp-tag">100–150 m²</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:center">
+            <span class="sp-price">ab € 28,– / Nacht</span>
+            <button class="btn btn-green" onclick="openBooking()" style="padding:.6rem 1.3rem;font-size:.82rem">Anfragen</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:2.5rem">
+      <a href="stellplaetze.html" class="btn btn-white">Alle Stellplätze &amp; Ausstattung ansehen →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ WHY US (dark) ═══════════════ -->
+<section class="why-us">
+  <div class="why-inner">
+    <div class="why-img-wrap reveal from-left">
+      <div class="why-img">
+        <img src="2051960_sulmsse_herbst-029klein1.jpg" alt="Sulmsee Panorama" loading="lazy">
+      </div>
+      <div class="why-img-badge">4,8 ★<br><span style="font-size:.82rem;font-weight:400;font-family:'Nunito',sans-serif">Ø-Bewertung<br>500+ Gäste/Jahr</span></div>
+    </div>
+    <div class="why-text">
+      <div class="section-tag reveal">Warum Camping Sulmsee?</div>
+      <h2 class="section-title reveal">Mehr als nur ein<br><em>Campingplatz</em></h2>
+      <ul class="why-list reveal">
+        <li class="why-li"><span class="why-li-check">✓</span><span><strong>Lage direkt am See</strong> – kein Campingplatz in der Region liegt näher am Wasser</span></li>
+        <li class="why-li"><span class="why-li-check">✓</span><span><strong>Familienbetrieb seit 2013</strong> – persönliche Betreuung und echte Gastfreundschaft</span></li>
+        <li class="why-li"><span class="why-li-check">✓</span><span><strong>Makellose Sanitäranlagen</strong> – täglich gereinigt, modern ausgestattet</span></li>
+        <li class="why-li"><span class="why-li-check">✓</span><span><strong>Weinberge nebenan</strong> – Buschenschanken, Radtouren, Wanderwege direkt vor der Tür</span></li>
+        <li class="why-li"><span class="why-li-check">✓</span><span><strong>Hunde herzlich willkommen</strong> – am gesamten Gelände und am Seeufer</span></li>
+        <li class="why-li"><span class="why-li-check">✓</span><span><strong>Gratis WLAN &amp; eBike-Verleih</strong> – für aktive und entspannte Urlaubstage</span></li>
+      </ul>
+      <div class="reveal" style="display:flex;gap:1rem;flex-wrap:wrap">
+        <button class="btn btn-green" onclick="openBooking()">🗓 Jetzt buchen</button>
+        <a href="preise.html" class="btn btn-outline">Preise ansehen</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ PHOTO GALLERY ═══════════════ -->
+<div class="gal-mag">
+  <div class="gal-mag-grid">
+    <div class="gmi tall"><img src="Sulmsee_Fj_21-011.jpg" alt="Sulmsee Frühling" loading="lazy"></div>
+    <div class="gmi wide"><img src="sulmsee_sommer21-25.jpg" alt="Sulmsee Sommer" loading="lazy"></div>
+    <div class="gmi"><img src="sanitaeranlagen-014k.jpg" alt="Sanitäranlagen" loading="lazy"></div>
+    <div class="gmi"><img src="2051960_sulmsse_herbst-012-klein1.jpg" alt="Sulmsee Herbst" loading="lazy"></div>
+    <div class="gmi"><img src="20240419_151845-scaled.jpg" alt="Campingplatz Details" loading="lazy"></div>
+    <div class="gmi"><img src="Sulmsee_Fj_21-012.jpg" alt="Sulmsee Panorama" loading="lazy"></div>
+  </div>
+</div>
+
+<!-- ═══════════════ TESTIMONIALS CAROUSEL ═══════════════ -->
+<section class="ts-section">
+  <div class="ts-inner">
+    <div class="ts-header">
+      <div class="section-tag reveal">Gästestimmen</div>
+      <h2 class="section-title reveal">Was Familien über uns <em style="font-style:italic;color:#c49a6c">sagen</em></h2>
+      <p class="section-sub reveal">Echte Erlebnisse echter Familien – aus ganz Europa.</p>
+    </div>
+    <div class="ts-viewport">
+      <div class="ts-track" id="ts-track">
+        <div class="ts-card">
+          <div class="ts-stars">★★★★★</div>
+          <p class="ts-text">„Wir kommen jetzt seit drei Jahren jeden Frühling – der Sulmsee hat uns verzaubert. Riesige Stellplätze, makellose Sanitäranlagen und das herzlichste Team, das man sich vorstellen kann."</p>
+          <div class="ts-author"><div class="ts-av" style="background:#3d7a5c">MK</div><div><div class="ts-name">Maria &amp; Klaus R. <span style="font-weight:400;color:rgba(255,255,255,.5)">· Bayern</span></div><div class="ts-date">April 2025</div></div></div>
+        </div>
+        <div class="ts-card">
+          <div class="ts-stars">★★★★★</div>
+          <p class="ts-text">„Mit zwei Kindern und zwei Hunden – und trotzdem 100% Erholung! Hunde überall willkommen, die Kids lieben den See und wir genießen die Ruhe. Absolut perfekt für Familien."</p>
+          <div class="ts-author"><div class="ts-av" style="background:#8b5e3c">SF</div><div><div class="ts-name">Familie Steiner <span style="font-weight:400;color:rgba(255,255,255,.5)">· Graz</span></div><div class="ts-date">August 2025</div></div></div>
+        </div>
+        <div class="ts-card">
+          <div class="ts-stars">★★★★★</div>
+          <p class="ts-text">„Das eBike-Angebot hat unseren Urlaub auf ein neues Level gebracht. Morgens Weinberge erkunden, abends Buschenschank – so soll Camping sein! Definitiv wieder."</p>
+          <div class="ts-author"><div class="ts-av" style="background:#2c5c46">TH</div><div><div class="ts-name">Thomas &amp; Helga W. <span style="font-weight:400;color:rgba(255,255,255,.5)">· Wien</span></div><div class="ts-date">Juni 2025</div></div></div>
+        </div>
+        <div class="ts-card">
+          <div class="ts-stars">★★★★★</div>
+          <p class="ts-text">„Der Seeufer-Platz war ein absoluter Traum – morgens mit Seeblick aufwachen ist einfach unbezahlbar. Die Betreiber sind so herzlich, wir haben uns sofort wie zuhause gefühlt."</p>
+          <div class="ts-author"><div class="ts-av" style="background:#7a3d5c">PW</div><div><div class="ts-name">Petra &amp; Walter H. <span style="font-weight:400;color:rgba(255,255,255,.5)">· Innsbruck</span></div><div class="ts-date">Juli 2025</div></div></div>
+        </div>
+        <div class="ts-card">
+          <div class="ts-stars">★★★★★</div>
+          <p class="ts-text">„Als Hundebesitzerin war ich begeistert – überall willkommen, herrliche Wanderwege direkt ab Platz. Die Buschenschanken in den Weinbergen sind ein echtes Highlight!"</p>
+          <div class="ts-author"><div class="ts-av" style="background:#3d5c7a">SP</div><div><div class="ts-name">Sandra P. <span style="font-weight:400;color:rgba(255,255,255,.5)">· Salzburg</span></div><div class="ts-date">Mai 2025</div></div></div>
+        </div>
+        <div class="ts-card">
+          <div class="ts-stars">★★★★★</div>
+          <p class="ts-text">„Perfekte Familienatmosphäre, tolle Infrastruktur und ein See, der einfach zum Baden einlädt. Unsere Kinder hatten die beste Zeit – wir kommen nächstes Jahr sicher wieder!"</p>
+          <div class="ts-author"><div class="ts-av" style="background:#5c7a3d">AR</div><div><div class="ts-name">Andreas &amp; Renate M. <span style="font-weight:400;color:rgba(255,255,255,.5)">· Klagenfurt</span></div><div class="ts-date">August 2025</div></div></div>
+        </div>
+        <div class="ts-card">
+          <div class="ts-stars">★★★★★</div>
+          <p class="ts-text">„Ruhig, sauber, wunderschön gelegen. Der Platz am See ist jeden Euro wert. Das WLAN funktioniert sogar an der Uferwiese perfekt – top für alle, die auch im Urlaub erreichbar bleiben wollen."</p>
+          <div class="ts-author"><div class="ts-av" style="background:#7a5c3d">KF</div><div><div class="ts-name">Klaus &amp; Monika F. <span style="font-weight:400;color:rgba(255,255,255,.5)">· Stuttgart</span></div><div class="ts-date">September 2025</div></div></div>
+        </div>
+        <div class="ts-card">
+          <div class="ts-stars">★★★★★</div>
+          <p class="ts-text">„Die Weinstraße direkt vor der Tür, der See gleich daneben – Camping Sulmsee verbindet Natur, Kulinarik und Entspannung auf einzigartige Weise. Absolut empfehlenswert!"</p>
+          <div class="ts-author"><div class="ts-av" style="background:#4a7a5c">BL</div><div><div class="ts-name">Brigitte &amp; Lukas T. <span style="font-weight:400;color:rgba(255,255,255,.5)">· Linz</span></div><div class="ts-date">September 2025</div></div></div>
+        </div>
+      </div>
+    </div>
+    <div class="ts-controls">
+      <button class="ts-arr" id="ts-prev">&#8592;</button>
+      <div class="ts-dots" id="ts-dots"></div>
+      <button class="ts-arr" id="ts-next">&#8594;</button>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ CTA BANNER ═══════════════ -->
+<section class="cta-banner">
+  <div class="cta-banner-bg" style="background-image:url('Campingplatz2.jpg')"></div>
+  <div class="cta-banner-overlay"></div>
+  <div class="cta-banner-content reveal">
+    <div class="section-tag" style="justify-content:center;color:var(--el)">Sichern Sie Ihren Platz</div>
+    <h2>Ihr Familienurlaub<br>beginnt <em>hier</em></h2>
+    <p>Die besten Plätze am Seeufer sind schnell vergeben. Senden Sie jetzt Ihre unverbindliche Anfrage für die Saison 2026 – wir melden uns innerhalb von 24 Stunden.</p>
+    <div class="cta-banner-btns">
+      <button class="btn btn-green" onclick="openBooking()" style="font-size:.95rem;padding:.95rem 2.4rem;box-shadow:0 8px 30px rgba(0,0,0,.3)">🗓 Jetzt Stellplatz anfragen</button>
+      <a href="tel:004334528286" class="btn btn-outline" style="font-size:.95rem;padding:.95rem 2rem">📞 Direkt anrufen</a>
+    </div>
+  </div>
+</section>
+
+<!-- Floating CTA -->
+<div class="fcta" id="fcta">
+  <button class="fcta-btn fcta-primary" onclick="openBooking()">🗓 Jetzt buchen</button>
+  <a href="tel:004334528286"><button class="fcta-btn fcta-phone">📞 Anrufen</button></a>
+</div>
+
+<!-- Footer -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <a href="index.html" style="text-decoration:none"><div class="fb-logo">Camping <span>Sulmsee</span></div></a>
+      <p>Ihr Familienparadies in der südsteirischen Weinlandschaft. Herzlich, naturnah und unvergesslich.</p>
+      <div style="font-size:.82rem;color:rgba(255,255,255,.32)">Gastgewerbliche Betriebe Prasser KG<br>Sulmsee 1, 8430 Leibnitz, Österreich</div>
+    </div>
+    <div class="fc"><h4>Navigation</h4><ul>
+      <li><a href="index.html">Startseite</a></li>
+      <li><a href="stellplaetze.html">Stellplätze</a></li>
+      <li><a href="preise.html">Preise 2026</a></li>
+      <li><a href="freizeit.html">Freizeitangebot</a></li>
+      <li><a href="anreise.html">Anreise</a></li>
+      <li><a href="kontakt.html">Kontakt</a></li>
+    </ul></div>
+    <div class="fc"><h4>Freizeit</h4><ul>
+      <li><a href="freizeit.html">eBike Service</a></li>
+      <li><a href="freizeit.html">Radtouren</a></li>
+      <li><a href="freizeit.html">Wandern</a></li>
+      <li><a href="freizeit.html">Buschenschanken</a></li>
+    </ul></div>
+    <div class="fc"><h4>Rechtliches</h4><ul>
+      <li><a href="#">Impressum</a></li>
+      <li><a href="#">Datenschutz</a></li>
+      <li><a href="#">AGB</a></li>
+    </ul></div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-copy">© 2026 Gastgewerbliche Betriebe Prasser KG · Camping Sulmsee</div>
+    <div class="footer-legal"><a href="#">Impressum</a><a href="#">Datenschutz</a><a href="#">AGB</a></div>
+  </div>
+</footer>
+
+<script src="booking.js"></script>
+<script src="chatbot.js"></script>
+<script>
+// Page loader
+window.addEventListener('load',function(){
+  const loader=document.getElementById('page-loader');
+  if(loader){loader.classList.add('hidden');setTimeout(()=>loader.remove(),600);}
+});
+// Scroll progress
+(function(){
+  const bar=document.getElementById('scroll-progress');
+  if(!bar)return;
+  window.addEventListener('scroll',()=>{
+    const max=document.documentElement.scrollHeight-window.innerHeight;
+    bar.style.width=(window.scrollY/max*100)+'%';
+  },{passive:true});
+})();
+// Nav scrolled
+window.addEventListener('scroll',()=>{
+  document.getElementById('mainNav').classList.toggle('scrolled',window.scrollY>20);
+},{passive:true});
+// Mobile menu
+document.getElementById('hamBtn').addEventListener('click', openMobMenu);
+document.getElementById('mobMenuClose').addEventListener('click', closeMobMenu);
+// Scroll reveal (including directional)
+(function(){
+  const obs=new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}});
+  },{threshold:.07,rootMargin:'0px 0px 50px 0px'});
+  document.querySelectorAll('.reveal').forEach((el,i)=>{
+    el.style.transitionDelay=(i%5*.08)+'s';
+    obs.observe(el);
+  });
+  setTimeout(()=>{
+    document.querySelectorAll('.reveal:not(.visible)').forEach(el=>{
+      const r=el.getBoundingClientRect();
+      if(r.top<window.innerHeight)el.classList.add('visible');
+    });
+  },120);
+})();
+// Animated counters
+(function(){
+  const counters=document.querySelectorAll('.counter');
+  if(!counters.length)return;
+  const obs=new IntersectionObserver((entries)=>{
+    entries.forEach(entry=>{
+      if(!entry.isIntersecting)return;
+      const el=entry.target;
+      const target=+el.getAttribute('data-target');
+      const duration=1600;
+      const step=target/60;
+      let current=0;
+      const timer=setInterval(()=>{
+        current+=step;
+        if(current>=target){current=target;clearInterval(timer);}
+        el.textContent=Math.round(current);
+      },duration/60);
+      obs.unobserve(el);
+    });
+  },{threshold:.5});
+  counters.forEach(c=>obs.observe(c));
+})();
+// FCTA visibility
+(function(){
+  const fcta=document.getElementById('fcta');
+  if(!fcta)return;
+  window.addEventListener('scroll',()=>{
+    const show=window.scrollY>400;
+    fcta.style.opacity=show?'1':'0';
+    fcta.style.transform=show?'none':'translateY(16px)';
+  },{passive:true});
+  fcta.style.opacity='0';
+  fcta.style.transition='opacity .4s,transform .4s';
+})();
+// Countdown to season start
+(function(){
+  const start=new Date('2026-04-17');
+  const today=new Date();today.setHours(0,0,0,0);
+  const diff=Math.ceil((start-today)/86400000);
+  const badge=document.getElementById('hero-season-badge');
+  const span=document.getElementById('days-until');
+  if(diff<=0){
+    if(badge)badge.innerHTML='🌱 Saison 2026 geöffnet';
+    const nb=document.getElementById('nav-season-badge');
+    if(nb)nb.textContent='🌱 Saison 2026 geöffnet';
+  } else {
+    if(span)span.textContent=diff;
+  }
+})();
+// Weather widget – Open-Meteo, Leibnitz/Sulmsee
+(function(){
+  const WI={0:'☀️',1:'🌤',2:'⛅',3:'☁️',45:'🌫',48:'🌫',51:'🌦',53:'🌦',55:'🌧',61:'🌧',63:'🌧',65:'🌧',71:'🌨',73:'🌨',75:'🌨',80:'🌦',81:'🌧',82:'🌧',95:'⛈',96:'⛈',99:'⛈'};
+  const WD={0:'Klar',1:'Meist klar',2:'Teils bewölkt',3:'Bedeckt',45:'Nebel',48:'Raureif',51:'Nieselregen',53:'Nieselregen',55:'Nieselregen',61:'Leichter Regen',63:'Regen',65:'Starkregen',71:'Leichter Schnee',73:'Schnee',75:'Starker Schnee',80:'Regenschauer',81:'Regenschauer',82:'Starke Schauer',95:'Gewitter',96:'Gewitter',99:'Gewitter'};
+  fetch('https://api.open-meteo.com/v1/forecast?latitude=46.78&longitude=15.54&current=temperature_2m,weathercode,windspeed_10m&timezone=Europe%2FVienna')
+    .then(r=>r.json())
+    .then(d=>{
+      const c=d.current;
+      const temp=Math.round(c.temperature_2m);
+      const code=c.weathercode;
+      document.getElementById('hw-icon').textContent=WI[code]||'🌡';
+      document.getElementById('hw-temp').textContent=temp+'°C';
+      document.getElementById('hw-desc').textContent=(WD[code]||'')+(c.windspeed_10m?' · '+Math.round(c.windspeed_10m)+' km/h':'');
+      const w=document.getElementById('hero-weather');
+      if(w){w.style.display='';w.style.animation='hFloat 4s .8s ease-in-out infinite';}
+    })
+    .catch(()=>{});
+})();
+// Testimonial Carousel
+(function(){
+  var track=document.getElementById('ts-track');
+  var prev=document.getElementById('ts-prev');
+  var next=document.getElementById('ts-next');
+  var dotsWrap=document.getElementById('ts-dots');
+  if(!track||!prev||!next||!dotsWrap)return;
+  var cards=track.querySelectorAll('.ts-card');
+  var total=cards.length;
+  var getVis=function(){return window.innerWidth>900?3:window.innerWidth>600?2:1;};
+  var visibleCount=getVis();
+  var maxIndex=Math.max(0,total-visibleCount);
+  var current=0;
+  var autoTimer=null;
+  // Build dots
+  for(var i=0;i<maxIndex+1;i++){
+    var dot=document.createElement('button');
+    dot.className='ts-dot'+(i===0?' active':'');
+    (function(idx){dot.addEventListener('click',function(){goTo(idx);resetAuto();});})(i);
+    dotsWrap.appendChild(dot);
+  }
+  function updateDots(){dotsWrap.querySelectorAll('.ts-dot').forEach(function(d,i){d.classList.toggle('active',i===current);});}
+  function goTo(idx){
+    current=Math.max(0,Math.min(idx,maxIndex));
+    var w=cards[0].offsetWidth+21;
+    track.style.transform='translateX('+(-current*w)+'px)';
+    updateDots();
+  }
+  function resetAuto(){
+    clearInterval(autoTimer);
+    autoTimer=setInterval(function(){goTo(current<maxIndex?current+1:0);},4500);
+  }
+  prev.addEventListener('click',function(){goTo(current>0?current-1:maxIndex);resetAuto();});
+  next.addEventListener('click',function(){goTo(current<maxIndex?current+1:0);resetAuto();});
+  var sx=0;
+  track.addEventListener('touchstart',function(e){sx=e.changedTouches[0].screenX;},{passive:true});
+  track.addEventListener('touchend',function(e){var d=sx-e.changedTouches[0].screenX;if(Math.abs(d)>40){goTo(d>0?current+1:current-1);resetAuto();}},{passive:true});
+  window.addEventListener('resize',function(){visibleCount=getVis();maxIndex=Math.max(0,total-visibleCount);goTo(Math.min(current,maxIndex));});
+  goTo(0);resetAuto();
+})();
+// Gallery lightbox for gal-mag photos
+(function(){
+  const items=document.querySelectorAll('.gmi');
+  items.forEach(item=>{
+    item.addEventListener('click',()=>{
+      const img=item.querySelector('img');
+      if(!img)return;
+      const lb=document.createElement('div');
+      lb.style.cssText='position:fixed;inset:0;background:rgba(0,0,0,.92);z-index:5000;display:flex;align-items:center;justify-content:center;cursor:zoom-out;animation:mbFadeIn .2s ease both';
+      const i=document.createElement('img');
+      i.src=img.src;i.alt=img.alt;
+      i.style.cssText='max-width:90vw;max-height:88vh;border-radius:10px;object-fit:contain;box-shadow:0 20px 60px rgba(0,0,0,.5);animation:mbSlide .3s cubic-bezier(.22,1,.36,1) both';
+      lb.appendChild(i);
+      lb.addEventListener('click',()=>lb.remove());
+      document.body.appendChild(lb);
+    });
+  });
+})();
+</script>
+</body>
+</html>

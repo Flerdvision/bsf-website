@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Kontaktieren Sie das Camping Sulmsee – wir freuen uns auf Ihre Anfrage.">
+<title>Kontakt – Camping Sulmsee</title>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400;1,600&family=Nunito:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script>
+function openMobMenu(){var m=document.getElementById('mobMenu'),h=document.getElementById('hamBtn');if(m)m.classList.add('open');if(h)h.classList.add('open');document.body.style.overflow='hidden';}
+function closeMobMenu(){var m=document.getElementById('mobMenu'),h=document.getElementById('hamBtn');if(m)m.classList.remove('open');if(h)h.classList.remove('open');document.body.style.overflow='';}
+window.openBooking=function(){var m=document.getElementById('bookingModal');if(m){m.classList.add('open');document.body.style.overflow='hidden';}else{document.addEventListener('DOMContentLoaded',function(){var m2=document.getElementById('bookingModal');if(m2){m2.classList.add('open');document.body.style.overflow='hidden';}});}};
+</script>
+<style>
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .55s cubic-bezier(.22,1,.36,1),transform .55s cubic-bezier(.22,1,.36,1)}
+.reveal.from-left{transform:translateX(-28px)}
+.reveal.from-right{transform:translateX(28px)}
+.reveal.visible{opacity:1!important;transform:none!important}
+/* Premium contact cards */
+.ci-card{border-radius:16px;padding:1.4rem 1.6rem;gap:1.2rem}
+.ci-card-icon{font-size:1.8rem;flex-shrink:0;width:48px;height:48px;background:var(--fp);border-radius:50%;display:flex;align-items:center;justify-content:center;transition:transform .3s cubic-bezier(.22,1,.36,1)}
+.ci-card:hover .ci-card-icon{transform:scale(1.15) rotate(-5deg)}
+/* Form upgrade */
+.contact-form-wrap{border-radius:24px;padding:3rem}
+.form-group input,.form-group select,.form-group textarea{border-radius:12px;font-size:.95rem;padding:.9rem 1.1rem;transition:border-color .2s,box-shadow .2s}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--f);box-shadow:0 0 0 3px rgba(30,64,50,.08)}
+.form-submit{border-radius:50px;padding:1.1rem 2rem;font-size:.95rem;letter-spacing:.03em;transition:all .25s cubic-bezier(.22,1,.36,1)}
+.form-submit:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(30,64,50,.25)}
+/* Quick actions */
+.quick-actions{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:2rem}
+.qa-btn{display:flex;align-items:center;gap:10px;padding:1rem 1.2rem;border:1.5px solid var(--bd);border-radius:14px;font-size:.88rem;font-weight:600;color:var(--f);transition:all .25s;background:#fff}
+.qa-btn:hover{border-color:var(--fl);background:var(--fp);transform:translateY(-3px);box-shadow:var(--sh)}
+.qa-icon{font-size:1.3rem}
+@media(max-width:500px){.quick-actions{grid-template-columns:1fr}}
+/* Success toast */
+.form-success{display:none;background:var(--fp);border:1px solid rgba(61,122,92,.3);border-radius:var(--r);padding:1.2rem 1.5rem;margin-top:1rem;color:var(--f);font-weight:600;font-size:.9rem;align-items:center;gap:.6rem}
+.form-success.show{display:flex;animation:panelIn .4s cubic-bezier(.22,1,.36,1) both}
+@keyframes panelIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<div id="scroll-progress"></div>
+<div id="page-loader" style="display:none;visibility:hidden;pointer-events:none"></div>
+<div class="mob-menu" id="mobMenu">
+  <button class="mob-menu-close" id="mobMenuClose">✕</button>
+  <a href="index.html" onclick="closeMobMenu()">Startseite</a>
+  <a href="stellplaetze.html" onclick="closeMobMenu()">Stellplätze</a>
+  <a href="preise.html" onclick="closeMobMenu()">Preise</a>
+  <a href="freizeit.html" onclick="closeMobMenu()">Freizeit</a>
+  <a href="anreise.html" onclick="closeMobMenu()">Anreise</a>
+  <a href="kontakt.html" onclick="closeMobMenu()">Kontakt</a>
+  <a href="#" onclick="closeMobMenu();openBooking();return false;" style="color:var(--e)">🗓 Jetzt buchen</a>
+</div>
+<nav id="mainNav">
+  <div class="nav-inner">
+    <a class="nav-logo" href="index.html">
+      <img src="campingsulmsee.png" class="nav-logo-icon" alt="Logo">
+      <span class="nav-logo-text">Camping <span>Sulmsee</span></span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Startseite</a></li>
+      <li><a href="stellplaetze.html">Stellplätze</a></li>
+      <li><a href="preise.html">Preise</a></li>
+      <li><a href="freizeit.html">Freizeit</a></li>
+      <li><a href="anreise.html">Anreise</a></li>
+      <li><a href="kontakt.html" class="nav-active">Kontakt</a></li>
+      <li><a href="#" onclick="openBooking();return false;" class="nav-book">🗓 Jetzt buchen</a></li>
+    </ul>
+    <div class="nav-right">
+      <div class="nav-badge">🌱 Saison ab 17. April 2026</div>
+      <button class="ham-btn" id="hamBtn" onclick="openMobMenu()"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="page-hero-photo">
+  <div class="ph-bg" style="background-image:url('sulmsee_sommer21-25.jpg');background-position:center 60%"></div>
+  <div class="ph-overlay"></div>
+  <div class="ph-content">
+    <div class="section-tag">Kontakt</div>
+    <h1>Wir freuen uns<br><em>auf Ihre Nachricht</em></h1>
+    <p>Fragen zur Buchung, Lage oder Ausstattung? Wir antworten innerhalb von 24 Stunden – persönlich und herzlich.</p>
+    <div class="page-hero-btns">
+      <button class="btn btn-green" onclick="openBooking()">🗓 Direkt buchen</button>
+      <a href="tel:004334528286" class="btn btn-outline">📞 Jetzt anrufen</a>
+    </div>
+  </div>
+</div>
+
+<!-- INFO STRIP -->
+<div class="count-section">
+  <div class="count-inner">
+    <div class="count-item reveal"><div class="count-num">24 h</div><div class="count-divider"></div><div class="count-label">Antwortzeit</div></div>
+    <div class="count-item reveal"><div class="count-num">📞</div><div class="count-divider"></div><div class="count-label"><a href="tel:004334528286" style="color:inherit;text-decoration:none">+43 3452 82866</a></div></div>
+    <div class="count-item reveal"><div class="count-num">✉️</div><div class="count-divider"></div><div class="count-label"><a href="mailto:office@sulmsee.at" style="color:inherit;text-decoration:none">office@sulmsee.at</a></div></div>
+    <div class="count-item reveal"><div class="count-num">17. Apr</div><div class="count-divider"></div><div class="count-label">Saisonstart 2026</div></div>
+  </div>
+</div>
+
+<!-- CONTACT SECTION -->
+<section class="contact" id="kontakt" style="padding:5rem 2rem 6rem">
+  <div class="contact-inner">
+    <div style="text-align:center;margin-bottom:3rem">
+      <div class="section-tag reveal">Sprechen Sie uns an</div>
+      <h2 class="section-title reveal">Wir sind <em style="font-style:italic;color:var(--el)">für Sie da</em></h2>
+      <p class="section-sub reveal" style="margin:0 auto">Alle Kontaktwege – wählen Sie, was Ihnen am liebsten ist.</p>
+    </div>
+    <div class="contact-grid">
+      <div class="reveal from-left">
+        <div class="ci-cards">
+          <div class="ci-card">
+            <div class="ci-card-icon">📞</div>
+            <div><div class="ci-lbl">Telefon</div><div class="ci-val"><a href="tel:004334528286" style="color:inherit">+43 3452 82866</a></div></div>
+          </div>
+          <div class="ci-card">
+            <div class="ci-card-icon">✉️</div>
+            <div><div class="ci-lbl">E-Mail</div><div class="ci-val"><a href="mailto:office@sulmsee.at" style="color:inherit">office@sulmsee.at</a></div></div>
+          </div>
+          <div class="ci-card">
+            <div class="ci-card-icon">📍</div>
+            <div><div class="ci-lbl">Adresse</div><div class="ci-val">Sulmsee 1, 8430 Leibnitz</div></div>
+          </div>
+          <div class="ci-card">
+            <div class="ci-card-icon">🗓</div>
+            <div><div class="ci-lbl">Saison 2026</div><div class="ci-val">17. April – 26. Oktober</div></div>
+          </div>
+          <div class="ci-card">
+            <div class="ci-card-icon">🕐</div>
+            <div><div class="ci-lbl">Check-in Mo–Do</div><div class="ci-val">09:00–12:00 &amp; 14:00–18:00</div></div>
+          </div>
+          <div class="ci-card">
+            <div class="ci-card-icon">🕐</div>
+            <div><div class="ci-lbl">Check-in Fr–So</div><div class="ci-val">09:00–12:00 &amp; 14:00–19:00</div></div>
+          </div>
+        </div>
+        <div class="quick-actions">
+          <a href="tel:004334528286" class="qa-btn"><span class="qa-icon">📞</span>Direkt anrufen</a>
+          <a href="https://maps.google.com/?q=Sulmsee+1,+8430+Leibnitz" target="_blank" class="qa-btn"><span class="qa-icon">📍</span>Navigation</a>
+          <a href="mailto:office@sulmsee.at" class="qa-btn"><span class="qa-icon">✉️</span>E-Mail senden</a>
+          <a href="#" class="qa-btn" onclick="openBooking();return false;"><span class="qa-icon">🗓</span>Jetzt buchen</a>
+        </div>
+
+      </div>
+
+      <div class="contact-form-wrap reveal from-right">
+        <h3>Schreiben Sie uns</h3>
+        <p style="margin-bottom:1.8rem">Wir antworten persönlich innerhalb von 24 Stunden.</p>
+        <div class="form-row">
+          <div class="form-group"><label>Vorname</label><input type="text" id="c-fname" placeholder="Max"></div>
+          <div class="form-group"><label>Nachname</label><input type="text" id="c-lname" placeholder="Muster"></div>
+        </div>
+        <div class="form-group"><label>E-Mail *</label><input type="email" id="c-email" placeholder="max@beispiel.at"></div>
+        <div class="form-row">
+          <div class="form-group"><label>Anreise (optional)</label><input type="date" id="c-arrival"></div>
+          <div class="form-group"><label>Abreise (optional)</label><input type="date" id="c-depart"></div>
+        </div>
+        <div class="form-group"><label>Nachricht *</label><textarea id="c-msg" placeholder="Ihre Frage oder Ihr Anliegen..." style="min-height:120px"></textarea></div>
+        <button class="form-submit" id="contactBtn" onclick="submitContact(this)">✉ Nachricht senden</button>
+        <div class="form-success" id="form-success">✅ Ihre Nachricht wurde weitergeleitet. Wir melden uns bald!</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <a href="index.html" style="text-decoration:none"><div class="fb-logo">Camping <span>Sulmsee</span></div></a>
+      <p>Ihr Ferienparadies in der südsteirischen Weinlandschaft. Herzlich, naturnah und unvergesslich.</p>
+      <div style="font-size:.82rem;color:rgba(255,255,255,.32)">Gastgewerbliche Betriebe Prasser KG<br>Sulmsee 1, 8430 Leibnitz, Österreich</div>
+    </div>
+    <div class="fc"><h4>Navigation</h4><ul>
+      <li><a href="index.html">Startseite</a></li>
+      <li><a href="stellplaetze.html">Stellplätze</a></li>
+      <li><a href="preise.html">Preise 2026</a></li>
+      <li><a href="freizeit.html">Freizeitangebot</a></li>
+      <li><a href="anreise.html">Anreise</a></li>
+      <li><a href="kontakt.html">Kontakt</a></li>
+    </ul></div>
+    <div class="fc"><h4>Freizeit</h4><ul>
+      <li><a href="freizeit.html">eBike Service</a></li>
+      <li><a href="freizeit.html">Radtouren</a></li>
+      <li><a href="freizeit.html">Wandern</a></li>
+      <li><a href="freizeit.html">Buschenschanken</a></li>
+    </ul></div>
+    <div class="fc"><h4>Rechtliches</h4><ul>
+      <li><a href="#">Impressum</a></li>
+      <li><a href="#">Datenschutz</a></li>
+      <li><a href="#">AGB</a></li>
+    </ul></div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-copy">© 2026 Gastgewerbliche Betriebe Prasser KG · Camping Sulmsee</div>
+    <div class="footer-legal"><a href="#">Impressum</a><a href="#">Datenschutz</a><a href="#">AGB</a></div>
+  </div>
+</footer>
+
+<script src="booking.js"></script>
+<script src="chatbot.js"></script>
+<script src="subpage.js"></script>
+<script>
+document.getElementById('hamBtn').addEventListener('click', openMobMenu);
+document.getElementById('mobMenuClose').addEventListener('click', closeMobMenu);
+function submitContact(btn){
+  var email=document.getElementById('c-email').value.trim();
+  var msg=document.getElementById('c-msg').value.trim();
+  if(!email||!msg){
+    btn.style.animation='bkShake .4s ease both';
+    setTimeout(function(){btn.style.animation='';},500);
+    return;
+  }
+  var fname=document.getElementById('c-fname').value.trim();
+  var lname=document.getElementById('c-lname').value.trim();
+  var arrival=document.getElementById('c-arrival').value;
+  var depart=document.getElementById('c-depart').value;
+  var subject='Anfrage Camping Sulmsee'+(fname?' – '+fname+' '+lname:'');
+  var body='Name: '+(fname+' '+lname).trim()+'\nE-Mail: '+email+'\n';
+  if(arrival)body+='Anreise: '+arrival+'\n';
+  if(depart)body+='Abreise: '+depart+'\n';
+  body+='\nNachricht:\n'+msg;
+  window.location.href='mailto:office@sulmsee.at?subject='+encodeURIComponent(subject)+'&body='+encodeURIComponent(body);
+  var succ=document.getElementById('form-success');
+  succ.classList.add('show');
+  btn.textContent='✓ Gesendet';
+  btn.style.background='var(--fl)';
+  setTimeout(function(){btn.textContent='✉ Nachricht senden';btn.style.background='';},3500);
+}
+(function(){
+  var obs=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}});
+  },{threshold:.06,rootMargin:'0px 0px 60px 0px'});
+  document.querySelectorAll('.reveal').forEach(function(el,i){
+    if(!el.style.transitionDelay)el.style.transitionDelay=(i%8*.065)+'s';
+    obs.observe(el);
+  });
+  setTimeout(function(){
+    document.querySelectorAll('.reveal:not(.visible)').forEach(function(el){
+      if(el.getBoundingClientRect().top<window.innerHeight)el.classList.add('visible');
+    });
+  },120);
+})();
+</script>
+</body>
+</html>

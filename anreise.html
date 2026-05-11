@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="So finden Sie uns – Camping Sulmsee in Leibnitz, Südsteiermark.">
+<title>Anreise – Camping Sulmsee</title>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400;1,600&family=Nunito:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script>
+function openMobMenu(){var m=document.getElementById('mobMenu'),h=document.getElementById('hamBtn');if(m)m.classList.add('open');if(h)h.classList.add('open');document.body.style.overflow='hidden';}
+function closeMobMenu(){var m=document.getElementById('mobMenu'),h=document.getElementById('hamBtn');if(m)m.classList.remove('open');if(h)h.classList.remove('open');document.body.style.overflow='';}
+window.openBooking=function(){var m=document.getElementById('bookingModal');if(m){m.classList.add('open');document.body.style.overflow='hidden';}else{document.addEventListener('DOMContentLoaded',function(){var m2=document.getElementById('bookingModal');if(m2){m2.classList.add('open');document.body.style.overflow='hidden';}});}};
+</script>
+<style>
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .55s cubic-bezier(.22,1,.36,1),transform .55s cubic-bezier(.22,1,.36,1)}
+.reveal.from-left{transform:translateX(-28px)}
+.reveal.from-right{transform:translateX(28px)}
+.reveal.visible{opacity:1!important;transform:none!important}
+/* Route cards upgrade */
+.route-card{border-radius:16px;padding:1.6rem 1.8rem;position:relative;overflow:hidden}
+.route-card::before{content:'';position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--bd);border-radius:0 2px 2px 0;transition:background .3s}
+.route-card:hover::before{background:var(--fl)}
+.route-num{position:absolute;top:1rem;right:1.2rem;font-family:'Lora',serif;font-size:2.5rem;color:var(--bd);font-weight:600;line-height:1;transition:color .3s}
+.route-card:hover .route-num{color:var(--fp)}
+/* Contact info strip */
+.info-strip{background:var(--f);padding:4rem 2rem}
+.info-strip-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;text-align:center}
+.info-item{color:#fff}
+.info-item-icon{font-size:2rem;margin-bottom:.6rem;display:block}
+.info-item-lbl{font-size:.67rem;text-transform:uppercase;letter-spacing:.12em;color:rgba(255,255,255,.45);font-weight:700;margin-bottom:.3rem}
+.info-item-val{font-size:.9rem;font-weight:600;color:#fff}
+.info-item-val a{color:var(--el)}
+@media(max-width:800px){.info-strip-inner{grid-template-columns:1fr 1fr}}
+@media(max-width:480px){.info-strip-inner{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div id="scroll-progress"></div>
+<div id="page-loader" style="display:none;visibility:hidden;pointer-events:none"></div>
+<div class="mob-menu" id="mobMenu">
+  <button class="mob-menu-close" id="mobMenuClose">✕</button>
+  <a href="index.html" onclick="closeMobMenu()">Startseite</a>
+  <a href="stellplaetze.html" onclick="closeMobMenu()">Stellplätze</a>
+  <a href="preise.html" onclick="closeMobMenu()">Preise</a>
+  <a href="freizeit.html" onclick="closeMobMenu()">Freizeit</a>
+  <a href="anreise.html" onclick="closeMobMenu()">Anreise</a>
+  <a href="kontakt.html" onclick="closeMobMenu()">Kontakt</a>
+  <a href="#" onclick="closeMobMenu();openBooking();return false;" style="color:var(--e)">🗓 Jetzt buchen</a>
+</div>
+<nav id="mainNav">
+  <div class="nav-inner">
+    <a class="nav-logo" href="index.html">
+      <img src="campingsulmsee.png" class="nav-logo-icon" alt="Logo">
+      <span class="nav-logo-text">Camping <span>Sulmsee</span></span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Startseite</a></li>
+      <li><a href="stellplaetze.html">Stellplätze</a></li>
+      <li><a href="preise.html">Preise</a></li>
+      <li><a href="freizeit.html">Freizeit</a></li>
+      <li><a href="anreise.html" class="nav-active">Anreise</a></li>
+      <li><a href="kontakt.html">Kontakt</a></li>
+      <li><a href="#" onclick="openBooking();return false;" class="nav-book">🗓 Jetzt buchen</a></li>
+    </ul>
+    <div class="nav-right">
+      <div class="nav-badge">🌱 Saison ab 17. April 2026</div>
+      <button class="ham-btn" id="hamBtn" onclick="openMobMenu()"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="page-hero-photo">
+  <div class="ph-bg" style="background-image:url('sulmsee_sommer21-3.jpg');background-position:center 50%"></div>
+  <div class="ph-overlay"></div>
+  <div class="ph-content">
+    <div class="section-tag">Anreise &amp; Lage</div>
+    <h1>So finden<br><em>Sie uns</em></h1>
+    <p>Gut erreichbar mit Auto, Bahn oder Fahrrad – mitten in der Südsteiermark, nur wenige Minuten von Leibnitz.</p>
+    <div class="page-hero-btns">
+      <button class="btn btn-green" onclick="openBooking()">🗓 Stellplatz anfragen</button>
+      <a href="https://maps.google.com/?q=Sulmsee+1,+8430+Leibnitz" target="_blank" class="btn btn-outline">📍 Navigation starten</a>
+    </div>
+  </div>
+</div>
+
+<!-- INFO STRIP -->
+<div class="info-strip">
+  <div class="info-strip-inner">
+    <div class="info-item reveal"><span class="info-item-icon">📍</span><div class="info-item-lbl">Adresse</div><div class="info-item-val">Sulmsee 1<br>8430 Leibnitz, AT</div></div>
+    <div class="info-item reveal"><span class="info-item-icon">📞</span><div class="info-item-lbl">Telefon</div><div class="info-item-val"><a href="tel:004334528286">+43 3452 82866</a></div></div>
+    <div class="info-item reveal"><span class="info-item-icon">✈️</span><div class="info-item-lbl">Vom Flughafen Graz</div><div class="info-item-val">ca. 45 Min. mit dem Auto</div></div>
+    <div class="info-item reveal"><span class="info-item-icon">🗓</span><div class="info-item-lbl">Saison 2026</div><div class="info-item-val">17. April – 26. Oktober</div></div>
+  </div>
+</div>
+
+<!-- ANREISE SECTION -->
+<section class="anreise" id="anreise" style="padding:5rem 2rem 6rem">
+  <div class="anreise-inner">
+    <div>
+      <div class="section-tag reveal">Anfahrtswege</div>
+      <h2 class="section-title reveal">So erreichen<br>Sie uns</h2>
+      <p class="section-sub reveal">Egal ob mit Auto, Bahn oder Fahrrad – wir sind gut erreichbar.</p>
+      <div class="route-list">
+        <div class="route-card reveal from-left">
+          <div class="route-num">01</div>
+          <div class="route-icon">🚗</div>
+          <div><div class="route-lbl">Mit dem Auto</div>
+          <div class="route-text">A9 Pyhrn Autobahn, Ausfahrt <strong>Leibnitz</strong>, dann Richtung Sulmsee (ca. 2 km). Parkplatz direkt am Campingplatz.</div></div>
+        </div>
+        <div class="route-card reveal from-left">
+          <div class="route-num">02</div>
+          <div class="route-icon">🚂</div>
+          <div><div class="route-lbl">Mit der Bahn</div>
+          <div class="route-text">Bahnhof <strong>Leibnitz</strong> – ca. 15 Min. mit dem Fahrrad oder Taxi. Direktverbindungen aus Graz (45 Min.), Wien (2,5 Std.).</div></div>
+        </div>
+        <div class="route-card reveal from-left">
+          <div class="route-num">03</div>
+          <div class="route-icon">🚴</div>
+          <div><div class="route-lbl">Mit dem Fahrrad</div>
+          <div class="route-text">Über den <strong>Sulm-Radweg</strong> direkt zum Campingplatz. Fahrradabstellplätze und eBike-Ladestation vorhanden.</div></div>
+        </div>
+        <div class="route-card reveal from-left">
+          <div class="route-num">04</div>
+          <div class="route-icon">✈️</div>
+          <div><div class="route-lbl">Vom Flughafen</div>
+          <div class="route-text">Flughafen Graz (GRZ): ca. <strong>45 Minuten</strong> mit dem Auto. Shuttleservice auf Anfrage buchbar.</div></div>
+        </div>
+      </div>
+      <div class="addr-box reveal">
+        <div class="addr-lbl">Adresse</div><div class="addr-val" style="margin-bottom:1rem">Sulmsee 1, 8430 Leibnitz, Österreich</div>
+        <div class="addr-lbl">Telefon</div><div class="addr-val" style="margin-bottom:1rem"><a href="tel:004334528286" style="color:#fff">+43 3452 82866</a></div>
+        <div class="addr-lbl">E-Mail</div><div class="addr-val" style="margin-bottom:1rem"><a href="mailto:office@sulmsee.at" style="color:#fff">office@sulmsee.at</a></div>
+        <div class="addr-lbl">Saison</div><div class="addr-val" style="margin-bottom:1.5rem">17. April – 26. Oktober 2026</div>
+        <a href="https://maps.google.com/?q=Sulmsee+1,+8430+Leibnitz" target="_blank" class="btn btn-white">📍 In Google Maps öffnen</a>
+      </div>
+    </div>
+    <div class="reveal from-right">
+      <div class="map-iframe-wrap">
+        <iframe
+          src="https://maps.google.com/maps?q=Sulmsee+1,+8430+Leibnitz,+Austria&t=&z=14&ie=UTF8&iwloc=&output=embed"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Camping Sulmsee Karte">
+        </iframe>
+      </div>
+      <!-- WEATHER WIDGET -->
+      <div id="anr-weather" style="display:none;margin-top:1.2rem;background:var(--f);border-radius:var(--r);padding:1.4rem 1.8rem;display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap">
+        <div>
+          <div style="font-size:.66rem;text-transform:uppercase;letter-spacing:.12em;color:rgba(255,255,255,.5);font-weight:700;margin-bottom:.4rem">Aktuelles Wetter am Sulmsee</div>
+          <div style="display:flex;align-items:center;gap:.7rem">
+            <span id="anr-wi" style="font-size:2rem;line-height:1">–</span>
+            <span id="anr-temp" style="font-family:'Lora',serif;font-size:1.8rem;color:#fff;font-weight:600;line-height:1">–</span>
+            <span id="anr-desc" style="font-size:.85rem;color:rgba(255,255,255,.62)">–</span>
+          </div>
+        </div>
+        <div style="margin-left:auto;text-align:right">
+          <div style="font-size:.72rem;color:rgba(255,255,255,.4);margin-bottom:.2rem">Leibnitz · Echtzeit</div>
+          <a href="anreise.html" class="btn btn-white" style="padding:.5rem 1.1rem;font-size:.78rem">📍 Zum Campingplatz</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="photo-strip" style="margin-top:4rem;max-width:1200px;margin-left:auto;margin-right:auto;border-radius:var(--r);overflow:hidden">
+    <div class="ps-item"><img src="Sulmsee_Fj_21-014.jpg" alt="Sulmsee Frühling" loading="lazy"></div>
+    <div class="ps-item"><img src="2051960_sulmsse_herbst-008-klein1.jpg" alt="Sulmsee Herbst" loading="lazy"></div>
+    <div class="ps-item"><img src="Campingplatz.jpg" alt="Luftaufnahme Campingplatz" loading="lazy"></div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <a href="index.html" style="text-decoration:none"><div class="fb-logo">Camping <span>Sulmsee</span></div></a>
+      <p>Ihr Ferienparadies in der südsteirischen Weinlandschaft. Herzlich, naturnah und unvergesslich.</p>
+      <div style="font-size:.82rem;color:rgba(255,255,255,.32)">Gastgewerbliche Betriebe Prasser KG<br>Sulmsee 1, 8430 Leibnitz, Österreich</div>
+    </div>
+    <div class="fc"><h4>Navigation</h4><ul>
+      <li><a href="index.html">Startseite</a></li>
+      <li><a href="stellplaetze.html">Stellplätze</a></li>
+      <li><a href="preise.html">Preise 2026</a></li>
+      <li><a href="freizeit.html">Freizeitangebot</a></li>
+      <li><a href="anreise.html">Anreise</a></li>
+      <li><a href="kontakt.html">Kontakt</a></li>
+    </ul></div>
+    <div class="fc"><h4>Freizeit</h4><ul>
+      <li><a href="freizeit.html">eBike Service</a></li>
+      <li><a href="freizeit.html">Radtouren</a></li>
+      <li><a href="freizeit.html">Wandern</a></li>
+      <li><a href="freizeit.html">Buschenschanken</a></li>
+    </ul></div>
+    <div class="fc"><h4>Rechtliches</h4><ul>
+      <li><a href="#">Impressum</a></li>
+      <li><a href="#">Datenschutz</a></li>
+      <li><a href="#">AGB</a></li>
+    </ul></div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-copy">© 2026 Gastgewerbliche Betriebe Prasser KG · Camping Sulmsee</div>
+    <div class="footer-legal"><a href="#">Impressum</a><a href="#">Datenschutz</a><a href="#">AGB</a></div>
+  </div>
+</footer>
+
+<script src="booking.js"></script>
+<script src="chatbot.js"></script>
+<script src="subpage.js"></script>
+<script>
+document.getElementById('hamBtn').addEventListener('click', openMobMenu);
+document.getElementById('mobMenuClose').addEventListener('click', closeMobMenu);
+(function(){
+  var obs=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}});
+  },{threshold:.06,rootMargin:'0px 0px 60px 0px'});
+  document.querySelectorAll('.reveal').forEach(function(el,i){
+    if(!el.style.transitionDelay)el.style.transitionDelay=(i%8*.07)+'s';
+    obs.observe(el);
+  });
+  setTimeout(function(){
+    document.querySelectorAll('.reveal:not(.visible)').forEach(function(el){
+      if(el.getBoundingClientRect().top<window.innerHeight)el.classList.add('visible');
+    });
+  },120);
+})();
+// Weather widget – Open-Meteo, Leibnitz/Sulmsee
+(function(){
+  var WI={0:'☀️',1:'🌤',2:'⛅',3:'☁️',45:'🌫',48:'🌫',51:'🌦',53:'🌦',55:'🌧',61:'🌧',63:'🌧',65:'🌧',71:'🌨',73:'🌨',75:'🌨',80:'🌦',81:'🌧',82:'🌧',95:'⛈',96:'⛈',99:'⛈'};
+  var WD={0:'Klar',1:'Meist klar',2:'Teils bewölkt',3:'Bedeckt',45:'Nebel',51:'Nieselregen',61:'Leichter Regen',63:'Regen',80:'Regenschauer',95:'Gewitter'};
+  fetch('https://api.open-meteo.com/v1/forecast?latitude=46.78&longitude=15.54&current=temperature_2m,weathercode,windspeed_10m&timezone=Europe%2FVienna')
+    .then(function(r){return r.json();})
+    .then(function(d){
+      var c=d.current;
+      var temp=Math.round(c.temperature_2m);
+      var code=c.weathercode;
+      document.getElementById('anr-wi').textContent=WI[code]||'🌡';
+      document.getElementById('anr-temp').textContent=temp+'°C';
+      document.getElementById('anr-desc').textContent=(WD[code]||'')+(c.windspeed_10m?' · '+Math.round(c.windspeed_10m)+' km/h':'');
+      var w=document.getElementById('anr-weather');
+      if(w){w.style.display='flex';}
+    })
+    .catch(function(){});
+})();
+</script>
+</body>
+</html>

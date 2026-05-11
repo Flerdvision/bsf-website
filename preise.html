@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Transparente Preise für Ihren Urlaub am Sulmsee – Saison 2026.">
+<title>Preise 2026 – Camping Sulmsee</title>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400;1,600&family=Nunito:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script>
+function openMobMenu(){var m=document.getElementById('mobMenu'),h=document.getElementById('hamBtn');if(m)m.classList.add('open');if(h)h.classList.add('open');document.body.style.overflow='hidden';}
+function closeMobMenu(){var m=document.getElementById('mobMenu'),h=document.getElementById('hamBtn');if(m)m.classList.remove('open');if(h)h.classList.remove('open');document.body.style.overflow='';}
+window.openBooking=function(){var m=document.getElementById('bookingModal');if(m){m.classList.add('open');document.body.style.overflow='hidden';}else{document.addEventListener('DOMContentLoaded',function(){var m2=document.getElementById('bookingModal');if(m2){m2.classList.add('open');document.body.style.overflow='hidden';}});}};
+</script>
+<style>
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .55s cubic-bezier(.22,1,.36,1),transform .55s cubic-bezier(.22,1,.36,1)}
+.reveal.visible{opacity:1!important;transform:none!important}
+/* Season cards */
+.season-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-bottom:3rem}
+.scard{border-radius:20px;overflow:hidden;border:2px solid var(--bd);background:#fff;cursor:pointer;transition:all .3s cubic-bezier(.22,1,.36,1);position:relative}
+.scard:hover{transform:translateY(-6px);box-shadow:0 20px 50px rgba(30,64,50,.14);border-color:var(--fl)}
+.scard.active{border-color:var(--f);box-shadow:0 12px 40px rgba(30,64,50,.18)}
+.scard-head{padding:1.6rem 1.8rem 1.2rem;background:var(--ff)}
+.scard.active .scard-head{background:var(--f)}
+.scard-tag{font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:var(--tl);margin-bottom:.3rem}
+.scard.active .scard-tag{color:rgba(255,255,255,.55)}
+.scard-name{font-family:'Lora',serif;font-size:1.2rem;color:var(--f);font-weight:600}
+.scard.active .scard-name{color:#fff}
+.scard-dates{font-size:.79rem;color:var(--tl);margin-top:.2rem}
+.scard.active .scard-dates{color:rgba(255,255,255,.6)}
+.scard-badge{position:absolute;top:.8rem;right:.8rem;background:var(--el);color:var(--f);font-size:.65rem;font-weight:800;padding:2px 10px;border-radius:50px;text-transform:uppercase;letter-spacing:.06em}
+.scard-body{padding:1.2rem 1.8rem 1.6rem}
+.scard-price{font-family:'Lora',serif;font-size:2rem;color:var(--f);font-weight:600;line-height:1}
+.scard-price span{font-size:.8rem;font-weight:400;color:var(--tl);font-family:'Nunito',sans-serif;margin-left:2px}
+/* Price panel */
+.ppanel{display:none}.ppanel.active{display:block;animation:panelIn .3s cubic-bezier(.22,1,.36,1) both}
+@keyframes panelIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+/* Incl badges */
+.incl-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.8rem;margin-top:1.5rem}
+.incl-item{display:flex;align-items:center;gap:10px;background:var(--fp);border-radius:var(--rs);padding:.8rem 1rem;font-size:.84rem;color:var(--fm);font-weight:600;border:1px solid rgba(61,122,92,.15)}
+.incl-icon{font-size:1.1rem;flex-shrink:0}
+/* Check-in cards */
+.ci-fancy{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:1.5rem}
+.cif{background:#fff;border:1px solid var(--bd);border-radius:var(--r);padding:1.2rem 1.4rem;text-align:center;transition:all .25s}
+.cif:hover{border-color:var(--fl);transform:translateY(-3px);box-shadow:var(--sh)}
+.cif-icon{font-size:1.6rem;margin-bottom:.4rem}
+.cif-label{font-size:.69rem;text-transform:uppercase;letter-spacing:.1em;color:var(--tl);font-weight:700;margin-bottom:.2rem}
+.cif-val{font-size:.88rem;font-weight:600;color:var(--f)}
+@media(max-width:900px){.season-cards{grid-template-columns:1fr}.incl-grid{grid-template-columns:1fr 1fr}.ci-fancy{grid-template-columns:1fr}}
+@media(max-width:580px){.incl-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div id="scroll-progress"></div>
+<div id="page-loader" style="display:none;visibility:hidden;pointer-events:none"></div>
+<div class="mob-menu" id="mobMenu">
+  <button class="mob-menu-close" id="mobMenuClose">✕</button>
+  <a href="index.html" onclick="closeMobMenu()">Startseite</a>
+  <a href="stellplaetze.html" onclick="closeMobMenu()">Stellplätze</a>
+  <a href="preise.html" onclick="closeMobMenu()">Preise</a>
+  <a href="freizeit.html" onclick="closeMobMenu()">Freizeit</a>
+  <a href="anreise.html" onclick="closeMobMenu()">Anreise</a>
+  <a href="kontakt.html" onclick="closeMobMenu()">Kontakt</a>
+  <a href="#" onclick="closeMobMenu();openBooking();return false;" style="color:var(--e)">🗓 Jetzt buchen</a>
+</div>
+<nav id="mainNav">
+  <div class="nav-inner">
+    <a class="nav-logo" href="index.html">
+      <img src="campingsulmsee.png" class="nav-logo-icon" alt="Logo">
+      <span class="nav-logo-text">Camping <span>Sulmsee</span></span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Startseite</a></li>
+      <li><a href="stellplaetze.html">Stellplätze</a></li>
+      <li><a href="preise.html" class="nav-active">Preise</a></li>
+      <li><a href="freizeit.html">Freizeit</a></li>
+      <li><a href="anreise.html">Anreise</a></li>
+      <li><a href="kontakt.html">Kontakt</a></li>
+      <li><a href="#" onclick="openBooking();return false;" class="nav-book">🗓 Jetzt buchen</a></li>
+    </ul>
+    <div class="nav-right">
+      <div class="nav-badge">🌱 Saison ab 17. April 2026</div>
+      <button class="ham-btn" id="hamBtn" onclick="openMobMenu()"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="page-hero-photo">
+  <div class="ph-bg" style="background-image:url('Stehplaetze.jpg');background-position:center 55%"></div>
+  <div class="ph-overlay"></div>
+  <div class="ph-content">
+    <div class="section-tag">Preise 2026</div>
+    <h1>Fair, transparent,<br><em>ohne Überraschungen</em></h1>
+    <p>Alle Preise für die Saison 2026 auf einen Blick. Ortstaxe und Umweltabgabe werden vor Ort verrechnet.</p>
+    <div class="page-hero-btns">
+      <button class="btn btn-green" onclick="openBooking()">🗓 Stellplatz anfragen</button>
+      <a href="kontakt.html" class="btn btn-outline">Fragen? Kontakt</a>
+    </div>
+  </div>
+</div>
+
+<!-- STATS STRIP -->
+<div class="count-section">
+  <div class="count-inner">
+    <div class="count-item reveal"><div class="count-num">3</div><div class="count-divider"></div><div class="count-label">Saisonkategorien</div></div>
+    <div class="count-item reveal"><div class="count-num">ab 12,10 €</div><div class="count-divider"></div><div class="count-label">Stellplatz pro Nacht</div></div>
+    <div class="count-item reveal"><div class="count-num">0 €</div><div class="count-divider"></div><div class="count-label">Versteckte Gebühren</div></div>
+    <div class="count-item reveal"><div class="count-num">1 Tag</div><div class="count-divider"></div><div class="count-label">Mindestaufenthalt</div></div>
+  </div>
+</div>
+
+<!-- PREISE SECTION -->
+<section class="preise" id="preise" style="padding:5rem 2rem 6rem">
+  <div class="preise-inner">
+    <div style="text-align:center;margin-bottom:3rem">
+      <div class="section-tag reveal">Saison 2026</div>
+      <h2 class="section-title reveal">Preise auf<br><em style="font-style:italic;color:var(--el)">einen Blick</em></h2>
+      <p class="section-sub reveal" style="margin:0 auto">Wählen Sie Ihre Reisezeit – die Preise passen sich der Saison an.</p>
+    </div>
+
+    <!-- Season selector cards -->
+    <div class="season-cards">
+      <div class="scard active reveal" onclick="showPP('vor',this)" id="sc-vor">
+        <div class="scard-head">
+          <div class="scard-tag">Vor- &amp; Nachsaison</div>
+          <div class="scard-name">Ruhige Zeiten</div>
+          <div class="scard-dates">17.04.–11.05. &nbsp;/&nbsp; 06.10.–26.10.2026</div>
+        </div>
+        <div class="scard-body">
+          <div class="scard-price">ab 12,10<span>€/Nacht</span></div>
+          <div style="font-size:.8rem;color:var(--tl);margin-top:.4rem">Stellplatz · zzgl. Personen</div>
+        </div>
+      </div>
+      <div class="scard reveal" onclick="showPP('zwischen',this)" id="sc-zwischen">
+        <div class="scard-head">
+          <div class="scard-tag">Zwischensaison</div>
+          <div class="scard-name">Frühling & Herbst</div>
+          <div class="scard-dates">12.05.–30.06. &nbsp;/&nbsp; 08.09.–05.10.2026</div>
+        </div>
+        <div class="scard-body">
+          <div class="scard-price">ab 14,60<span>€/Nacht</span></div>
+          <div style="font-size:.8rem;color:var(--tl);margin-top:.4rem">Stellplatz · zzgl. Personen</div>
+        </div>
+      </div>
+      <div class="scard reveal" onclick="showPP('haupt',this)" id="sc-haupt">
+        <span class="scard-badge">⭐ Beliebt</span>
+        <div class="scard-head">
+          <div class="scard-tag">Hauptsaison</div>
+          <div class="scard-name">Hochsommer</div>
+          <div class="scard-dates">01.07.–07.09.2026</div>
+        </div>
+        <div class="scard-body">
+          <div class="scard-price">ab 18,80<span>€/Nacht</span></div>
+          <div style="font-size:.8rem;color:var(--tl);margin-top:.4rem">Stellplatz · zzgl. Personen</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Price panels -->
+    <div class="ppanel active reveal" id="pp-vor">
+      <div class="ppanel-head"><h3>Vor- &amp; Nachsaison</h3><p>17.04.–11.05.2026 &nbsp;/&nbsp; 06.10.–26.10.2026</p></div>
+      <table class="ptable"><thead><tr><th>Kategorie</th><th>Details</th><th>Preis / Nacht</th></tr></thead><tbody>
+        <tr class="pr sh"><td colspan="3">Stellplatz</td></tr>
+        <tr class="pr hl"><td>Stellplatz</td><td>Sulmsee- oder Silberseelage</td><td>EUR 12,10</td></tr>
+        <tr class="pr sh"><td colspan="3">Personen</td></tr>
+        <tr class="pr"><td>Erwachsene (ab 14 J.)</td><td></td><td>EUR 8,00</td></tr>
+        <tr class="pr hl"><td>Jugendliche (10–13 J.)</td><td></td><td>EUR 5,50</td></tr>
+        <tr class="pr"><td>Kinder (3–9 J.)</td><td></td><td>EUR 4,80</td></tr>
+        <tr class="pr sh"><td colspan="3">Zusatzleistungen</td></tr>
+        <tr class="pr hl"><td>10 Ampere Strom</td><td></td><td>EUR 5,00</td></tr>
+        <tr class="pr"><td>Hund (max. 2 pro Platz)</td><td></td><td>EUR 4,20</td></tr>
+        <tr class="pr hl"><td>Zusatzzelt</td><td></td><td>EUR 5,00</td></tr>
+        <tr class="pr"><td>2. PKW</td><td></td><td>EUR 3,40</td></tr>
+      </tbody></table>
+    </div>
+    <div class="ppanel" id="pp-zwischen">
+      <div class="ppanel-head"><h3>Zwischensaison</h3><p>12.05.–30.06.2026 &nbsp;/&nbsp; 08.09.–05.10.2026</p></div>
+      <table class="ptable"><thead><tr><th>Kategorie</th><th>Details</th><th>Preis / Nacht</th></tr></thead><tbody>
+        <tr class="pr sh"><td colspan="3">Stellplatz</td></tr>
+        <tr class="pr hl"><td>Stellplatz</td><td>Sulmsee- oder Silberseelage</td><td>EUR 14,60</td></tr>
+        <tr class="pr sh"><td colspan="3">Personen</td></tr>
+        <tr class="pr"><td>Erwachsene (ab 14 J.)</td><td></td><td>EUR 9,60</td></tr>
+        <tr class="pr hl"><td>Jugendliche (10–13 J.)</td><td></td><td>EUR 6,90</td></tr>
+        <tr class="pr"><td>Kinder (3–9 J.)</td><td></td><td>EUR 5,80</td></tr>
+        <tr class="pr sh"><td colspan="3">Zusatzleistungen</td></tr>
+        <tr class="pr hl"><td>10 Ampere Strom</td><td></td><td>EUR 5,00</td></tr>
+        <tr class="pr"><td>Hund (max. 2 pro Platz)</td><td></td><td>EUR 4,20</td></tr>
+        <tr class="pr hl"><td>Zusatzzelt</td><td></td><td>EUR 5,00</td></tr>
+        <tr class="pr"><td>2. PKW</td><td></td><td>EUR 3,40</td></tr>
+      </tbody></table>
+    </div>
+    <div class="ppanel" id="pp-haupt">
+      <div class="ppanel-head"><h3>Hauptsaison</h3><p>01.07.–07.09.2026</p></div>
+      <table class="ptable"><thead><tr><th>Kategorie</th><th>Details</th><th>Preis / Nacht</th></tr></thead><tbody>
+        <tr class="pr sh"><td colspan="3">Stellplatz</td></tr>
+        <tr class="pr hl"><td>Stellplatz</td><td>Sulmsee- oder Silberseelage</td><td>EUR 18,80</td></tr>
+        <tr class="pr sh"><td colspan="3">Personen</td></tr>
+        <tr class="pr"><td>Erwachsene (ab 14 J.)</td><td></td><td>EUR 12,40</td></tr>
+        <tr class="pr hl"><td>Jugendliche (10–13 J.)</td><td></td><td>EUR 10,90</td></tr>
+        <tr class="pr"><td>Kinder (3–9 J.)</td><td></td><td>EUR 8,50</td></tr>
+        <tr class="pr sh"><td colspan="3">Zusatzleistungen</td></tr>
+        <tr class="pr hl"><td>10 Ampere Strom</td><td></td><td>EUR 5,00</td></tr>
+        <tr class="pr"><td>Hund (max. 2 pro Platz)</td><td></td><td>EUR 4,20</td></tr>
+        <tr class="pr hl"><td>Zusatzzelt</td><td></td><td>EUR 5,00</td></tr>
+        <tr class="pr"><td>2. PKW</td><td></td><td>EUR 3,40</td></tr>
+      </tbody></table>
+    </div>
+
+    <div style="text-align:center;margin-top:3rem">
+      <button class="btn btn-green" onclick="openBooking()" style="font-size:.95rem;padding:.9rem 2.4rem">🗓 Jetzt zum besten Preis buchen</button>
+    </div>
+  </div>
+</section>
+
+<!-- INKLUSIVE – dark premium section -->
+<div class="amenities-premium">
+  <div class="amenities-premium-inner">
+    <div class="am-prem-header">
+      <div class="section-tag reveal">Alles inklusive</div>
+      <h2 class="reveal">Im Stellplatzpreis<br><em style="color:#c49a6c;font-style:italic">bereits enthalten</em></h2>
+      <p class="reveal">Kein Kleingedrucktes. Diese Leistungen sind für jeden Gast kostenlos dabei.</p>
+    </div>
+    <div class="am-prem-grid">
+      <div class="am-feat reveal"><span class="am-feat-icon">📶</span><div class="am-feat-title">Kostenfreies WLAN</div><div class="am-feat-desc">Schnelles Internet auf dem gesamten Gelände – vom Stellplatz bis ans Seeufer.</div></div>
+      <div class="am-feat reveal"><span class="am-feat-icon">🚿</span><div class="am-feat-title">Sanitäranlagen &amp; Duschen</div><div class="am-feat-desc">Täglich gereinigte, moderne Anlagen mit Warmwasser. Barrierefrei zugänglich.</div></div>
+      <div class="am-feat reveal"><span class="am-feat-icon">💧</span><div class="am-feat-title">Frischwasserversorgung</div><div class="am-feat-desc">Frischwasseranschluss direkt am Platz (Sulmsee) oder zentral (Silbersee).</div></div>
+      <div class="am-feat reveal"><span class="am-feat-icon">🚰</span><div class="am-feat-title">Grauwasserentleerung</div><div class="am-feat-desc">Zentrale Grauwasserentleerung auf dem gesamten Gelände – kein Aufpreis.</div></div>
+      <div class="am-feat reveal"><span class="am-feat-icon">🌿</span><div class="am-feat-title">Rasenpflege</div><div class="am-feat-desc">Ihr Stellplatz wird regelmäßig gemäht und gepflegt – damit Sie entspannen können.</div></div>
+      <div class="am-feat reveal"><span class="am-feat-icon">🚗</span><div class="am-feat-title">1 Fahrzeug inklusive</div><div class="am-feat-desc">Ein Fahrzeug pro Stellplatz ist im Grundpreis enthalten. Weiteres PKW gegen Aufpreis.</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- CHECK-IN – count-section style -->
+<div class="count-section">
+  <div class="count-inner">
+    <div class="count-item reveal">
+      <div class="count-num" style="font-size:1.5rem;letter-spacing:-.01em">09:00–18:00</div>
+      <div class="count-divider"></div>
+      <div class="count-label">Check-in Mo–Do</div>
+    </div>
+    <div class="count-item reveal">
+      <div class="count-num" style="font-size:1.5rem;letter-spacing:-.01em">09:00–19:00</div>
+      <div class="count-divider"></div>
+      <div class="count-label">Check-in Fr–So</div>
+    </div>
+    <div class="count-item reveal">
+      <div class="count-num" style="font-size:1.5rem">Bar &amp; Karte</div>
+      <div class="count-divider"></div>
+      <div class="count-label">Visa · MC · AmEx · EC</div>
+    </div>
+    <div class="count-item reveal">
+      <div class="count-num" style="font-size:1.5rem">24 Std</div>
+      <div class="count-divider"></div>
+      <div class="count-label">Antwortzeit auf Anfragen</div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <a href="index.html" style="text-decoration:none"><div class="fb-logo">Camping <span>Sulmsee</span></div></a>
+      <p>Ihr Ferienparadies in der südsteirischen Weinlandschaft. Herzlich, naturnah und unvergesslich.</p>
+      <div style="font-size:.82rem;color:rgba(255,255,255,.32)">Gastgewerbliche Betriebe Prasser KG<br>Sulmsee 1, 8430 Leibnitz, Österreich</div>
+    </div>
+    <div class="fc"><h4>Navigation</h4><ul>
+      <li><a href="index.html">Startseite</a></li>
+      <li><a href="stellplaetze.html">Stellplätze</a></li>
+      <li><a href="preise.html">Preise 2026</a></li>
+      <li><a href="freizeit.html">Freizeitangebot</a></li>
+      <li><a href="anreise.html">Anreise</a></li>
+      <li><a href="kontakt.html">Kontakt</a></li>
+    </ul></div>
+    <div class="fc"><h4>Freizeit</h4><ul>
+      <li><a href="freizeit.html">eBike Service</a></li>
+      <li><a href="freizeit.html">Radtouren</a></li>
+      <li><a href="freizeit.html">Wandern</a></li>
+      <li><a href="freizeit.html">Buschenschanken</a></li>
+    </ul></div>
+    <div class="fc"><h4>Rechtliches</h4><ul>
+      <li><a href="#">Impressum</a></li>
+      <li><a href="#">Datenschutz</a></li>
+      <li><a href="#">AGB</a></li>
+    </ul></div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-copy">© 2026 Gastgewerbliche Betriebe Prasser KG · Camping Sulmsee</div>
+    <div class="footer-legal"><a href="#">Impressum</a><a href="#">Datenschutz</a><a href="#">AGB</a></div>
+  </div>
+</footer>
+
+<script src="booking.js"></script>
+<script src="chatbot.js"></script>
+<script src="subpage.js"></script>
+<script>
+document.getElementById('hamBtn').addEventListener('click', openMobMenu);
+document.getElementById('mobMenuClose').addEventListener('click', closeMobMenu);
+function showPP(id, btn) {
+  document.querySelectorAll('.ppanel').forEach(function(p){p.classList.remove('active');});
+  document.querySelectorAll('.scard').forEach(function(s){s.classList.remove('active');});
+  document.getElementById('pp-'+id).classList.add('active');
+  btn.classList.add('active');
+}
+(function(){
+  var obs=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}});
+  },{threshold:.06,rootMargin:'0px 0px 60px 0px'});
+  document.querySelectorAll('.reveal').forEach(function(el,i){
+    if(!el.style.transitionDelay)el.style.transitionDelay=(i%8*.065)+'s';
+    obs.observe(el);
+  });
+  setTimeout(function(){
+    document.querySelectorAll('.reveal:not(.visible)').forEach(function(el){
+      if(el.getBoundingClientRect().top<window.innerHeight)el.classList.add('visible');
+    });
+  },120);
+})();
+</script>
+</body>
+</html>
