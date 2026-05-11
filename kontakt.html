@@ -86,20 +86,18 @@ window.openBooking=function(){var m=document.getElementById('bookingModal');if(m
 </nav>
 
 <!-- HERO -->
-<div class="page-hero-photo">
-  <!-- TODO: BSF-Bürobild einsetzen (Zug/Büro-Foto) -->
-  <div class="ph-bg" style="background-image:url('https://images.unsplash.com/photo-1487958449943-2429e8be8625?w=2400&q=85');background-position:center 60%"></div>
-  <div class="ph-overlay"></div>
-  <div class="ph-content">
-    <div class="section-tag">Direkter Kontakt</div>
-    <h1>Ihr Mandat beginnt<br><em>mit einem Gespräch</em></h1>
-    <p>Vertraulich, unverbindlich und auf Wunsch per NDA – melden Sie sich. Wir antworten innerhalb eines Werktags.</p>
-    <div class="page-hero-btns">
-      <button class="btn btn-green" onclick="openBooking()">→ Erstgespräch anfragen</button>
-      <a href="tel:+41417603616" class="btn btn-outline">Anrufen</a>
+<section class="hero">
+  <div class="hero-bg" style="background-image:url('https://images.unsplash.com/photo-1487958449943-2429e8be8625?w=2400&q=85')"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <span class="hero-eyebrow">Kontakt</span>
+    <h1><em>Sprechen</em> wir.</h1>
+    <p class="hero-desc">Drei Wege führen zu uns. Antwort innerhalb eines Werktags. Vertraulich.</p>
+    <div class="hero-actions">
+      <a href="#" onclick="openBooking();return false;" class="btn btn-green">Erstgespräch starten</a>
     </div>
   </div>
-</div>
+</section>
 
 <!-- INTRO: DREI WEGE -->
 <section style="padding:6rem 2rem;background:#fff">
