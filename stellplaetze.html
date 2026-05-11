@@ -98,8 +98,8 @@ window.openBooking=function(){var m=document.getElementById('bookingModal');if(m
 </section>
 
 <!-- INTRO -->
-<section style="padding:6rem 2rem;background:#fff">
-  <div style="max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center">
+<section class="section-wrap">
+  <div class="section-wrap-inner" style="display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center">
     <div>
       <div class="section-tag reveal">Unser Fokus</div>
       <h2 class="section-title reveal">Ein Haus.<br><em>Vier Felder.</em></h2>
@@ -124,7 +124,7 @@ window.openBooking=function(){var m=document.getElementById('bookingModal');if(m
 </section>
 
 <!-- MANDATE CARDS -->
-<section class="spots-prev" id="mandate" style="padding:6rem 2rem">
+<section class="spots-prev section-wrap" id="mandate">
   <div class="spots-prev-inner">
     <div class="sp-header">
       <div class="section-tag reveal">Unsere Mandatsfelder</div>
@@ -216,8 +216,8 @@ window.openBooking=function(){var m=document.getElementById('bookingModal');if(m
 </section>
 
 <!-- WAS WIR TUN / NICHT TUN -->
-<section style="padding:6rem 2rem;background:var(--fp)">
-  <div style="max-width:1000px;margin:0 auto">
+<section class="section-wrap bg-pastel">
+  <div class="section-wrap-inner" style="max-width:1000px">
     <div style="text-align:center;margin-bottom:3.5rem">
       <div class="section-tag reveal">Klare Grenzen</div>
       <h2 class="section-title reveal">Was wir tun —<br><em>und was nicht</em></h2>
@@ -249,8 +249,8 @@ window.openBooking=function(){var m=document.getElementById('bookingModal');if(m
 </section>
 
 <!-- EDITORIAL / QUOTE -->
-<section style="background:linear-gradient(135deg,var(--f) 0%,#0e1a2e 100%);padding:6rem 2rem;text-align:center">
-  <div style="max-width:820px;margin:0 auto">
+<section class="section-wrap bg-dark" style="text-align:center">
+  <div class="section-wrap-inner-narrow">
     <div class="section-tag reveal" style="border-color:rgba(212,185,118,.3);color:var(--el)">Unser Versprechen</div>
     <blockquote class="reveal" style="font-family:'Lora',serif;font-size:clamp(1.4rem,3vw,2.1rem);color:#fff;line-height:1.55;font-style:italic;margin:1.8rem 0 1.4rem;border:none;padding:0">
       „Eine Seite pro Mandat.<br><em style="color:var(--el)">Kein Doppelmandat.</em>"
@@ -260,8 +260,8 @@ window.openBooking=function(){var m=document.getElementById('bookingModal');if(m
 </section>
 
 <!-- CTA -->
-<section style="padding:5rem 2rem;text-align:center;background:#fff">
-  <div style="max-width:700px;margin:0 auto">
+<section class="section-wrap" style="text-align:center">
+  <div class="section-wrap-inner-narrow">
     <div class="section-tag reveal">Ihr Mandat</div>
     <h2 class="section-title reveal">Passt BSF<br><em>zu Ihrer Situation?</em></h2>
     <p class="section-sub reveal" style="margin:0 auto 2.5rem">Klären Sie es im kostenlosen Erstgespräch. Kein Verkaufsgespräch – eine ehrliche Einschätzung.</p>
@@ -304,6 +304,7 @@ window.openBooking=function(){var m=document.getElementById('bookingModal');if(m
   </div>
 </footer>
 
+<script src="reveal.js"></script>
 <script src="booking.js"></script>
 <script src="chatbot.js"></script>
 <script src="subpage.js"></script>

@@ -100,8 +100,8 @@ window.openBooking=function(){var m=document.getElementById('bookingModal');if(m
 </section>
 
 <!-- INTRO: DREI WEGE -->
-<section style="padding:6rem 2rem;background:#fff">
-  <div style="max-width:1100px;margin:0 auto;text-align:center">
+<section class="section-wrap">
+  <div class="section-wrap-inner" style="text-align:center">
     <div class="section-tag reveal">Kontaktwege</div>
     <h2 class="section-title reveal">Drei Wege<br><em>zu uns</em></h2>
     <p class="section-sub reveal" style="margin:0 auto">Wählen Sie den Weg, der Ihnen am besten passt – alle führen zu einer persönlichen Antwort.</p>
@@ -129,7 +129,7 @@ window.openBooking=function(){var m=document.getElementById('bookingModal');if(m
 </section>
 
 <!-- KONTAKTFORMULAR -->
-<section class="contact" id="kontakt" style="padding:6rem 2rem;background:var(--fp)">
+<section class="contact section-wrap bg-pastel" id="kontakt">
   <div class="contact-inner">
     <div style="text-align:center;margin-bottom:3rem">
       <div class="section-tag reveal">Direkte Nachricht</div>
@@ -193,7 +193,7 @@ window.openBooking=function(){var m=document.getElementById('bookingModal');if(m
 </section>
 
 <!-- STANDORT & ANFAHRT -->
-<section class="anreise" id="standort" style="padding:6rem 2rem">
+<section class="anreise section-wrap" id="standort">
   <div class="anreise-inner">
     <div>
       <div class="section-tag reveal">Standort & Anfahrt</div>
@@ -247,8 +247,8 @@ window.openBooking=function(){var m=document.getElementById('bookingModal');if(m
 </section>
 
 <!-- EDITORIAL / QUOTE -->
-<section style="background:linear-gradient(135deg,var(--f) 0%,#0e1a2e 100%);padding:6rem 2rem;text-align:center">
-  <div style="max-width:820px;margin:0 auto">
+<section class="section-wrap bg-dark" style="text-align:center">
+  <div class="section-wrap-inner-narrow">
     <div class="section-tag reveal" style="border-color:rgba(212,185,118,.3);color:var(--el)">Unser Versprechen</div>
     <blockquote class="reveal" style="font-family:'Lora',serif;font-size:clamp(1.4rem,3vw,2.1rem);color:#fff;line-height:1.55;font-style:italic;margin:1.8rem 0 1.4rem;border:none;padding:0">
       „Antwort innerhalb eines Werktags.<br><em style="color:var(--el)">Vertraulichkeit selbstverständlich.</em>"
@@ -258,8 +258,8 @@ window.openBooking=function(){var m=document.getElementById('bookingModal');if(m
 </section>
 
 <!-- CTA -->
-<section style="padding:5rem 2rem;text-align:center;background:#fff">
-  <div style="max-width:700px;margin:0 auto">
+<section class="section-wrap" style="text-align:center">
+  <div class="section-wrap-inner-narrow">
     <div class="section-tag reveal">Jetzt handeln</div>
     <h2 class="section-title reveal">Rufen Sie uns<br><em>direkt an</em></h2>
     <p class="section-sub reveal" style="margin:0 auto 2.5rem">Persönlich, diskret, ohne Warteschleife. Wir freuen uns auf Ihr Anliegen.</p>
@@ -302,6 +302,7 @@ window.openBooking=function(){var m=document.getElementById('bookingModal');if(m
   </div>
 </footer>
 
+<script src="reveal.js"></script>
 <script src="booking.js"></script>
 <script src="chatbot.js"></script>
 <script src="subpage.js"></script>

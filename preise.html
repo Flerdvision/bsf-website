@@ -92,8 +92,8 @@ window.openBooking=function(){var m=document.getElementById('bookingModal');if(m
 </section>
 
 <!-- INTRO -->
-<section style="padding:6rem 2rem;background:#fff">
-  <div style="max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center">
+<section class="section-wrap">
+  <div class="section-wrap-inner" style="display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center">
     <div>
       <div class="section-tag reveal">Vergütungsphilosophie</div>
       <h2 class="section-title reveal">Transparenz<br><em>von Anfang an</em></h2>
@@ -118,7 +118,7 @@ window.openBooking=function(){var m=document.getElementById('bookingModal');if(m
 </section>
 
 <!-- HONORAR SECTION -->
-<section class="preise" id="honorar" style="padding:6rem 2rem">
+<section class="preise section-wrap" id="honorar">
   <div class="preise-inner">
     <div style="text-align:center;margin-bottom:3rem">
       <div class="section-tag reveal">Vergütungsstruktur</div>
@@ -186,8 +186,8 @@ window.openBooking=function(){var m=document.getElementById('bookingModal');if(m
 </section>
 
 <!-- FAQ -->
-<section style="padding:6rem 2rem;background:var(--fp)">
-  <div style="max-width:900px;margin:0 auto">
+<section class="section-wrap bg-pastel">
+  <div class="section-wrap-inner" style="max-width:900px">
     <div class="section-tag reveal" style="justify-content:center;margin-bottom:1rem">Häufige Fragen</div>
     <h2 class="section-title reveal" style="text-align:center;margin-bottom:3rem">Was Mandanten<br><em>meistens fragen</em></h2>
     <div style="display:grid;gap:1.2rem">
@@ -212,8 +212,8 @@ window.openBooking=function(){var m=document.getElementById('bookingModal');if(m
 </section>
 
 <!-- EDITORIAL / QUOTE -->
-<section style="background:linear-gradient(135deg,var(--f) 0%,#0e1a2e 100%);padding:6rem 2rem;text-align:center">
-  <div style="max-width:820px;margin:0 auto">
+<section class="section-wrap bg-dark" style="text-align:center">
+  <div class="section-wrap-inner-narrow">
     <div class="section-tag reveal" style="border-color:rgba(212,185,118,.3);color:var(--el)">Unser Grundsatz</div>
     <blockquote class="reveal" style="font-family:'Lora',serif;font-size:clamp(1.5rem,3vw,2.2rem);color:#fff;line-height:1.5;font-style:italic;margin:1.8rem 0 1.4rem;border:none;padding:0">
       „Wir verdienen,<br><em style="color:var(--el)">wenn Sie verdienen.</em>"
@@ -223,8 +223,8 @@ window.openBooking=function(){var m=document.getElementById('bookingModal');if(m
 </section>
 
 <!-- CTA -->
-<section style="padding:5rem 2rem;text-align:center;background:#fff">
-  <div style="max-width:700px;margin:0 auto">
+<section class="section-wrap" style="text-align:center">
+  <div class="section-wrap-inner-narrow">
     <div class="section-tag reveal">Nächster Schritt</div>
     <h2 class="section-title reveal">Honorar im Detail<br><em>besprechen</em></h2>
     <p class="section-sub reveal" style="margin:0 auto 2.5rem">Kostenlos, unverbindlich, vertraulich. Wir erklären genau, was auf Sie zukommen würde.</p>
@@ -267,6 +267,7 @@ window.openBooking=function(){var m=document.getElementById('bookingModal');if(m
   </div>
 </footer>
 
+<script src="reveal.js"></script>
 <script src="booking.js"></script>
 <script src="chatbot.js"></script>
 <script src="subpage.js"></script>
