@@ -104,7 +104,7 @@ window.openBooking=function(){var m=document.getElementById('bookingModal');if(m
     <div class="hf-sub">12 Sektoren · zuletzt aktualisiert April 2025</div>
   </div>
   <div class="hero-weather" id="hero-weather" style="display:none">
-    <div class="hw-label">Wetter am Sulmsee</div>
+    <div class="hw-label">Wetter in Zug</div>
     <div class="hw-main">
       <div class="hw-icon" id="hw-icon">–</div>
       <div class="hw-temp" id="hw-temp">–</div>
@@ -572,7 +572,7 @@ document.getElementById('mobMenuClose').addEventListener('click', closeMobMenu);
     if(diff>0) span.textContent=diff;
   } catch(e) {}
 })();
-// Weather widget – Open-Meteo, Leibnitz/Sulmsee
+// Weather widget – Open-Meteo (Koordinaten auf Zug aktualisieren in späterem Schritt)
 (function(){
   const WI={0:'☀️',1:'🌤',2:'⛅',3:'☁️',45:'🌫',48:'🌫',51:'🌦',53:'🌦',55:'🌧',61:'🌧',63:'🌧',65:'🌧',71:'🌨',73:'🌨',75:'🌨',80:'🌦',81:'🌧',82:'🌧',95:'⛈',96:'⛈',99:'⛈'};
   const WD={0:'Klar',1:'Meist klar',2:'Teils bewölkt',3:'Bedeckt',45:'Nebel',48:'Raureif',51:'Nieselregen',53:'Nieselregen',55:'Nieselregen',61:'Leichter Regen',63:'Regen',65:'Starkregen',71:'Leichter Schnee',73:'Schnee',75:'Starker Schnee',80:'Regenschauer',81:'Regenschauer',82:'Starke Schauer',95:'Gewitter',96:'Gewitter',99:'Gewitter'};
