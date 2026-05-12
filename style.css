@@ -74,8 +74,10 @@ button:focus-visible,.btn:focus-visible{outline-offset:4px}
 
 .section-tag{display:inline-flex;align-items:center;gap:8px;font-size:.72rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--e);margin-bottom:.9rem}
 .section-tag::before{content:'';width:24px;height:2px;background:var(--el);border-radius:2px}
-.section-title{font-family:'Lora',serif;font-size:clamp(1.9rem,3vw,2.7rem);color:var(--f);line-height:1.2;margin-bottom:1rem}
-.section-sub{font-size:1rem;color:var(--tm);max-width:580px;line-height:1.8}
+.section-title{font-family:'Lora',serif;font-size:clamp(2rem,3.8vw,3rem);color:var(--f);line-height:1.15;letter-spacing:-.015em;margin-bottom:1rem}
+.section-sub{font-size:clamp(1rem,1.2vw,1.15rem);color:var(--tm);max-width:680px;line-height:1.65}
+h3{font-family:'Lora',serif;font-size:clamp(1.25rem,1.8vw,1.5rem);font-weight:600;line-height:1.25}
+p{line-height:1.7}
 .btn{display:inline-flex;align-items:center;gap:8px;padding:.78rem 1.9rem;border-radius:50px;font-size:.88rem;font-weight:700;letter-spacing:.04em;border:none;transition:all .2s;cursor:pointer}
 .btn-green{background:var(--f);color:#fff}.btn-green:hover{background:var(--fm);transform:translateY(-2px);box-shadow:0 8px 24px rgba(26,43,72,.28)}
 .btn-outline{background:rgba(255,255,255,.1);color:#fff;border:2px solid rgba(255,255,255,.6)}.btn-outline:hover{background:rgba(255,255,255,.25);color:#fff;border-color:#fff}
@@ -150,10 +152,10 @@ nav{position:sticky;top:0;z-index:500;background:rgba(250,248,243,.98);backdrop-
 }
 .hero h1 {
   font-family: 'Lora', serif;
-  font-size: clamp(2.5rem, 5.5vw, 4.4rem);
+  font-size: clamp(2.6rem, 5.5vw, 4.8rem);
   font-weight: 600;
-  line-height: 1.06;
-  letter-spacing: -0.02em;
+  line-height: 1.05;
+  letter-spacing: -0.025em;
   color: #fff;
   margin: 0;
 }
@@ -169,10 +171,10 @@ nav{position:sticky;top:0;z-index:500;background:rgba(250,248,243,.98);backdrop-
   font-weight: 600;
 }
 .hero-desc {
-  font-size: 1.05rem;
-  line-height: 1.75;
-  color: rgba(255,255,255,.83);
-  max-width: 580px;
+  font-size: clamp(1.05rem,1.4vw,1.25rem);
+  line-height: 1.55;
+  color: rgba(255,255,255,.88);
+  max-width: 620px;
   margin: 0;
   text-align: center;
 }
