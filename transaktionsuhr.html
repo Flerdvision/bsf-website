@@ -268,12 +268,17 @@ window.openBooking=function(){var m=document.getElementById('bookingModal');if(m
 </section>
 
 <!-- CTA -->
-<section class="tu-cta">
-  <h2 data-reveal>Die vollständige Ausgabe.</h2>
-  <p data-reveal data-reveal-delay="1">Detaillierte Sektor-Kommentare, Quellen, Methodik und Empfehlungen erhalten Mandanten nach dem Erstgespräch — kostenfrei und vertraulich.</p>
-  <a href="#" onclick="openBooking();return false;" class="btn btn-green" data-reveal data-reveal-delay="2" style="background:var(--el);color:var(--f);border:none;font-size:.95rem;padding:.95rem 2.4rem">
-    → Ausgabe per Erstgespräch anfordern
-  </a>
+<section class="cta-banner">
+  <div class="cta-banner-bg" style="background-image:url('https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?w=2400&q=85')"></div>
+  <div class="cta-banner-overlay"></div>
+  <div class="cta-banner-content reveal">
+    <div class="section-tag" style="justify-content:center;color:var(--el)">Nur für Mandanten</div>
+    <h2>Die vollständige<br><em>Ausgabe.</em></h2>
+    <p>Detaillierte Sektor-Kommentare, Quellen, Methodik und Empfehlungen erhalten Mandanten nach dem Erstgespräch — kostenfrei und vertraulich.</p>
+    <div class="cta-banner-btns">
+      <button class="btn btn-gold" onclick="openBooking()">→ Ausgabe per Erstgespräch anfordern</button>
+    </div>
+  </div>
 </section>
 
 <!-- Floating CTA -->
