@@ -433,11 +433,26 @@ document.addEventListener('DOMContentLoaded', function() {
 </script>
 <script src="chatbot.js"></script>
 <script>
-// Page loader
-window.addEventListener('load',function(){
-  const loader=document.getElementById('page-loader');
-  if(loader){loader.classList.add('hidden');setTimeout(()=>loader.remove(),600);}
-});
+// Page loader — robust: hard-cap + multiple ready-state hooks
+(function(){
+  var loader=document.getElementById('page-loader');
+  if(!loader)return;
+  var minDisplayTime=1000,maxDisplayTime=3500,startTime=Date.now(),hidden=false;
+  function hideLoader(){
+    if(hidden)return;hidden=true;
+    var remaining=Math.max(0,minDisplayTime-(Date.now()-startTime));
+    setTimeout(function(){
+      loader.classList.add('hidden');
+      setTimeout(function(){if(loader&&loader.parentNode)loader.style.display='none';},700);
+    },remaining);
+  }
+  if(document.readyState==='complete'){hideLoader();}
+  else{
+    window.addEventListener('load',hideLoader);
+    document.addEventListener('DOMContentLoaded',function(){setTimeout(hideLoader,500);});
+  }
+  setTimeout(hideLoader,maxDisplayTime);
+})();
 // Scroll progress
 (function(){
   const bar=document.getElementById('scroll-progress');

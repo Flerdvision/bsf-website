@@ -306,5 +306,26 @@ document.addEventListener('DOMContentLoaded', function() {
   },120);
 })();
 </script>
+<script>
+(function(){
+  var loader=document.getElementById('page-loader');
+  if(!loader)return;
+  var minDisplayTime=1000,maxDisplayTime=3500,startTime=Date.now(),hidden=false;
+  function hideLoader(){
+    if(hidden)return;hidden=true;
+    var remaining=Math.max(0,minDisplayTime-(Date.now()-startTime));
+    setTimeout(function(){
+      loader.classList.add('hidden');
+      setTimeout(function(){if(loader&&loader.parentNode)loader.style.display='none';},700);
+    },remaining);
+  }
+  if(document.readyState==='complete'){hideLoader();}
+  else{
+    window.addEventListener('load',hideLoader);
+    document.addEventListener('DOMContentLoaded',function(){setTimeout(hideLoader,500);});
+  }
+  setTimeout(hideLoader,maxDisplayTime);
+})();
+</script>
 </body>
 </html>
