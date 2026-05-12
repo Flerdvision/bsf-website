@@ -433,11 +433,13 @@ document.addEventListener('DOMContentLoaded', function() {
 </script>
 <script src="chatbot.js"></script>
 <script>
-// Page loader — robust: hard-cap + multiple ready-state hooks
+// Page loader — nur beim ersten Besuch der Session
 (function(){
   var loader=document.getElementById('page-loader');
   if(!loader)return;
-  var minDisplayTime=1000,maxDisplayTime=3500,startTime=Date.now(),hidden=false;
+  if(sessionStorage.getItem('bsf_loader_shown')){loader.style.display='none';return;}
+  sessionStorage.setItem('bsf_loader_shown','1');
+  var minDisplayTime=1500,maxDisplayTime=3500,startTime=Date.now(),hidden=false;
   function hideLoader(){
     if(hidden)return;hidden=true;
     var remaining=Math.max(0,minDisplayTime-(Date.now()-startTime));

@@ -310,7 +310,9 @@ document.addEventListener('DOMContentLoaded', function() {
 (function(){
   var loader=document.getElementById('page-loader');
   if(!loader)return;
-  var minDisplayTime=1000,maxDisplayTime=3500,startTime=Date.now(),hidden=false;
+  if(sessionStorage.getItem('bsf_loader_shown')){loader.style.display='none';return;}
+  sessionStorage.setItem('bsf_loader_shown','1');
+  var minDisplayTime=1500,maxDisplayTime=3500,startTime=Date.now(),hidden=false;
   function hideLoader(){
     if(hidden)return;hidden=true;
     var remaining=Math.max(0,minDisplayTime-(Date.now()-startTime));
