@@ -428,7 +428,10 @@ nav{position:sticky;top:0;z-index:500;background:rgba(250,248,243,.98);backdrop-
 .form-submit:hover{background:var(--fm);transform:translateY(-1px)}
 
 /* === FOOTER === */
-footer{background-color:#0a1520;background-image:linear-gradient(rgba(14,26,46,.88),rgba(5,14,30,.93)),url('https://images.unsplash.com/photo-1486325212027-8081e485255e?w=1800&q=85');background-size:cover;background-position:center;padding:4rem 4rem 2rem}
+footer{background-color:#0a1520;position:relative;overflow:hidden;color:#fff;padding:4rem 4rem 2rem}
+footer::before{content:'';position:absolute;inset:-20px;background-image:url('https://images.unsplash.com/photo-1486325212027-8081e485255e?w=1800&q=85');background-size:cover;background-position:center;filter:blur(8px) brightness(0.5) saturate(0.7);z-index:0;transform:scale(1.05)}
+footer::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,18,40,.75) 0%,rgba(10,18,40,.95) 100%);z-index:1}
+footer>*{position:relative;z-index:2}
 .footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:3rem;padding-bottom:3rem;border-bottom:1px solid rgba(255,255,255,.08)}
 .fb-logo{font-family:'Lora',serif;font-size:1.25rem;color:#fff;display:flex;align-items:center;gap:10px;margin-bottom:.8rem}
 .fb-logo span{color:var(--el);font-style:italic}
