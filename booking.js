@@ -356,7 +356,7 @@ function bkBuildSummary() { ... }
   /* ── Submit ──────────────────────────────────────────────────────────── */
   function bkSubmit() {
     var next = document.getElementById('bk-next');
-    if (next) { next.disabled = true; next.textContent = 'Wird gesendet …'; }
+    if (next) { next.disabled = true; next.classList.add('is-loading'); next.textContent = 'Wird gesendet …'; }
 
     var g = function (id) { var el = document.getElementById(id); return el ? (el.value || '').trim() : ''; };
     var formData = {
