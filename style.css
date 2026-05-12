@@ -800,8 +800,8 @@ nav.scrolled{box-shadow:0 4px 30px rgba(26,43,72,.1)}
 .fam-usp-header{text-align:center;margin-bottom:3rem}
 .fam-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.2rem;margin-top:1rem}
 .fam-card{border-radius:22px;overflow:hidden;position:relative;height:340px;cursor:default;flex-direction:column;display:flex}
-.fam-card-bg{position:absolute;inset:0;background-size:cover;background-position:center;transition:transform .65s cubic-bezier(.22,1,.36,1)}
-.fam-card:hover .fam-card-bg{transform:scale(1.08)}
+.fam-card-bg{position:absolute;inset:0;background-size:cover;background-position:center;transition:transform .65s cubic-bezier(.22,1,.36,1),filter .5s;filter:saturate(0.82) contrast(1.10) brightness(0.94)}
+.fam-card:hover .fam-card-bg{transform:scale(1.08);filter:saturate(0.95) contrast(1.08) brightness(1)}
 .fam-card-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(10,20,42,.82) 0%,rgba(10,20,42,.25) 55%,transparent 100%)}
 .fam-card-body{position:absolute;bottom:0;left:0;right:0;padding:1.8rem 1.6rem;transform:translateY(8px);transition:transform .35s cubic-bezier(.22,1,.36,1)}
 .fam-card:hover .fam-card-body{transform:translateY(0)}
