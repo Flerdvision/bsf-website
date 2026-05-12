@@ -126,7 +126,7 @@ nav{position:sticky;top:0;z-index:500;background:rgba(250,248,243,.98);backdrop-
   z-index: 2;
   width: 100%;
   max-width: 920px;
-  padding: 0 2rem;
+  padding: 8rem 2rem;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -610,7 +610,7 @@ nav.scrolled{box-shadow:0 4px 30px rgba(26,43,72,.1)}
   .nav-inner{display:flex;justify-content:space-between;padding:0 1.5rem}
   .nav-links{display:none}
   .nav-badge{display:none}
-  .hero{grid-template-columns:1fr;min-height:auto}
+  .hero{grid-template-columns:1fr;min-height:55vh}
   .hero-left{padding:4rem 2rem 3rem;background:transparent}
   .hero-right{height:60vw;min-height:300px}
   .about-inner,.contact-grid,.anreise-inner{grid-template-columns:1fr}
