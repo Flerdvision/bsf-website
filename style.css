@@ -126,16 +126,16 @@ nav{position:sticky;top:0;z-index:500;background:rgba(250,248,243,.98);backdrop-
   background-position: center 45%;
   transition: transform 10s ease;
   transform: scale(1.05);
-  filter: saturate(0.82) contrast(1.10) brightness(0.94);
+  filter: saturate(0.75) contrast(1.18) brightness(0.88);
 }
 .hero:hover .hero-bg { transform: scale(1); }
 .hero-overlay {
   position: absolute;
   inset: 0;
   background: linear-gradient(135deg,
-    rgba(10,18,40,.75) 0%,
-    rgba(10,18,40,.55) 50%,
-    rgba(10,18,40,.38) 100%
+    rgba(10,18,40,.62) 0%,
+    rgba(10,18,40,.45) 50%,
+    rgba(10,18,40,.35) 100%
   );
 }
 .hero-content {
@@ -446,7 +446,7 @@ nav{position:sticky;top:0;z-index:500;background:rgba(250,248,243,.98);backdrop-
 
 /* === FOOTER === */
 footer{background-color:#0a1520;position:relative;overflow:hidden;color:#fff;padding:4rem 4rem 2rem}
-footer::before{content:'';position:absolute;inset:-20px;background-image:url('https://images.unsplash.com/photo-1486325212027-8081e485255e?w=1800&q=85');background-size:cover;background-position:center;filter:blur(8px) brightness(0.5) saturate(0.7);z-index:0;transform:scale(1.05)}
+footer::before{content:'';position:absolute;inset:-20px;background-image:url('https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?w=1800&q=85');background-size:cover;background-position:center;filter:blur(8px) brightness(0.5) saturate(0.7);z-index:0;transform:scale(1.05)}
 footer::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,18,40,.75) 0%,rgba(10,18,40,.95) 100%);z-index:1}
 footer>*{position:relative;z-index:2}
 .footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:3rem;padding-bottom:3rem;border-bottom:1px solid rgba(255,255,255,.08)}
@@ -845,8 +845,8 @@ nav.scrolled{box-shadow:0 4px 30px rgba(26,43,72,.1)}
 .mandate-card{background:var(--wh);border-radius:var(--r);overflow:hidden;box-shadow:0 8px 30px rgba(26,43,72,.08);transition:transform .4s cubic-bezier(.2,.8,.2,1),box-shadow .4s ease}
 .mandate-card:hover{transform:translateY(-8px);box-shadow:0 24px 60px rgba(26,43,72,.18)}
 .mandate-card-img{position:relative;width:100%;aspect-ratio:4/3;overflow:hidden;background:var(--f)}
-.mandate-card-img img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s cubic-bezier(.2,.8,.2,1),filter .6s;filter:saturate(.85) contrast(1.06)}
-.mandate-card:hover .mandate-card-img img{transform:scale(1.08);filter:saturate(1) contrast(1.08)}
+.mandate-card-img img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s cubic-bezier(.2,.8,.2,1),filter .6s;filter:saturate(0.78) contrast(1.12) brightness(0.92)}
+.mandate-card:hover .mandate-card-img img{transform:scale(1.08);filter:saturate(0.95) contrast(1.10) brightness(1)}
 .about-img img,.editorial-img img,.av2-main img,.av2-sm img{filter:saturate(.85) contrast(1.04);border-radius:var(--r);box-shadow:0 30px 80px rgba(26,43,72,.20)}
 .mandate-card-body{padding:2rem}
 .mandate-card-num{font-family:'Lora',serif;font-size:1rem;color:var(--el);font-weight:600;letter-spacing:.15em;margin-bottom:.8rem}
@@ -873,7 +873,7 @@ nav.scrolled{box-shadow:0 4px 30px rgba(26,43,72,.1)}
 
 /* ── CTA Banner ────────────────────────────────────────────── */
 .cta-banner{position:relative;padding:9rem 2rem;text-align:center;overflow:hidden}
-.cta-banner-bg{position:absolute;inset:0;background-size:cover;background-position:center 40%;transition:transform 10s ease;transform:scale(1.05)}
+.cta-banner-bg{position:absolute;inset:0;background-size:cover;background-position:center 40%;transition:transform 10s ease;transform:scale(1.05);filter:brightness(0.45) saturate(0.78)}
 .cta-banner:hover .cta-banner-bg{transform:scale(1)}
 .cta-banner-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(8,20,42,.6) 0%,rgba(5,14,36,.72) 100%)}
 .cta-banner-content{position:relative;z-index:2;max-width:680px;margin:0 auto}
@@ -881,6 +881,11 @@ nav.scrolled{box-shadow:0 4px 30px rgba(26,43,72,.1)}
 .cta-banner h2 em{color:var(--el);font-style:italic}
 .cta-banner p{font-size:1.05rem;color:rgba(255,255,255,.78);margin-bottom:2.5rem;line-height:1.9}
 .cta-banner-btns{display:flex;gap:1.2rem;justify-content:center;flex-wrap:wrap}
+.btn-gold{background:var(--el);color:var(--f);border:2px solid var(--el)}
+.btn-gold:hover{background:#c4a85e;border-color:#c4a85e;transform:translateY(-2px);box-shadow:0 8px 24px rgba(212,185,118,.35)}
+.btn-outline-white{background:transparent;color:#fff;border:2px solid rgba(255,255,255,.6)}
+.btn-outline-white:hover{background:rgba(255,255,255,.12);border-color:#fff;transform:translateY(-2px)}
+@media(max-width:540px){.cta-banner-btns{flex-direction:column;align-items:center}.cta-banner-btns .btn{width:100%;max-width:320px;justify-content:center}}
 
 /* ── Animated counter ──────────────────────────────────────── */
 .count-section{padding:5rem 2rem;background:var(--f)}
