@@ -124,88 +124,52 @@ window.openBooking=function(){var m=document.getElementById('bookingModal');if(m
 </section>
 
 <!-- MANDATE CARDS -->
-<section class="spots-prev section-wrap bg-paper" id="mandate">
-  <div class="spots-prev-inner">
-    <div class="sp-header">
+<section class="section-wrap bg-paper" id="mandate">
+  <div class="section-wrap-inner">
+    <div style="text-align:center;margin-bottom:1rem">
       <div class="section-tag reveal">UNSERE LEISTUNGEN</div>
       <h2 class="section-title reveal">In diesen <em>vier Situationen</em><br>sind wir an Ihrer Seite.</h2>
       <p class="section-sub reveal" style="margin:0 auto">BSF begleitet mittelständische Unternehmen in allen wesentlichen M&amp;A-Situationen – diskret, strukturiert, ergebnisorientiert.</p>
     </div>
-    <div class="sp-grid" style="grid-template-columns:repeat(2,1fr)">
-      <div class="sp-card reveal">
-        <div class="sp-img" style="background:var(--f);display:flex;align-items:center;justify-content:center;min-height:200px">
-          <!-- TODO: BSF-Mandat-Bild I einsetzen (Verkauf/Kauf) -->
-          <span style="font-size:4rem">🏢</span>
+    <div class="mandate-grid">
+      <div class="mandate-card reveal d1">
+        <div class="mandate-card-img">
+          <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?w=1200&q=85" alt="Unternehmensverkauf" loading="lazy">
         </div>
-        <div class="sp-body">
-          <div class="sp-badge">Kernkompetenz</div>
+        <div class="mandate-card-body">
+          <div class="mandate-card-num">01</div>
           <h3>Unternehmensverkauf</h3>
-          <p>Strukturierte M&amp;A-Prozesse für mittelständische Unternehmen in DACH und der Türkei. Von der Vorbereitung bis zum finalen Closing – diskret und ergebnisorientiert.</p>
-          <div class="sp-tags">
-            <span class="sp-tag">🎯 Strukturierter Prozess</span>
-            <span class="sp-tag">🔒 NDA-gesichert</span>
-            <span class="sp-tag">DACH · Türkei</span>
-          </div>
-          <div style="display:flex;justify-content:flex-end">
-            <button class="btn btn-green" onclick="openBooking()" style="padding:.6rem 1.3rem;font-size:.82rem">Anfragen</button>
-          </div>
+          <p>Wir bringen Ihr Unternehmen zum richtigen Käufer — mit strukturiertem Prozess, geprüften Interessenten und maximaler Vertraulichkeit. Für Verkäufe ab CHF 5 Mio. Transaktionsvolumen.</p>
         </div>
       </div>
-      <div class="sp-card reveal">
-        <div class="sp-img" style="background:var(--fm);display:flex;align-items:center;justify-content:center;min-height:200px">
-          <!-- TODO: BSF-Mandat-Bild II einsetzen (Nachfolge) -->
-          <span style="font-size:4rem">🤝</span>
+      <div class="mandate-card reveal d2">
+        <div class="mandate-card-img">
+          <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=1200&q=85" alt="Nachfolge im Familienunternehmen" loading="lazy">
         </div>
-        <div class="sp-body">
-          <div class="sp-badge" style="background:var(--fp);color:var(--f)">Nachfolgeberatung</div>
+        <div class="mandate-card-body">
+          <div class="mandate-card-num">02</div>
           <h3>Nachfolge im Familienunternehmen</h3>
-          <p>Familieninterne und externe Nachfolgeregelungen mit Fingerspitzengefühl. Wir begleiten Übergaben so, dass Lebenswerk und Unternehmenswert erhalten bleiben.</p>
-          <div class="sp-tags">
-            <span class="sp-tag">👨‍👩‍👧 Familienintern</span>
-            <span class="sp-tag">🏦 Management-Buy-out</span>
-            <span class="sp-tag">Diskret</span>
-          </div>
-          <div style="display:flex;justify-content:flex-end">
-            <button class="btn btn-green" onclick="openBooking()" style="padding:.6rem 1.3rem;font-size:.82rem">Anfragen</button>
-          </div>
+          <p>Wenn die nächste Generation übernimmt — oder ein externer Käufer das Lebenswerk fortführt. Wir begleiten Sie in der oft mehrjährigen Vorbereitung, Bewertung und Übergabe.</p>
         </div>
       </div>
-      <div class="sp-card reveal">
-        <div class="sp-img" style="background:var(--f);display:flex;align-items:center;justify-content:center;min-height:200px">
-          <!-- TODO: BSF-Mandat-Bild III einsetzen (Restrukturierung) -->
-          <span style="font-size:4rem">🔄</span>
+      <div class="mandate-card reveal d3">
+        <div class="mandate-card-img">
+          <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=1200&q=85" alt="Restrukturierung und Sanierung" loading="lazy">
         </div>
-        <div class="sp-body">
-          <div class="sp-badge" style="background:var(--fp);color:var(--f)">Restrukturierung</div>
+        <div class="mandate-card-body">
+          <div class="mandate-card-num">03</div>
           <h3>Restrukturierung &amp; Sanierung</h3>
-          <p>Operative und finanzielle Neuausrichtung in komplexen Unternehmenssituationen. BSF begleitet strategische Transformationen mit klarem Fokus auf Werterhalt.</p>
-          <div class="sp-tags">
-            <span class="sp-tag">⚙️ Operativ</span>
-            <span class="sp-tag">💼 Finanziell</span>
-            <span class="sp-tag">Strategisch</span>
-          </div>
-          <div style="display:flex;justify-content:flex-end">
-            <button class="btn btn-green" onclick="openBooking()" style="padding:.6rem 1.3rem;font-size:.82rem">Anfragen</button>
-          </div>
+          <p>Strukturen ordnen, bevor sie problematisch werden. Holding-Aufbau, Konzern-Vereinfachung oder Sanierung in der Krise — wir helfen mit Steuerberatern und Anwälten.</p>
         </div>
       </div>
-      <div class="sp-card reveal">
-        <div class="sp-img" style="background:var(--fm);display:flex;align-items:center;justify-content:center;min-height:200px">
-          <!-- TODO: BSF-Mandat-Bild IV einsetzen (Joint Ventures) -->
-          <span style="font-size:4rem">🌍</span>
+      <div class="mandate-card reveal d4">
+        <div class="mandate-card-img">
+          <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=1200&q=85" alt="Akquisitionen und Beteiligungen" loading="lazy">
         </div>
-        <div class="sp-body">
-          <div class="sp-badge" style="background:var(--fp);color:var(--f)">Cross-Border</div>
+        <div class="mandate-card-body">
+          <div class="mandate-card-num">04</div>
           <h3>Akquisitionen &amp; Beteiligungen</h3>
-          <p>Grenzüberschreitende Kooperationsstrukturen, insbesondere zwischen DACH und der Türkei. BSF verfügt über ein aktives Netzwerk in beiden Märkten.</p>
-          <div class="sp-tags">
-            <span class="sp-tag">🇩🇪🇦🇹🇨🇭 DACH</span>
-            <span class="sp-tag">🇹🇷 Türkei</span>
-            <span class="sp-tag">Cross-Border</span>
-          </div>
-          <div style="display:flex;justify-content:flex-end">
-            <button class="btn btn-green" onclick="openBooking()" style="padding:.6rem 1.3rem;font-size:.82rem">Anfragen</button>
-          </div>
+          <p>Sie wollen kaufen, nicht verkaufen? Wir finden passende Zielunternehmen in DACH und der Türkei — vom Erst-Screening bis zum Closing.</p>
         </div>
       </div>
     </div>
