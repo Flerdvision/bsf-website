@@ -1,5 +1,5 @@
 node_modules/
-.env
-*.db
-*.db-journal
 .DS_Store
+*.db
+.env
+camping-sulmsee-final2.html
