@@ -800,8 +800,8 @@ nav.scrolled{box-shadow:0 4px 30px rgba(26,43,72,.1)}
 .fam-usp-header{text-align:center;margin-bottom:3rem}
 .fam-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.2rem;margin-top:1rem}
 .fam-card{border-radius:22px;overflow:hidden;position:relative;height:340px;cursor:default;flex-direction:column;display:flex}
-.fam-card-bg{position:absolute;inset:0;background-size:cover;background-position:center;transition:transform .65s cubic-bezier(.22,1,.36,1),filter .5s;filter:saturate(0.82) contrast(1.10) brightness(0.94)}
-.fam-card:hover .fam-card-bg{transform:scale(1.08);filter:saturate(0.95) contrast(1.08) brightness(1)}
+.fam-card-bg{position:absolute;inset:0;background-size:cover;background-position:center;transition:transform .65s cubic-bezier(.22,1,.36,1),filter .5s;filter:saturate(0.78) contrast(1.12) brightness(0.92)}
+.fam-card:hover .fam-card-bg{transform:scale(1.08);filter:saturate(0.92) contrast(1.08) brightness(1)}
 .fam-card-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(10,20,42,.82) 0%,rgba(10,20,42,.25) 55%,transparent 100%)}
 .fam-card-body{position:absolute;bottom:0;left:0;right:0;padding:1.8rem 1.6rem;transform:translateY(8px);transition:transform .35s cubic-bezier(.22,1,.36,1)}
 .fam-card:hover .fam-card-body{transform:translateY(0)}
@@ -849,7 +849,7 @@ nav.scrolled{box-shadow:0 4px 30px rgba(26,43,72,.1)}
 .mandate-card:hover .mandate-card-img img{transform:scale(1.08);filter:saturate(0.95) contrast(1.10) brightness(1)}
 .mandate-card-icon{display:flex;align-items:center;justify-content:center;width:100%;aspect-ratio:4/3;font-size:5rem;background:linear-gradient(135deg,var(--f) 0%,#0e1a2e 100%);transition:background .4s ease}
 .mandate-card:hover .mandate-card-icon{background:linear-gradient(135deg,var(--fm,#243d6a) 0%,var(--f) 100%)}
-.about-img img,.editorial-img img,.av2-main img,.av2-sm img{filter:saturate(.85) contrast(1.04);border-radius:var(--r);box-shadow:0 30px 80px rgba(26,43,72,.20)}
+.about-img img,.editorial-img img,.av2-main img,.av2-sm img{filter:saturate(0.78) contrast(1.12) brightness(0.92);border-radius:var(--r);box-shadow:0 30px 80px rgba(26,43,72,.20)}
 .mandate-card-body{padding:2rem}
 .mandate-card-num{font-family:'Lora',serif;font-size:1rem;color:var(--el);font-weight:600;letter-spacing:.15em;margin-bottom:.8rem}
 .mandate-card-body h3{font-family:'Lora',serif;font-size:1.4rem;color:var(--f);font-weight:600;line-height:1.2;margin-bottom:1rem}
