@@ -3,166 +3,120 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Die BSF Transaktionsuhr — halbjährliche Markt-Indikatoren für 12 Sektoren. Aktuelle Ausgabe H1/2025.">
-<title>Transaktionsuhr | BSF Consulting AG</title>
+<meta data-i18n-attr="content:auto.853c825b" name="description" content="Die BSF-Transaktionsuhr — quartalsweise Markt-Indikatoren für 14 Sektoren. Aktuelle Ausgabe 2/2025.">
+<title data-i18n="auto.ee40cd73">Transaktionsuhr | BSF Consulting AG</title>
 <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
+<link rel="alternate" hreflang="de" href="https://www.bsfconsulting.ch/transaktionsuhr.html" />
+<link rel="alternate" hreflang="en" href="https://www.bsfconsulting.ch/en/transaktionsuhr.html" />
+<link rel="alternate" hreflang="tr" href="https://www.bsfconsulting.ch/tr/transaktionsuhr.html" />
 <script>
 function openMobMenu(){var m=document.getElementById('mobMenu'),h=document.getElementById('hamBtn');if(m)m.classList.add('open');if(h)h.classList.add('open');document.body.style.overflow='hidden';}
 function closeMobMenu(){var m=document.getElementById('mobMenu'),h=document.getElementById('hamBtn');if(m)m.classList.remove('open');if(h)h.classList.remove('open');document.body.style.overflow='';}
 window.openBooking=function(){var m=document.getElementById('bookingModal');if(m){m.classList.add('open');document.body.style.overflow='hidden';}else{document.addEventListener('DOMContentLoaded',function(){var m2=document.getElementById('bookingModal');if(m2){m2.classList.add('open');document.body.style.overflow='hidden';}});}};
 </script>
-<style>
-.reveal{opacity:0;transform:translateY(20px);transition:opacity .55s cubic-bezier(.22,1,.36,1),transform .55s cubic-bezier(.22,1,.36,1)}
-.reveal.visible{opacity:1!important;transform:none!important}
-
-/* === Transaktionsuhr-spezifisch === */
-.tu-hero{padding:8rem 2rem 5rem;background:linear-gradient(135deg,var(--f) 0%,#0e1a2e 100%);color:#fff;text-align:center}
-.tu-hero .section-tag{color:var(--el);justify-content:center}
-.tu-hero .section-tag::before{background:var(--el)}
-.tu-hero h1{font-family:'Lora',serif;font-size:clamp(2.4rem,5vw,4rem);font-weight:600;line-height:1.05;color:#fff;margin-bottom:1.2rem;letter-spacing:-0.02em}
-.tu-hero h1 em{font-style:italic;color:var(--el)}
-.tu-hero .lead{font-size:1.05rem;color:rgba(255,255,255,.7);max-width:640px;margin:0 auto;line-height:1.7}
-.tu-meta{display:flex;justify-content:center;gap:2.5rem;margin-top:2.5rem;padding-top:2rem;border-top:1px solid rgba(255,255,255,.15);max-width:600px;margin-left:auto;margin-right:auto;flex-wrap:wrap}
-.tu-meta-item{text-align:center}
-.tu-meta-item .k{font-family:'Inter',sans-serif;font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--el);margin-bottom:6px}
-.tu-meta-item .v{font-family:'Lora',serif;font-size:1.3rem;color:#fff}
-
-.tu-clock-section{padding:6rem 2rem;background:var(--cr)}
-.tu-clock-wrap{max-width:920px;margin:0 auto}
-.tu-clock-frame{position:relative;aspect-ratio:1;max-width:680px;margin:0 auto;background:var(--wh);border-radius:50%;box-shadow:0 30px 80px rgba(26,43,72,.12),inset 0 0 0 1px var(--bd)}
-.tu-clock-svg{width:100%;height:100%;display:block}
-.tu-token{cursor:pointer}
-.tu-token-circle{fill:var(--f);stroke:var(--wh);stroke-width:2.5;transition:fill .2s,stroke-width .2s}
-.tu-token:hover .tu-token-circle{fill:var(--el);stroke-width:5}
-.tu-token-text{fill:#fff;font-family:'Inter',sans-serif;font-size:11px;font-weight:700;letter-spacing:.04em;text-anchor:middle;dominant-baseline:central;pointer-events:none;transition:font-size .2s}
-.tu-token:hover .tu-token-text{font-size:13px}
-.tu-quadrant-label{font-family:'Inter',sans-serif;font-size:10px;letter-spacing:.22em;text-transform:uppercase;fill:var(--tl);font-weight:600}
-
-.tu-detail{margin-top:3rem;background:var(--wh);border:1px solid var(--bd);border-radius:var(--r);padding:2.5rem;min-height:160px;display:none}
-.tu-detail.open{display:block;animation:tu-fade .35s ease}
-@keyframes tu-fade{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
-.tu-detail-head{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:1rem;margin-bottom:1.5rem;padding-bottom:1.2rem;border-bottom:1px solid var(--bd)}
-.tu-detail-code{font-family:'Lora',serif;font-size:2.4rem;color:var(--f);font-weight:600}
-.tu-detail-name{font-family:'Inter',sans-serif;font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--tl);margin-top:6px}
-.tu-detail-quadrant{display:inline-flex;align-items:center;gap:8px;padding:6px 16px;border-radius:50px;font-family:'Inter',sans-serif;font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;font-weight:700}
-.tu-detail-quadrant.hoch{background:#f5e8eb;color:#8B2E3F}
-.tu-detail-quadrant.abkuehlung{background:var(--ep);color:var(--e)}
-.tu-detail-quadrant.tief{background:#e8ecf4;color:#1a2b48}
-.tu-detail-quadrant.aufschwung{background:#e8eef5;color:#2e5080}
-.tu-detail-body{font-size:1rem;line-height:1.75;color:var(--tm)}
-.tu-detail-body strong{color:var(--f);font-weight:600}
-.tu-detail-hint{color:var(--tl);font-size:.88rem;margin-top:1.5rem;font-style:italic}
-
-.tu-legend{padding:5rem 2rem;background:var(--ff)}
-.tu-legend-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.2rem;max-width:1100px;margin:0 auto}
-.tu-legend-card{background:var(--wh);border:1px solid var(--bd);border-radius:var(--r);padding:1.5rem}
-.tu-legend-card-head{display:flex;align-items:center;gap:10px;margin-bottom:.8rem}
-.tu-legend-dot{width:13px;height:13px;border-radius:50%;flex-shrink:0}
-.tu-legend-dot.hoch{background:#8B2E3F}
-.tu-legend-dot.abkuehlung{background:#C9A24B}
-.tu-legend-dot.tief{background:#1a2b48}
-.tu-legend-dot.aufschwung{background:#3a6090}
-.tu-legend-name{font-family:'Lora',serif;font-size:1.05rem;color:var(--f);font-weight:600}
-.tu-legend-desc{font-size:.88rem;color:var(--tm);line-height:1.55}
-
-.tu-cta{padding:6rem 2rem;background:var(--fp);color:var(--f);text-align:center}
-.tu-cta h2{font-family:'Lora',serif;font-size:clamp(1.8rem,3vw,2.6rem);margin-bottom:1rem;color:var(--f);font-weight:600}
-.tu-cta p{color:var(--tm);max-width:560px;margin:0 auto 2rem;line-height:1.7}
-
-@media(max-width:900px){.tu-legend-grid{grid-template-columns:1fr 1fr}}
-@media(max-width:500px){.tu-legend-grid{grid-template-columns:1fr}.tu-clock-frame{max-width:100%}.tu-token-text{font-size:9px}}
-</style>
 </head>
 <body>
 
 <div id="scroll-progress"></div>
 <div id="page-loader">
-  <div class="ld-logo">BSF <span style="color:var(--el)">Consulting AG</span></div>
-  <div class="ld-tagline">Swiss M&amp;A · Zug · seit 1998</div>
+  <div class="ld-logo">BSF CONSULTING AG</div>
+  <div data-i18n="auto.ad73eeed" class="ld-tagline">Swiss M&amp;A · Zug · seit 1998</div>
   <div class="ld-bar"><div class="ld-fill"></div></div>
 </div>
 
 <!-- Mobile Menu -->
 <div class="mob-menu" id="mobMenu">
   <button class="mob-menu-close" id="mobMenuClose">✕</button>
-  <a href="index.html" onclick="closeMobMenu()">Startseite</a>
-  <a href="stellplaetze.html" onclick="closeMobMenu()">Mandate</a>
-  <a href="preise.html" onclick="closeMobMenu()">Honorar</a>
-  <a href="freizeit.html" onclick="closeMobMenu()">Methode</a>
-  <a href="transaktionsuhr.html" onclick="closeMobMenu()">Transaktionsuhr</a>
-  <a href="kontakt.html" onclick="closeMobMenu()">Kontakt</a>
-  <a href="#" onclick="closeMobMenu();openBooking();return false;" style="color:var(--el)">→ Erstgespräch</a>
+  <a href="index.html" onclick="closeMobMenu()" data-i18n="nav.home">Startseite</a>
+  <a href="firma.html" onclick="closeMobMenu()" data-i18n="nav.ueberuns">Über uns</a>
+  <a href="leistungen.html" onclick="closeMobMenu()" data-i18n="nav.leistungen">Leistungen</a>
+  <a href="methode.html" onclick="closeMobMenu()" data-i18n="nav.methode">Methode</a>
+  <a href="transaktionsuhr.html" onclick="closeMobMenu()" data-i18n="nav.transaktionsuhr">Transaktionsuhr</a>
+  <a href="honorar.html" onclick="closeMobMenu()" data-i18n="nav.honorar">Honorar</a>
+  <a href="kontakt.html" onclick="closeMobMenu()" data-i18n="nav.kontakt">Kontakt</a>
+  <a href="#" onclick="closeMobMenu();openBooking();return false;" data-i18n="nav.erstgespraech">→ Erstgespräch</a>
+  <div data-i18n-attr="aria-label:auto.ebe7eb7a" data-i18n="auto.660bc503" class="lang-switch in-mobmenu" role="navigation" aria-label="Sprache wählen">
+    <a data-lang-switch="de">DE</a>
+    <a data-lang-switch="en">EN</a>
+    <a data-lang-switch="tr">TR</a>
+  </div>
 </div>
 
 <!-- Nav -->
 <nav id="mainNav">
   <div class="nav-inner">
     <a class="nav-logo" href="index.html" style="text-decoration:none">
-      <span class="nav-logo-text">BSF <span>Consulting AG</span></span>
+      <span class="nav-logo-text">BSF Consulting</span>
     </a>
-    <ul class="nav-links">
-      <li><a href="index.html">Startseite</a></li>
-      <li><a href="stellplaetze.html">Mandate</a></li>
-      <li><a href="preise.html">Honorar</a></li>
-      <li><a href="freizeit.html">Methode</a></li>
-      <li><a href="transaktionsuhr.html" class="nav-active">Transaktionsuhr</a></li>
-      <li><a href="kontakt.html">Kontakt</a></li>
-      <li><a href="#" onclick="openBooking();return false;" class="nav-book">→ Erstgespräch</a></li>
+        <ul class="nav-links">
+      <li><a href="index.html" data-i18n="nav.home">Startseite</a></li>
+      <li><a href="firma.html" data-i18n="nav.ueberuns">Über uns</a></li>
+      <li><a href="leistungen.html" data-i18n="nav.leistungen">Leistungen</a></li>
+      <li><a href="methode.html" data-i18n="nav.methode">Methode</a></li>
+      <li><a href="transaktionsuhr.html" class="nav-active" data-i18n="nav.transaktionsuhr">Transaktionsuhr</a></li>
+      <li><a href="honorar.html" data-i18n="nav.honorar">Honorar</a></li>
+      <li><a href="kontakt.html" data-i18n="nav.kontakt">Kontakt</a></li>
+      <li><a href="#" onclick="openBooking();return false;" class="nav-book" data-i18n="nav.erstgespraech">→ Erstgespräch</a></li>
     </ul>
     <div class="nav-right">
-      <div class="nav-badge">CH · Zug · seit 1998</div>
+      <div class="nav-badge" data-i18n="nav.badge">CH · Zug · seit 1998</div>
+      <div data-i18n-attr="aria-label:auto.ebe7eb7a" data-i18n="auto.35222110" class="lang-switch" role="navigation" aria-label="Sprache wählen">
+        <a data-lang-switch="de">DE</a>
+        <a data-lang-switch="en">EN</a>
+        <a data-lang-switch="tr">TR</a>
+      </div>
       <button class="ham-btn" id="hamBtn" onclick="openMobMenu()"><span></span><span></span><span></span></button>
     </div>
   </div>
 </nav>
 
 <!-- HERO -->
-<section class="hero">
-  <div class="hero-bg" style="background-image:url('https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?w=2400&q=85');filter:saturate(0.5) contrast(1.1) brightness(0.45)"></div>
+<section class="hero hero--sub">
+  <div class="hero-bg" style="background-image:url('pics/bsf_uhr_header.png')"></div>
   <div class="hero-overlay"></div>
   <div class="hero-content">
-    <span class="hero-eyebrow">Das BSF-Instrument</span>
-    <h1>Die <em>Transaktionsuhr.</em></h1>
-    <p class="hero-desc">Welche Branche ist gerade Verkäufermarkt? Wo sind die Bewertungen niedrig? Unsere Transaktionsuhr zeigt halbjährlich die Marktphase für 12 Branchen — kostenfrei für unsere Mandanten.</p>
-    <div class="hero-actions">
-      <a href="#" onclick="openBooking();return false;" class="btn btn-green">Aktuelle Ausgabe ansehen</a>
+    <span class="hero-eyebrow" data-i18n="transaktionsuhr.heroEyebrow">Das BSF-Instrument</span>
+    <h1 data-i18n="transaktionsuhr.heroTitle">Die Transaktionsuhr. <em>Quartalsweise. Indiziert.</em></h1>
+    <p class="hero-desc" data-i18n="transaktionsuhr.heroDesc">Unser eigener Marktalgorithmus berechnet quartalsweise den Zyklus-Stand von 14 Wirtschaftssektoren — Verkäufermarkt, Abkühlung, Tief oder Aufschwung.</p>
+    <div data-i18n="auto.b2476bab" class="hero-actions">
+      <a href="#" onclick="openBooking();return false;" class="btn btn-green" >Aktuelle Uhr ansehen →</a>
     </div>
   </div>
 </section>
 
 <!-- INTRO -->
-<section class="section-wrap bg-cream">
+<section class="section section--paper">
   <div class="section-wrap-inner" style="display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center">
     <div class="reveal from-left">
-      <div class="section-tag reveal">Was die Uhr zeigt</div>
-      <h2 class="section-title reveal">12 Sektoren.<br><em>4 Marktphasen.</em></h2>
-      <p class="section-sub reveal" style="margin:0 0 1.5rem">Die BSF Transaktionsuhr analysiert halbjährlich 12 Wirtschaftssektoren und ordnet jeden einer von vier Marktphasen zu: Hoch, Abkühlung, Tief und Aufschwung.</p>
-      <p class="reveal" style="font-size:.95rem;color:var(--tl);line-height:1.75">Das Ergebnis: eine visuelle Karte des M&amp;A-Klimas – sektorgenau, ohne Anlageempfehlung, aktualisiert im Halbjahresrhythmus. Ein Kompass für Mandanten, die den richtigen Moment nicht dem Zufall überlassen.</p>
+      <div class="section-tag reveal" data-i18n="transaktionsuhr.introTag">Was die Uhr zeigt</div>
+      <h2 class="section-title reveal" data-i18n="transaktionsuhr.introTitle">14 Sektoren.<br><em>4 Marktphasen.</em></h2>
+      <p data-i18n="auto.13209207" class="section-sub reveal" style="margin:0 0 1.5rem">Die Transaktionsuhr ist kein Aktien-Indikator und keine Konjunkturprognose. Sie misst die M&amp;A-Stimmung jedes Sektors — auf Basis von Transaktionsvolumen, Multiplikatorentwicklung und qualitativen Marktbeobachtungen.</p>
+      <p data-i18n="auto.7ac4298b" class="reveal" style="font-size:.95rem;color:var(--tl);line-height:1.75">Das Ergebnis: eine visuelle Karte des M&amp;A-Klimas — sektorgenau, ohne Anlageempfehlung, aktualisiert im Quartalsrhythmus. Ein Kompass für Mandanten, die den richtigen Moment nicht dem Zufall überlassen.</p>
     </div>
     <div class="reveal from-right" style="display:grid;grid-template-columns:1fr 1fr;gap:1rem">
       <div style="background:rgba(139,46,63,.06);border-radius:16px;padding:1.4rem;border-left:4px solid #8B2E3F;text-align:center">
-        <div style="font-family:'Lora',serif;font-size:1.1rem;font-weight:600;color:#8B2E3F;margin-bottom:.3rem">Hoch</div>
-        <div style="font-size:.8rem;color:var(--tl);line-height:1.5">Bewertungen maximal – optimale Phase für Verkäufer</div>
+        <div style="font-family:'Lora',serif;font-size:1.1rem;font-weight:600;color:#8B2E3F;margin-bottom:.3rem" data-i18n="transaktionsuhr.phase0Name">Hoch</div>
+        <div style="font-size:.8rem;color:var(--tl);line-height:1.5" data-i18n="transaktionsuhr.phase0Sub">Bewertungen maximal – optimale Phase für Verkäufer</div>
       </div>
       <div style="background:rgba(201,162,75,.07);border-radius:16px;padding:1.4rem;border-left:4px solid #C9A24B;text-align:center">
-        <div style="font-family:'Lora',serif;font-size:1.1rem;font-weight:600;color:#C9A24B;margin-bottom:.3rem">Abkühlung</div>
-        <div style="font-size:.8rem;color:var(--tl);line-height:1.5">Markt beruhigt sich – strukturierte Vorbereitung beginnt</div>
+        <div style="font-family:'Lora',serif;font-size:1.1rem;font-weight:600;color:#C9A24B;margin-bottom:.3rem" data-i18n="transaktionsuhr.phase1Name">Abkühlung</div>
+        <div style="font-size:.8rem;color:var(--tl);line-height:1.5" data-i18n="transaktionsuhr.phase1Sub">Markt beruhigt sich – strukturierte Vorbereitung beginnt</div>
       </div>
       <div style="background:rgba(26,43,72,.05);border-radius:16px;padding:1.4rem;border-left:4px solid var(--f);text-align:center">
-        <div style="font-family:'Lora',serif;font-size:1.1rem;font-weight:600;color:var(--f);margin-bottom:.3rem">Tief</div>
-        <div style="font-size:.8rem;color:var(--tl);line-height:1.5">Akquisitionsfenster offen – günstige Phase für Käufer</div>
+        <div style="font-family:'Lora',serif;font-size:1.1rem;font-weight:600;color:var(--f);margin-bottom:.3rem" data-i18n="transaktionsuhr.phase2Name">Tief</div>
+        <div style="font-size:.8rem;color:var(--tl);line-height:1.5" data-i18n="transaktionsuhr.phase2Sub">Akquisitionsfenster offen – günstige Phase für Käufer</div>
       </div>
-      <div style="background:rgba(58,96,144,.05);border-radius:16px;padding:1.4rem;border-left:4px solid #3A6090;text-align:center">
-        <div style="font-family:'Lora',serif;font-size:1.1rem;font-weight:600;color:#3A6090;margin-bottom:.3rem">Aufschwung</div>
-        <div style="font-size:.8rem;color:var(--tl);line-height:1.5">Aktivität steigt – Mandate jetzt eröffnen</div>
+      <div style="background:rgba(26,43,72,.05);border-radius:16px;padding:1.4rem;border-left:4px solid var(--accent);text-align:center">
+        <div style="font-family:'Lora',serif;font-size:1.1rem;font-weight:600;color:var(--accent);margin-bottom:.3rem" data-i18n="transaktionsuhr.phase3Name">Aufschwung</div>
+        <div style="font-size:.8rem;color:var(--tl);line-height:1.5" data-i18n="transaktionsuhr.phase3Sub">Aktivität steigt – Mandate jetzt eröffnen</div>
       </div>
     </div>
   </div>
 </section>
 
 <!-- CLOCK -->
-<section class="tu-clock-section">
+<section class="tu-clock-section section section--soft">
   <div class="tu-clock-wrap">
 
     <div class="tu-clock-frame">
@@ -191,7 +145,7 @@ window.openBooking=function(){var m=document.getElementById('bookingModal');if(m
         <g id="tuTicks"></g>
 
         <!-- Center dot -->
-        <circle cx="300" cy="300" r="5" fill="var(--f)" opacity=".6"/>
+        <circle cx="300" cy="300" r="5" fill="var(--accent-deep)" opacity=".8"/>
 
         <!-- Tokens — generated by JS -->
         <g id="tuTokens"></g>
@@ -203,157 +157,189 @@ window.openBooking=function(){var m=document.getElementById('bookingModal');if(m
       <div class="tu-detail-head">
         <div>
           <div class="tu-detail-code" id="tuDetailCode">—</div>
-          <div class="tu-detail-name" id="tuDetailName">Sektor wählen</div>
+          <div data-i18n="auto.ec720103" class="tu-detail-name" id="tuDetailName">Sektor wählen</div>
         </div>
         <div class="tu-detail-quadrant" id="tuDetailQuadrant">—</div>
       </div>
-      <div class="tu-detail-body" id="tuDetailBody">
+      <div class="tu-detail-body" id="tuDetailBody" data-i18n="transaktionsuhr.detailDefault">
         Klicken Sie auf einen Sektor in der Uhr, um Details zur aktuellen Marktposition zu sehen.
       </div>
-      <div class="tu-detail-hint" id="tuDetailHint" style="display:none">
+      <div class="tu-detail-hint" id="tuDetailHint" style="display:none" data-i18n="transaktionsuhr.detailHint">
         Vollständige Analyse inkl. Methodik und Empfehlung erhalten Mandanten nach dem Erstgespräch.
       </div>
     </div>
   </div>
 </section>
 
+<!-- TOP-SEKTOR -->
+<div class="tu-top-sektor reveal" style="text-align:center;max-width:760px;margin:3rem auto;">
+  <span data-i18n="auto.9483e097" class="section-tag" style="justify-content:center">Spitzenposition · Ausgabe 2/2025</span>
+  <h3 data-i18n="auto.63cb831f" style="font-family:'Lora',serif;font-size:2.2rem;color:var(--accent-deep);margin:1rem 0 .5rem;line-height:1.15">Nahrung &amp; Genuss<span style="color:var(--gold);font-style:italic;display:block">+2,10</span></h3>
+  <p data-i18n="auto.29a372d2" style="color:var(--muted);font-size:.95rem;max-width:560px;margin:0 auto">Höchster Zyklus-Stand unter den 14 Sektoren. Klarer Verkäufermarkt: hohe Nachfrage, steigende Multiplikatoren, kurze Prozesse.</p>
+</div>
+
 <!-- QUADRANT-LEGEND -->
-<section class="tu-legend">
+<section class="tu-legend section section--paper">
   <div class="section-wrap-inner" style="text-align:center;margin-bottom:3rem" data-reveal>
-    <div class="section-tag" style="justify-content:center">Lesehilfe</div>
-    <h2 class="section-title">Vier Marktphasen.</h2>
-    <p class="section-sub">Klicken Sie auf eine Branche, um den aktuellen Stand zu sehen.</p>
+    <div data-i18n="auto.e77c8b6d" class="section-tag" style="justify-content:center">Vier Marktphasen</div>
+    <h2 data-i18n="auto.47072199" class="section-title">Wo Ihr Sektor <em>heute steht.</em></h2>
+    <p data-i18n="auto.af9b58fc" class="section-sub">Klicken Sie auf eine Branche in der Uhr, um den aktuellen Zyklus-Stand zu sehen.</p>
   </div>
   <div class="tu-legend-grid">
     <div class="tu-legend-card reveal">
       <div class="tu-legend-card-head">
         <span class="tu-legend-dot hoch"></span>
-        <span class="tu-legend-name">Hoch</span>
+        <span class="tu-legend-name" data-i18n="transaktionsuhr.phase0Name">Hoch</span>
       </div>
-      <p class="tu-legend-desc">Bewertungen am oberen Ende, M&amp;A-Aktivität hoch. Günstige Phase für <strong>Verkäufer</strong> — Multiples auf Niveau, Käufer zahlen Prämien.</p>
+      <p data-i18n="auto.1e8225a0" class="tu-legend-desc">Bewertungen am oberen Ende, Aktivität hoch. Günstige Phase für <strong>Verkäufer</strong> — Multiplikatoren auf Niveau, strategische Käufer zahlen Prämien. Zyklus-Stand: +1.0 bis +3.0</p>
     </div>
     <div class="tu-legend-card reveal">
       <div class="tu-legend-card-head">
         <span class="tu-legend-dot abkuehlung"></span>
-        <span class="tu-legend-name">Abkühlung</span>
+        <span class="tu-legend-name" data-i18n="transaktionsuhr.phase1Name">Abkühlung</span>
       </div>
-      <p class="tu-legend-desc">Multiples sinken, Käufer werden selektiver. Empfehlung: <strong>jetzt strukturieren</strong>, in 6–12 Monaten handeln.</p>
+      <p data-i18n="auto.e38166fe" class="tu-legend-desc">Aktivität nimmt ab, Käufer werden selektiver. Empfehlung: <strong>jetzt vorbereiten</strong>, bevor die Phase in ein Tief übergeht. Zyklus-Stand: −0.1 bis −1.0</p>
     </div>
     <div class="tu-legend-card reveal">
       <div class="tu-legend-card-head">
         <span class="tu-legend-dot tief"></span>
-        <span class="tu-legend-name">Tief</span>
+        <span class="tu-legend-name" data-i18n="transaktionsuhr.phase2Name">Tief</span>
       </div>
-      <p class="tu-legend-desc">Bewertungen niedrig, Akquisitionsfenster offen. Günstige Phase für <strong>Käufer</strong> mit langfristigem Horizont.</p>
+      <p data-i18n="auto.dcd7e42d" class="tu-legend-desc">Wenige Transaktionen, gedrückte Multiplikatoren. Günstige Phase für <strong>strategische Käufer</strong> mit langfristigem Horizont. Zyklus-Stand: −1.1 bis −3.0</p>
     </div>
     <div class="tu-legend-card reveal">
       <div class="tu-legend-card-head">
         <span class="tu-legend-dot aufschwung"></span>
-        <span class="tu-legend-name">Aufschwung</span>
+        <span class="tu-legend-name" data-i18n="transaktionsuhr.phase3Name">Aufschwung</span>
       </div>
-      <p class="tu-legend-desc">Aktivität nimmt zu, Wettbewerb steigt. Mandate sollten <strong>bald eröffnet werden</strong> — das Fenster öffnet sich.</p>
+      <p data-i18n="auto.6686255b" class="tu-legend-desc">Steigende Aktivität, anziehende Preise, mehr Käufer. Mandate sollten <strong>jetzt eröffnet werden</strong> — das Fenster öffnet sich. Zyklus-Stand: +0.1 bis +0.9</p>
     </div>
   </div>
 </section>
 
 <!-- EDITORIAL / QUOTE -->
-<section class="section-wrap bg-dark" style="text-align:center">
-  <div class="section-wrap-inner-narrow">
-    <div class="section-tag reveal" style="border-color:rgba(212,185,118,.3);color:var(--el)">Unser Instrument</div>
-    <blockquote class="reveal from-scale" style="font-family:'Lora',serif;font-size:clamp(1.4rem,3vw,2.1rem);color:#fff;line-height:1.55;font-style:italic;margin:1.8rem 0 1.4rem;border:none;padding:0">
-      „Der Markt hat immer einen Takt.<br><em style="color:var(--el)">Wir messen ihn.</em>"
+<section class="section section--soft" style="text-align:center">
+  <div class="section-wrap-inner-narrow" style="display:flex;flex-direction:column;align-items:center">
+    <div data-i18n="auto.2bdaea74" class="section-tag reveal" style="margin:0 auto 2rem">Ausgabe 2/2025</div>
+    <blockquote class="reveal" style="font-family:'Lora',serif;font-size:clamp(1.4rem,3vw,2.1rem);color:var(--ink);line-height:1.55;font-style:italic;margin:0 auto 1.4rem;border:none;padding:0;text-align:center;max-width:800px" data-i18n="transaktionsuhr.quoteText">
+      „Der Markt hat immer einen Takt — quartalsweise neu gemessen, sektorgenau ausgewiesen.<br><em>Ausgabe 2/2025 ist aktuell.</em>"
     </blockquote>
-    <div class="reveal" style="font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.35);font-weight:700">BSF Consulting AG · Zug · seit 1998</div>
+    <div class="reveal" style="font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:700;text-align:center" data-i18n="transaktionsuhr.quoteAttr">BSF Consulting AG · Zug · seit 1998</div>
   </div>
 </section>
 
 <!-- CTA -->
 <section class="cta-banner">
-  <div class="cta-banner-bg" style="background-image:url('https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?w=2400&q=85')"></div>
+  <div class="cta-banner-bg" style="background-image:url('pics/bsf_uhr_footer.png')"></div>
   <div class="cta-banner-overlay"></div>
   <div class="cta-banner-content reveal">
-    <div class="section-tag" style="justify-content:center;color:var(--el)">Nur für Mandanten</div>
-    <h2>Die vollständige<br><em>Ausgabe.</em></h2>
-    <p>Detaillierte Sektor-Kommentare, Quellen, Methodik und Empfehlungen erhalten Mandanten nach dem Erstgespräch — kostenfrei und vertraulich.</p>
+    <div class="section-tag" style="justify-content:center;color:var(--el)" data-i18n="transaktionsuhr.ctaTag">Nur für Mandanten</div>
+    <h2 data-i18n="transaktionsuhr.ctaTitle">Die vollständige<br><em>Ausgabe.</em></h2>
+    <p data-i18n="transaktionsuhr.ctaDesc">Detaillierte Sektor-Kommentare, Quellen, Methodik und Empfehlungen erhalten Mandanten nach dem Erstgespräch — kostenfrei und vertraulich.</p>
     <div class="cta-banner-btns">
-      <button class="btn btn-gold" onclick="openBooking()">→ Ausgabe per Erstgespräch anfordern</button>
+      <button class="btn btn-gold" onclick="openBooking()" data-i18n="transaktionsuhr.ctaPrimary">→ Ausgabe per Erstgespräch anfordern</button>
     </div>
   </div>
 </section>
 
 <!-- Floating CTA -->
 <div class="fcta" id="fcta">
-  <button class="fcta-btn fcta-primary" onclick="openBooking()">→ Erstgespräch</button>
-  <a href="tel:+41417603616"><button class="fcta-btn fcta-phone">Anrufen</button></a>
+  <button data-i18n="auto.757a6af6" class="fcta-btn fcta-primary" onclick="openBooking()">→ Erstgespräch</button>
+  <a href="tel:+41417603616"><button data-i18n="auto.45a93dfb" class="fcta-btn fcta-phone">Anrufen</button></a>
 </div>
 
 <!-- Footer -->
 <footer>
   <div class="footer-top">
     <div class="footer-brand">
-      <a href="index.html" style="text-decoration:none"><div class="fb-logo">BSF <span>Consulting AG</span></div></a>
-      <p>Schweizer M&amp;A-Boutique mit Sitz in Zug. Diskret, strukturiert, mit Erfahrung seit 1998.</p>
-      <div style="font-size:.82rem;color:rgba(255,255,255,.32)">BSF Consulting AG<br>Gubelstrasse 12, CH-6300 Zug<br>+41 41 760 36 16<br>info@bsfconsulting.ch</div>
+      <a href="index.html" style="text-decoration:none"><div class="fb-logo">BSF CONSULTING AG</div></a>
+      <p data-i18n="footer.brandSub">Schweizer M&amp;A-Boutique mit Sitz in Zug. Diskret, strukturiert, mit Erfahrung seit 1998.</p>
+      <div data-i18n="auto.0f7c3c96" style="font-size:.82rem;color:rgba(255,255,255,.32)">BSF Consulting AG<br>Gubelstrasse 12, CH-6300 Zug<br>+41 41 760 36 16<br>info@bsfconsulting.ch</div>
     </div>
-    <div class="fc"><h4>Navigation</h4><ul>
-      <li><a href="index.html">Startseite</a></li>
-      <li><a href="stellplaetze.html">Mandate</a></li>
-      <li><a href="preise.html">Honorar</a></li>
-      <li><a href="freizeit.html">Methode</a></li>
-      <li><a href="transaktionsuhr.html">Transaktionsuhr</a></li>
-      <li><a href="kontakt.html">Kontakt</a></li>
+    <div class="fc"><h4 data-i18n="footer.navHead">Navigation</h4><ul>
+      <li><a href="index.html" data-i18n="nav.home">Startseite</a></li>
+      <li><a href="firma.html" data-i18n="nav.ueberuns">Über uns</a></li>
+      <li><a href="leistungen.html" data-i18n="nav.leistungen">Leistungen</a></li>
+      <li><a href="methode.html" data-i18n="nav.methode">Methode</a></li>
+      <li><a href="transaktionsuhr.html" data-i18n="nav.transaktionsuhr">Transaktionsuhr</a></li>
+      <li><a href="honorar.html" data-i18n="nav.honorar">Honorar</a></li>
+      <li><a href="kontakt.html" data-i18n="nav.kontakt">Kontakt</a></li>
     </ul></div>
-    <div class="fc"><h4>Leistungen</h4><ul>
-      <li><a href="stellplaetze.html">Unternehmensverkauf</a></li>
-      <li><a href="stellplaetze.html">Unternehmenskauf</a></li>
-      <li><a href="stellplaetze.html">Nachfolge</a></li>
-      <li><a href="stellplaetze.html">Restrukturierung</a></li>
+        <div class="fc"><h4 data-i18n="footer.leistungenHead">Leistungen</h4><ul>
+      <li data-i18n="auto.bfd85769"><a href="leistungen.html#verkauf">Unternehmensverkauf</a></li>
+      <li data-i18n="auto.dd5b3846"><a href="leistungen.html#kauf">Unternehmenskauf</a></li>
+      <li data-i18n="auto.310f1a2e"><a href="leistungen.html#nachfolge">Nachfolge</a></li>
+      <li data-i18n="auto.98db43a0"><a href="leistungen.html#mbo">MBO / MBI</a></li>
+      <li data-i18n="auto.99ac9563"><a href="leistungen.html#jv">Joint Ventures</a></li>
+      <li data-i18n="auto.60252187"><a href="leistungen.html#gruendung">Unternehmensgründungen</a></li>
     </ul></div>
-    <div class="fc"><h4>Rechtliches</h4><ul>
-      <li><a href="#">Impressum</a></li>
-      <li><a href="#">Datenschutz</a></li>
-      <li><a href="#">AGB</a></li>
+    <div class="fc"><h4 data-i18n="footer.rechtlichesHead">Rechtliches</h4><ul>
+      <li><a href="impressum.html" data-i18n="footer.impressum">Impressum</a></li>
+      <li><a href="datenschutz.html" data-i18n="footer.datenschutz">Datenschutz</a></li>
     </ul></div>
   </div>
   <div class="footer-bottom">
-    <div class="footer-copy">© 2026 BSF Consulting AG · Zug · Schweiz</div>
-    <div class="footer-legal"><a href="#">Impressum</a><a href="#">Datenschutz</a><a href="#">AGB</a></div>
+    <div class="footer-copy" data-i18n="footer.copyright">© 2026 BSF Consulting AG · Zug · Schweiz</div>
+    <div class="footer-legal"><a href="impressum.html" data-i18n="footer.impressum">Impressum</a><a href="datenschutz.html" data-i18n="footer.datenschutz">Datenschutz</a></div>
   </div>
 </footer>
 
 <script src="reveal.js"></script>
 <script src="booking.js"></script>
+<script src="i18n.js" defer></script>
 <script src="chatbot.js"></script>
 <script src="subpage.js"></script>
 <script>
-// === Transaktionsuhr — Sektor-Daten H1/2025 ===
-// position: Uhrzeiger-Stunde (1.0 = 1-Uhr-Position, 12.0 = 12-Uhr-Position oben)
-// Quadranten: 12–3 Uhr = HOCH · 3–6 Uhr = ABKÜHLUNG · 6–9 Uhr = TIEF · 9–12 Uhr = AUFSCHWUNG
+// === BSF-Transaktionsuhr — Ausgabe 2/2025 ===
+// Datenquelle: BSF Marktdaten 2/2025 (indiziert)
+//
+// position: Uhrzeiger-Stunde, 12-Uhr oben.
+//   12-3 Uhr  (Position 0..3)  = HOCH       (Verkäufermarkt)
+//   3-6 Uhr   (Position 3..6)  = ABKÜHLUNG  (war hoch, normalisiert)
+//   6-9 Uhr   (Position 6..9)  = TIEF       (Käufermarkt)
+//   9-12 Uhr  (Position 9..12) = AUFSCHWUNG (kommt aus Tief)
+//
+// TODO Freigabe Thilo: Quadrant-Zuordnung ist Vorschlag basierend auf
+// Indexwert + plausibler Tendenz. Bitte einzeln bestätigen oder
+// umordnen lassen. Insbesondere Pharma (Grenzfall HOCH/ABKÜHLUNG) und
+// Software (Grenzfall ABKÜHLUNG/AUFSCHWUNG).
+
 var TU_SECTORS = [
-  { code: 'IT', name: 'Technologie / IT-Services', position: 1.5, quadrant: 'hoch',
-    comment: 'Bewertungsmultiples auf Mehrjahreshoch. Strategische Käufer bezahlen Premiums von 15–25 %. <strong>Verkäufer-Markt</strong> — aber Vorsicht vor Übersättigung in spezifischen Sub-Sektoren wie SaaS-Tools.' },
-  { code: 'FN', name: 'Finanzdienstleistungen', position: 2.5, quadrant: 'hoch',
-    comment: 'Konsolidierungsdruck im Asset-Management hält an. Bewertungen für etablierte Häuser stabil hoch. <strong>Buyside-Aktivität</strong> von PE und strategischen Holdings überdurchschnittlich.' },
-  { code: 'HC', name: 'Gesundheitswesen', position: 3.5, quadrant: 'abkuehlung',
-    comment: 'Nach Mehrjahreshoch erste Abkühlung sichtbar. Medizintechnik-Bewertungen 8–12 % unter Vorjahr. Pharma-Services stabil. Empfehlung: <strong>jetzt strukturieren</strong>, in 6–12 Monaten handeln.' },
-  { code: 'CG', name: 'Konsumgüter / Handel', position: 4.5, quadrant: 'abkuehlung',
-    comment: 'Premium-Marken halten Bewertung, Mid-Market unter Druck. E-Commerce-Aufschlag reduziert sich. <strong>Strategisches Repositionieren</strong> vor Exit sinnvoll.' },
-  { code: 'UT', name: 'Versorger / Utilities', position: 5.5, quadrant: 'abkuehlung',
-    comment: 'Energiewende-Investments hoch bewertet, klassische Versorgung neutral. Regulatorische Klarheit treibt Bewertungen. <strong>Türkei</strong> spezifisch positiv.' },
-  { code: 'TC', name: 'Telecom / Connectivity', position: 6.5, quadrant: 'tief',
-    comment: 'Konsolidierungsphase, Bewertungen nahe Mehrjahrestief. <strong>Akquisitionsfenster</strong> für Käufer mit langfristigem Horizont offen — vor allem im Mobilfunk-Mittelstand.' },
-  { code: 'RE', name: 'Immobilien / Real Estate', position: 7.5, quadrant: 'tief',
-    comment: 'Zinsumfeld hat Bewertungen 20–30 % gedrückt. Selektive Käufer-Phase. Wohnimmobilien stabiler als Gewerbe. <strong>Türkische Immobilien</strong> spezifisch interessant.' },
-  { code: 'AT', name: 'Automotive / Transport', position: 8.5, quadrant: 'tief',
-    comment: 'Strukturbruch bei Verbrennern, EV-Wandel drückt klassische Zulieferer. Bewertungen am unteren Ende. <strong>Antizyklische Käufer</strong> mit Plattformstrategie aktiv.' },
-  { code: 'MA', name: 'Industriewerkstoffe', position: 9.5, quadrant: 'aufschwung',
-    comment: 'Nach Konjunkturdelle erste Erholung sichtbar. Bewertungen ziehen an. Speziallegierungen und Verbundwerkstoffe besonders gefragt. <strong>Verkaufsfenster öffnet sich.</strong>' },
-  { code: 'EN', name: 'Energie / Energiehandel', position: 10.5, quadrant: 'aufschwung',
-    comment: 'Erneuerbaren-Projekte hoch nachgefragt. Klassische Energie selektiv. <strong>Konsolidierung</strong> mittelständischer Energiedienstleister beschleunigt sich.' },
-  { code: 'TM', name: 'Tourismus / Hospitality', position: 11.2, quadrant: 'aufschwung',
-    comment: 'Nach Pandemiekorrektur kräftiger Aufschwung. Premium-Hospitality auf Allzeithoch. Mid-Market holt auf. <strong>Verkaufsfenster</strong> für gut positionierte Marken öffnet sich.' },
-  { code: 'MF', name: 'Industrie / Maschinenbau', position: 0.5, quadrant: 'aufschwung',
-    comment: 'Mittelstand-M&A im Maschinenbau zieht an. DACH-Konsolidierung mit türkischen Käufern wächst. Bewertungsmultiples erholen sich — <strong>noch nicht überhitzt</strong>.' },
+  // === HOCH (Verkäufermarkt) ===
+  { code: 'NA', name: 'Nahrung', index: 2.10, position: 0.5, quadrant: 'hoch',
+    comment: 'Index <strong>+2,10</strong> – Spitzenwert der aktuellen Ausgabe. Konsolidierungsdruck im Mittelstand, strategische Käufer zahlen Premiums. <strong>Verkäufermarkt.</strong>' },
+  { code: 'PH', name: 'Pharma', index: 1.40, position: 1.5, quadrant: 'hoch',
+    comment: 'Index <strong>+1,40</strong> – Bewertungen für etablierte Häuser stabil hoch; selektive Nachfrage nach Specialty Pharma.' },
+  { code: 'MB', name: 'Maschinenbau', index: 1.20, position: 2.5, quadrant: 'hoch',
+    comment: 'Index <strong>+1,20</strong> – Mittelstand-M&A im Maschinenbau zieht an, getrieben von DACH-Konsolidierung und internationalen Käufern.' },
+
+  // === ABKÜHLUNG (war hoch, normalisiert sich) ===
+  { code: 'GS', name: 'Gas, Strom, Wasser', index: 0.70, position: 3.5, quadrant: 'abkuehlung',
+    comment: 'Index <strong>+0,70</strong> – Energiewende-Investments bleiben hoch bewertet; klassische Versorgung normalisiert sich.' },
+  { code: 'CH', name: 'Chemie', index: 0.60, position: 4.5, quadrant: 'abkuehlung',
+    comment: 'Index <strong>+0,60</strong> – Specialty Chemicals stabil, Commodity-Geschäft unter Druck.' },
+  { code: 'SW', name: 'Software', index: 0.40, position: 5.5, quadrant: 'abkuehlung',
+    comment: 'Index <strong>+0,40</strong> – Tech-Bewertungen haben sich von den Spitzen 2021/22 abgekühlt; selektierte Sub-Sektoren weiter attraktiv.' },
+
+  // === TIEF (Käufermarkt – antizyklisches Fenster) ===
+  { code: 'TR', name: 'Transport & Logistik', index: -2.10, position: 6.3, quadrant: 'tief',
+    comment: 'Index <strong>-2,10</strong> – Schwächster Sektor der Ausgabe. <strong>Käufermarkt</strong>; antizyklische Plattform-Strategien aktiv.' },
+  { code: 'MD', name: 'Medien', index: -1.90, position: 7.0, quadrant: 'tief',
+    comment: 'Index <strong>-1,90</strong> – Strukturbruch in klassischen Medien drückt Bewertungen.' },
+  { code: 'FB', name: 'Fahrzeugbau', index: -1.90, position: 7.7, quadrant: 'tief',
+    comment: 'Index <strong>-1,90</strong> – EV-Transformation belastet Zulieferer; Konsolidierung erwartet.' },
+  { code: 'ET', name: 'Elektrotechnik', index: -1.50, position: 8.5, quadrant: 'tief',
+    comment: 'Index <strong>-1,50</strong> – Zyklische Schwäche; antizyklische Käufer mit Plattform-Strategie aktiv.' },
+
+  // === AUFSCHWUNG (kommt aus Tief, Bewertungen ziehen an) ===
+  { code: 'HA', name: 'Handel', index: -0.30, position: 9.3, quadrant: 'aufschwung',
+    comment: 'Index <strong>-0,30</strong> – Erste Stabilisierung nach mehreren schwachen Quartalen; Premium-Marken halten Bewertungen.' },
+  { code: 'TK', name: 'Telekommunikation', index: 0.00, position: 10.0, quadrant: 'aufschwung',
+    comment: 'Index <strong>0,00</strong> – Konsolidierungsphase neutralisiert sich. Akquisitionsfenster im Mobilfunk-Mittelstand offen.' },
+  { code: 'BH', name: 'Bau und Handwerk', index: 0.10, position: 10.7, quadrant: 'aufschwung',
+    comment: 'Index <strong>+0,10</strong> – Erste Erholungssignale; regionale Konsolidierung nimmt Fahrt auf.' },
+  { code: 'TX', name: 'Textilien', index: 0.40, position: 11.5, quadrant: 'aufschwung',
+    comment: 'Index <strong>+0,40</strong> – Premium-Marken ziehen Bewertungen; Mid-Market beginnt sich zu erholen.' },
 ];
 
 var QUADRANT_LABELS = {
@@ -456,18 +442,7 @@ window.addEventListener('scroll', function () {
   if (fcta) { fcta.style.opacity = '0'; fcta.style.transition = 'opacity .4s,transform .4s'; }
 })();
 
-// Scroll reveal
-(function () {
-  var obs = new IntersectionObserver(function (entries) {
-    entries.forEach(function (e) {
-      if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }
-    });
-  }, { threshold: .08, rootMargin: '0px 0px 60px 0px' });
-  document.querySelectorAll('.reveal').forEach(function (el, i) {
-    el.style.transitionDelay = (i % 4 * 0.08) + 's';
-    obs.observe(el);
-  });
-})();
+
 
 // Mobile menu
 document.getElementById('hamBtn').addEventListener('click', openMobMenu);
@@ -479,7 +454,7 @@ document.getElementById('mobMenuClose').addEventListener('click', closeMobMenu);
   if(!loader)return;
   if(sessionStorage.getItem('bsf_loader_shown')){loader.style.display='none';return;}
   sessionStorage.setItem('bsf_loader_shown','1');
-  var minDisplayTime=1500,maxDisplayTime=3500,startTime=Date.now(),hidden=false;
+  var minDisplayTime=1200,maxDisplayTime=3500,startTime=Date.now(),hidden=false;
   function hideLoader(){
     if(hidden)return;hidden=true;
     var remaining=Math.max(0,minDisplayTime-(Date.now()-startTime));

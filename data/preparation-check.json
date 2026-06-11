@@ -1,0 +1,112 @@
+{
+  "metadata": {
+    "stand": "Q4 2025",
+    "hinweis": "12-Punkte-Vorbereitungs-Check fuer Verkaeuferseite. Kein Bewertungs-Score, sondern Strukturierungs-Diagnostik. Quelle: BSF-Erfahrung, ueblicher Due-Diligence-Scope DACH Mid-Market."
+  },
+  "categories": {
+    "finanzen": {
+      "label": "Finanzielle Bereitschaft",
+      "items": [
+        {
+          "id": "audited_financials",
+          "question": "Liegen audited Financial Statements der letzten 3 Jahre vor?",
+          "weight": "kritisch",
+          "fix_effort": "3 bis 6 Monate wenn nicht vorhanden",
+          "buyer_perspective": "PE-Mid-Market und groessere Strategen verlangen das ohne Ausnahme. Family Offices akzeptieren Reviewed Financials."
+        },
+        {
+          "id": "ebitda_clean",
+          "question": "Ist das EBITDA bereinigt (Eigentuemer-Geh-Verguetung, einmalige Posten, nicht-betriebliche Aufwaende)?",
+          "weight": "kritisch",
+          "fix_effort": "1 bis 2 Monate mit Steuerberater",
+          "buyer_perspective": "Jeder ernsthafte Kaeufer macht Quality-of-Earnings; unbereinigtes EBITDA wird heruntergerechnet."
+        },
+        {
+          "id": "monthly_reporting",
+          "question": "Gibt es monatliche Management Accounts mit klaren KPIs?",
+          "weight": "hoch",
+          "fix_effort": "2 bis 4 Monate Aufbau",
+          "buyer_perspective": "Zeigt Steuerungs-Reife. Kaeufer-Vertrauen steigt mit Berichts-Disziplin."
+        }
+      ]
+    },
+    "organisation": {
+      "label": "Organisatorische Bereitschaft",
+      "items": [
+        {
+          "id": "owner_dependency",
+          "question": "Wie laeuft das Geschaeft 3 Monate ohne den Eigentuemer?",
+          "weight": "kritisch",
+          "fix_effort": "12 bis 24 Monate fuer echte Entkopplung",
+          "buyer_perspective": "Der staerkste Multiple-Druecker. Hohe Eigentuemer-Abhaengigkeit kostet 1 bis 2 EBITDA-Multiples oder fuehrt zu Earn-Out-Strukturen."
+        },
+        {
+          "id": "second_management",
+          "question": "Gibt es eine zweite Management-Ebene mit klaren Verantwortlichkeiten?",
+          "weight": "hoch",
+          "fix_effort": "6 bis 18 Monate",
+          "buyer_perspective": "Insbesondere PE-Mid-Market verlangt operatives Management das nach Closing weitermacht."
+        },
+        {
+          "id": "key_person_retention",
+          "question": "Sind Schluessel-Personen vertraglich gebunden (Non-Compete, Retention-Boni)?",
+          "weight": "mittel",
+          "fix_effort": "1 bis 3 Monate",
+          "buyer_perspective": "Verhindert Wertabfluss zwischen Signing und Closing."
+        }
+      ]
+    },
+    "kunden": {
+      "label": "Kundenbasis und Vertrieb",
+      "items": [
+        {
+          "id": "top3_concentration",
+          "question": "Welcher Anteil des Umsatzes entfaellt auf die Top-3-Kunden?",
+          "weight": "kritisch",
+          "fix_effort": "12 bis 36 Monate fuer Diversifikation",
+          "buyer_perspective": "Top-3 ueber 40 Prozent ist rote Flagge. Ueber 60 Prozent oft Deal-Breaker oder massiver Abschlag."
+        },
+        {
+          "id": "contract_terms",
+          "question": "Sind die Top-Kunden ueber Mehrjahresvertraege gebunden?",
+          "weight": "hoch",
+          "fix_effort": "6 bis 18 Monate Vertragsverhandlungen",
+          "buyer_perspective": "Recurring Revenue mit Vertragslaufzeit ist viel hoeher bewertet als Spot-Geschaeft."
+        },
+        {
+          "id": "customer_satisfaction",
+          "question": "Gibt es belastbare Kundenzufriedenheits-Daten (NPS, Retention-Rate)?",
+          "weight": "mittel",
+          "fix_effort": "3 bis 6 Monate",
+          "buyer_perspective": "Stuetzt die Wachstums-These und reduziert Due-Diligence-Risiko."
+        }
+      ]
+    },
+    "recht_ip": {
+      "label": "Recht, IP, Data Room",
+      "items": [
+        {
+          "id": "legal_clean",
+          "question": "Sind alle relevanten Vertraege (Mietvertraege, IP-Lizenzen, Schluessel-Lieferanten) sauber dokumentiert und uebertragbar?",
+          "weight": "hoch",
+          "fix_effort": "2 bis 6 Monate Rechtsbereinigung",
+          "buyer_perspective": "Saubere Vertragslage spart 4 bis 8 Wochen Due-Diligence-Zeit."
+        },
+        {
+          "id": "ip_protection",
+          "question": "Ist geistiges Eigentum (Patente, Marken, Software-Code) sauber im Unternehmen gehalten und geschuetzt?",
+          "weight": "hoch",
+          "fix_effort": "3 bis 9 Monate",
+          "buyer_perspective": "IP beim Eigentuemer privat oder in separater Holding ist ein Standard-Problem das vor Verkauf geloest werden muss."
+        },
+        {
+          "id": "data_room_readiness",
+          "question": "Existiert ein vorstrukturierter Daten-Raum mit den ueblichen Due-Diligence-Dokumenten?",
+          "weight": "mittel",
+          "fix_effort": "4 bis 8 Wochen mit M&A-Berater",
+          "buyer_perspective": "Verkuerzt Due-Diligence-Phase um 30 bis 50 Prozent. Signalisiert Professionalitaet."
+        }
+      ]
+    }
+  }
+}

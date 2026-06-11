@@ -1,0 +1,37 @@
+{
+  "metadata": {
+    "region": "DACH (CH/DE/AT)",
+    "source": "PwC H1 2025 · Dealsuite · Argos Index Q4 2025",
+    "currency": "EUR",
+    "size_class_definitions": {
+      "micro": "EBITDA < 0.5 Mio.",
+      "lower_mid": "EBITDA 0.5 bis 2 Mio.",
+      "mid": "EBITDA 2 bis 10 Mio.",
+      "upper_mid": "EBITDA ueber 10 Mio."
+    },
+    "discount_micro_vs_mid": -0.25,
+    "premium_upper_mid_vs_mid": 0.15,
+    "growth_adjustment": {
+      "declining": -0.20,
+      "stable": 0,
+      "growing": 0.10,
+      "high_growth": 0.25
+    }
+  },
+  "sectors": {
+    "maschinenbau":   { "name": "Maschinen- & Anlagenbau",    "low": 5.5, "median": 6.8, "high": 8.5,  "note": "DACH-Kernkompetenz; Premium fuer Spezialisten und Marktfuehrer." },
+    "pharma":         { "name": "Pharma & Healthcare",         "low": 6.5, "median": 8.2, "high": 10.5, "note": "Hohe Multiples wegen defensiver Cashflows und demografischem Rueckenwind." },
+    "chemie":         { "name": "Chemie & Spezialchemie",      "low": 5.0, "median": 6.5, "high": 8.0,  "note": "Energiekosten belasten Multiples; Spezialitaeten hoeher." },
+    "energie":        { "name": "Energie & Versorgung",        "low": 6.0, "median": 7.5, "high": 9.5,  "note": "Stark durch ECB-Zinssenkungen 2025 und Infrastruktur-Investitionen beguenstigt." },
+    "bau":            { "name": "Bau & Baustoffe",             "low": 4.0, "median": 5.5, "high": 7.0,  "note": "Niedrigste Range; zyklisch und kapitalintensiv." },
+    "nahrung":        { "name": "Nahrung & Genuss",            "low": 6.0, "median": 7.8, "high": 9.5,  "note": "Defensiv; Markenwert treibt Multiples. Aktueller Verkaeufermarkt." },
+    "konsumgueter":   { "name": "Konsumgueter & Lifestyle",    "low": 5.5, "median": 7.0, "high": 9.0,  "note": "Markenkraft und Online-Praesenz entscheidend." },
+    "logistik":       { "name": "Logistik & Transport",        "low": 4.5, "median": 6.0, "high": 7.5,  "note": "Margen-getrieben; Spezial-Logistik am oberen Ende." },
+    "software":       { "name": "Software & SaaS",             "low": 6.5, "median": 8.5, "high": 12.0, "note": "Multiples 2025 unter Druck durch AI-Disruption; ARR und Retention zaehlen." },
+    "elektrotechnik": { "name": "Elektrotechnik & Elektronik", "low": 5.5, "median": 7.0, "high": 9.0,  "note": "Profitiert von Energiewende und Automation." },
+    "fahrzeugbau":    { "name": "Fahrzeugbau & Zulieferer",    "low": 3.5, "median": 5.0, "high": 7.0,  "note": "Strukturwandel Verbrenner zu E; Substanz-Multiples niedrig, E-Spezialisten hoeher." },
+    "textil":         { "name": "Textil & Bekleidung",         "low": 4.0, "median": 5.5, "high": 7.5,  "note": "Markenwert dominiert; Massenware niedrig, Premium-Marken oben." },
+    "medien_telekom": { "name": "Medien & Telekom",            "low": 5.5, "median": 7.5, "high": 10.0, "note": "Konsolidierungsphase; Content-Plattformen am oberen Ende." },
+    "handel":         { "name": "Handel & Distribution",       "low": 4.5, "median": 6.0, "high": 7.5,  "note": "Online-Anteil und Margen-Qualitaet entscheidend." }
+  }
+}
