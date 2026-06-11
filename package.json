@@ -4,7 +4,7 @@
   "description": "Backend für die Website der BSF Consulting AG",
   "main": "server.js",
   "scripts": {
-    "start": "node --no-warnings server.js",
+    "start": "node server.js",
     "dev": "node --no-warnings --watch server.js",
     "i18n": "node scripts/i18n.mjs --apply && node scripts/i18n.mjs --verify",
     "i18n:scan": "node scripts/i18n.mjs --scan",
