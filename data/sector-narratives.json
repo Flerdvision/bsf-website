@@ -1,0 +1,35 @@
+{
+  "metadata": {
+    "stand": "Q4 2025",
+    "hinweis": "Sektor-Narrative fuer DACH-Raum. 5 bis 7 Saetze pro Sektor. Quelle: BSF-Erfahrung, PwC M&A Trends, Dealsuite, oeffentliche Marktberichte. Aktualisierung quartalsweise durch Patron."
+  },
+  "sectors": {
+    "maschinenbau": "Klassische DACH-Kernkompetenz mit aktuell guter Multiple-Aufnahme im Verkaeufermarkt. Strategische Kaeufer aus Europa und seltener aus Asien zahlen Premium fuer Spezialmaschinen-Hersteller und Marktfuehrer in Nischen. PE-Mid-Market sehr aktiv mit Buy-and-Build-Strategien. Hauptthema fuer Verkaeufer: Eigentuemer-Abhaengigkeit aufloesen und zweite Management-Ebene etablieren. Familienunternehmen mit Nachfolge-Druck dominieren die Verkaeuferseite. Prozess-Laenge typisch 6 bis 9 Monate.",
+
+    "pharma": "Stabil hoher Multiple-Korridor durch defensive Cashflows und demografischen Rueckenwind. Strategische Konsolidierer aus EU dominieren bei groesseren Mandaten, PE bei mittelgrossen Specialty-Pharma- und Zulieferer-Deals. Regulatorische Komplexitaet macht Due Diligence aufwaendig - typische Prozess-Laenge 9 bis 12 Monate. Hauptwerttreiber: Pipeline-Reife, Zulassungs-Status, Patent-Restlaufzeit. Family Offices selektiv aktiv bei profitablen Generika- oder Wirkstoff-Herstellern.",
+
+    "chemie": "Multiples unter Druck durch hohe Energiekosten und Umweltauflagen. Spezialchemie (Performance Chemicals, Custom Synthesis) deutlich besser bewertet als Commodity-Chemie. Kaeuferseite vorsichtig - Due-Diligence-Themen wie ESG, REACH-Compliance, Site-Liabilities werden tief geprueft. Verkaeufer sollten Energiekosten-Hedging und Substitutions-Strategien vor Prozess-Start klar haben. PE selektiv, strategische Kaeufer dominieren.",
+
+    "energie": "Starker Aufschwung durch ECB-Zinssenkungen 2025 und EU-Infrastruktur-Programme. Erneuerbare-Energien-Entwickler, Energieeffizienz-Anbieter und Smart-Grid-Spezialisten besonders gefragt. PE-Infrastruktur-Fonds sehr aktiv, strategische Versorger konsolidieren. Prozess-Laenge oft kuerzer (4 bis 7 Monate) wenn Pipeline klar ist. Hauptthema: regulatorische Klarheit ueber Foerder-Zusagen.",
+
+    "bau": "Niedrigste Multiple-Range im DACH-Mid-Market durch Zyklizitaet und Kapitalintensitaet. Aufschwung seit H2 2025 dank Infrastruktur-Investitionen, aber Multiples noch nicht zurueck auf Pre-2023-Niveau. Spezialisierte Subsektoren (Tiefbau, Energietechnik im Bau, modulare Bauweise) besser bewertet als Generalunternehmer. Family Offices dominieren regional, PE selektiv bei Plattform-Buys.",
+
+    "nahrung": "Verkaeufermarkt mit hoechstem Zyklus-Stand unter den 14 Sektoren. Defensive Geschaeftsmodelle, Markenwert und Premium-Positionierung treiben Multiples. Strategische Kaeufer aus EU und Tuerkei sehr aktiv, PE bei skalierbaren Brands. Eigenmarken-Herstellung und Bio/Premium-Segmente besonders gefragt. Prozess-Laenge typisch 5 bis 8 Monate.",
+
+    "konsumgueter": "Multiples unter Druck durch Verbraucherzurueckhaltung und steigende Inputkosten. Online-Anteil und Markenkraft sind die entscheidenden Werthebel. PE selektiv, strategische Konsolidierer dominieren. Verkaeufer mit klarer Direct-to-Consumer-Story und Markenwert werden weiterhin gut aufgenommen. Family Offices bei Premium-Marken mit Patron-Charakter aktiv.",
+
+    "logistik": "Aktuell schwacher Markt mit Kaeufer-Vorteil. Spezial-Logistik (Pharma, Hightech, Kuehlkette, Schwergut) deutlich besser bewertet als Allgemein-Spedition. Strategische Konsolidierer aktiv, PE zurueckhaltend wegen Margen-Druck. Prozess-Laenge derzeit 8 bis 12 Monate. Verkaeufer brauchen klare Differenzierung und Margen-Story.",
+
+    "software": "Multiples 2025 unter Druck durch AI-Disruption und KI-getriebene Margen-Erwartungen. ARR, Net Revenue Retention und Customer Lifetime Value sind die entscheidenden KPIs. PE-Tech-Fonds weiterhin aktiv, aber selektiver. Strategische Tech-Konsolidierer fokussieren auf vertikale Marktfuehrer. Verkaeufer brauchen belastbare Wachstums- und Retention-Daten ueber 24 Monate.",
+
+    "elektrotechnik": "Profitiert stark von Energiewende, E-Mobilitaet und Industrie-Automation. Spezialisten fuer Leistungselektronik, Sensorik und Antriebstechnik besonders gefragt. Strategische Kaeufer aus EU und Asien sehr aktiv. PE-Mid-Market bei Plattform-Buys engagiert. Prozess-Laenge 6 bis 9 Monate. Hauptthema fuer Verkaeufer: Technologie-Tiefe vs. Skalierbarkeit darstellen.",
+
+    "fahrzeugbau": "Niedrigste Multiples im DACH-Mid-Market durch Strukturwandel Verbrenner zu Elektromobilitaet. Substanz-Multiples gedrueckt, E-Spezialisten und Software-fokussierte Zulieferer deutlich besser. Kaeuferseite vorsichtig, strategische Konsolidierer aktiv bei E-Komponenten. PE selektiv bei Buy-and-Build im Aftermarket. Verkaeufer brauchen klare E-Transformations-Story.",
+
+    "textil": "Kaeufermarkt mit langen Prozessen. Premium-Marken und Spezial-Textilien (Technik-Textilien, Funktions-Bekleidung) deutlich besser als Massenware. PE zurueckhaltend, Family Offices bei Premium-Marken aktiv. Strategische Konsolidierer dominieren bei Mass-Market. Prozess-Laenge derzeit 8 bis 14 Monate.",
+
+    "medien_telekom": "Konsolidierungsphase mit gemischtem Bild. Content-Plattformen und B2B-Telekom-Spezialisten besser bewertet als klassische Medien. PE-Tech-Fonds bei skalierbaren Plattformen aktiv. Strategische Kaeufer treiben Konsolidierung im B2B-Telekom. Prozess-Laenge 6 bis 10 Monate. Hauptthema: Wachstums- vs. Bestandsstory.",
+
+    "handel": "Multiples unter Druck durch E-Commerce-Disruption und Verbraucherzurueckhaltung. Online-Anteil und Margen-Qualitaet sind die entscheidenden Werthebel. Strategische Konsolidierer dominieren, PE selektiv bei E-Commerce-Reinrassigen und vertikalen Spezialisten. Family Offices bei Patron-gefuehrten Premium-Haendlern. Prozess-Laenge 7 bis 11 Monate."
+  }
+}

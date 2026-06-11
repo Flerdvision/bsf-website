@@ -3,50 +3,44 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="BSF Consulting AG – Schweizer M&amp;A-Beratungshaus in Zug. Wir begleiten Unternehmer bei Verkauf, Kauf und Nachfolge. Diskret, strukturiert, seit 1998.">
-<title>BSF Consulting AG – M&amp;A-Beratung in Zug</title>
+<meta data-i18n-attr="content:auto.22641f02" name="description" content="BSF Consulting AG – Schweizer M&amp;A-Boutique in Zug. Wir begleiten Unternehmer bei Verkauf, Kauf und Nachfolge. Diskret, strukturiert, seit 1998.">
+<title data-i18n="auto.7bc4dcc7">BSF Consulting AG – M&amp;A-Beratung in Zug</title>
 <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
+<link rel="alternate" hreflang="de" href="https://www.bsfconsulting.ch/" />
+<link rel="alternate" hreflang="en" href="https://www.bsfconsulting.ch/en/" />
+<link rel="alternate" hreflang="tr" href="https://www.bsfconsulting.ch/tr/" />
 <script>
 /* Critical UI – defined early so onclick attributes always work */
 function openMobMenu(){var m=document.getElementById('mobMenu'),h=document.getElementById('hamBtn');if(m)m.classList.add('open');if(h)h.classList.add('open');document.body.style.overflow='hidden';}
 function closeMobMenu(){var m=document.getElementById('mobMenu'),h=document.getElementById('hamBtn');if(m)m.classList.remove('open');if(h)h.classList.remove('open');document.body.style.overflow='';}
 window.openBooking=function(){var m=document.getElementById('bookingModal');if(m){m.classList.add('open');document.body.style.overflow='hidden';}else{document.addEventListener('DOMContentLoaded',function(){var m2=document.getElementById('bookingModal');if(m2){m2.classList.add('open');document.body.style.overflow='hidden';}});}};
 </script>
-<style>
-.reveal{opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s ease}
-.reveal.visible{opacity:1!important;transform:none!important}
-.reveal.from-left{transform:translateX(-28px)}
-.reveal.from-right{transform:translateX(28px)}
-.reveal.from-left.visible,.reveal.from-right.visible{transform:none!important}
-.fb-logo{font-family:'Lora',serif;font-size:1.3rem;font-weight:700;color:#fff}
-.fb-logo span{color:var(--el);font-style:italic}
-.stat-label{font-size:.7rem;color:rgba(255,255,255,.5);text-transform:uppercase;letter-spacing:.1em;margin-top:4px}
-.hf-label{font-size:.62rem;text-transform:uppercase;letter-spacing:.12em;color:rgba(255,255,255,.55);margin-bottom:5px;font-weight:700}
-.hf-val{font-family:'Lora',serif;font-size:1.15rem;color:#fff;font-weight:600}
-.hf-sub{font-size:.76rem;color:rgba(255,255,255,.5);margin-top:3px}
-@media(max-width:620px){.hbadge-date{display:none}}
-@media(max-width:1024px){.hero-float{display:none}}
-</style>
 </head>
 <body>
 <div id="scroll-progress"></div>
 <div id="page-loader">
-  <div class="ld-logo">BSF <span>Consulting AG</span></div>
-  <div class="ld-tagline">Swiss M&amp;A · Zug · seit 1998</div>
+  <div class="ld-logo">BSF CONSULTING AG</div>
+  <div data-i18n="auto.ad73eeed" class="ld-tagline">Swiss M&amp;A · Zug · seit 1998</div>
   <div class="ld-bar"><div class="ld-fill"></div></div>
 </div>
 
 <!-- Mobile Menu -->
 <div class="mob-menu" id="mobMenu">
   <button class="mob-menu-close" id="mobMenuClose">✕</button>
-  <a href="index.html" onclick="closeMobMenu()">Startseite</a>
-  <a href="stellplaetze.html" onclick="closeMobMenu()">Mandate</a>
-  <a href="preise.html" onclick="closeMobMenu()">Honorar</a>
-  <a href="freizeit.html" onclick="closeMobMenu()">Methode</a>
-  <a href="transaktionsuhr.html" onclick="closeMobMenu()">Transaktionsuhr</a>
-  <a href="kontakt.html" onclick="closeMobMenu()">Kontakt</a>
-  <a href="#" onclick="closeMobMenu();openBooking();return false;" style="color:var(--el)">→ Erstgespräch</a>
+  <a href="index.html" onclick="closeMobMenu()" data-i18n="nav.home">Startseite</a>
+  <a href="firma.html" onclick="closeMobMenu()" data-i18n="nav.ueberuns">Über uns</a>
+  <a href="leistungen.html" onclick="closeMobMenu()" data-i18n="nav.leistungen">Leistungen</a>
+  <a href="methode.html" onclick="closeMobMenu()" data-i18n="nav.methode">Methode</a>
+  <a href="transaktionsuhr.html" onclick="closeMobMenu()" data-i18n="nav.transaktionsuhr">Transaktionsuhr</a>
+  <a href="honorar.html" onclick="closeMobMenu()" data-i18n="nav.honorar">Honorar</a>
+  <a href="kontakt.html" onclick="closeMobMenu()" data-i18n="nav.kontakt">Kontakt</a>
+  <a href="#" onclick="closeMobMenu();openBooking();return false;" data-i18n="nav.erstgespraech">→ Erstgespräch</a>
+  <div data-i18n-attr="aria-label:auto.ebe7eb7a" data-i18n="auto.660bc503" class="lang-switch in-mobmenu" role="navigation" aria-label="Sprache wählen">
+    <a data-lang-switch="de">DE</a>
+    <a data-lang-switch="en">EN</a>
+    <a data-lang-switch="tr">TR</a>
+  </div>
 </div>
 
 <!-- Nav -->
@@ -54,19 +48,25 @@ window.openBooking=function(){var m=document.getElementById('bookingModal');if(m
   <div class="nav-inner">
     <a class="nav-logo" href="index.html" style="text-decoration:none">
       <!-- TODO: BSF-Logo einfügen sobald geliefert -->
-      <span class="nav-logo-text">BSF <span>Consulting AG</span></span>
+      <span class="nav-logo-text">BSF Consulting</span>
     </a>
-    <ul class="nav-links">
-      <li><a href="index.html" class="nav-active">Startseite</a></li>
-      <li><a href="stellplaetze.html">Mandate</a></li>
-      <li><a href="preise.html">Honorar</a></li>
-      <li><a href="freizeit.html">Methode</a></li>
-      <li><a href="transaktionsuhr.html">Transaktionsuhr</a></li>
-      <li><a href="kontakt.html">Kontakt</a></li>
-      <li><a href="#" onclick="openBooking();return false;" class="nav-book">→ Erstgespräch</a></li>
+        <ul class="nav-links">
+      <li><a href="index.html" class="nav-active" data-i18n="nav.home">Startseite</a></li>
+      <li><a href="firma.html" data-i18n="nav.ueberuns">Über uns</a></li>
+      <li><a href="leistungen.html" data-i18n="nav.leistungen">Leistungen</a></li>
+      <li><a href="methode.html" data-i18n="nav.methode">Methode</a></li>
+      <li><a href="transaktionsuhr.html" data-i18n="nav.transaktionsuhr">Transaktionsuhr</a></li>
+      <li><a href="honorar.html" data-i18n="nav.honorar">Honorar</a></li>
+      <li><a href="kontakt.html" data-i18n="nav.kontakt">Kontakt</a></li>
+      <li><a href="#" onclick="openBooking();return false;" class="nav-book" data-i18n="nav.erstgespraech">→ Erstgespräch</a></li>
     </ul>
     <div class="nav-right">
-      <div class="nav-badge" id="nav-season-badge">CH · Zug · seit 1998</div>
+      <div class="nav-badge" id="nav-season-badge" data-i18n="nav.badge">CH · Zug · seit 1998</div>
+      <div data-i18n-attr="aria-label:auto.ebe7eb7a" data-i18n="auto.35222110" class="lang-switch" role="navigation" aria-label="Sprache wählen">
+        <a data-lang-switch="de">DE</a>
+        <a data-lang-switch="en">EN</a>
+        <a data-lang-switch="tr">TR</a>
+      </div>
       <button class="ham-btn" id="hamBtn" onclick="openMobMenu()"><span></span><span></span><span></span></button>
     </div>
   </div>
@@ -74,245 +74,95 @@ window.openBooking=function(){var m=document.getElementById('bookingModal');if(m
 
 <!-- ═══════════════ HERO ═══════════════ -->
 <section class="hero">
-  <div class="hero-bg" style="background-image:url('https://images.unsplash.com/photo-1486325212027-8081e485255e?w=2400&q=85')"></div>
-  <div class="hero-overlay" style="background:linear-gradient(135deg,rgba(10,18,40,.68) 0%,rgba(10,18,40,.45) 55%,rgba(10,18,40,.30) 100%)"></div>
+  <div class="hero-bg" style="background-image:url('pics/bsf_home_header.png')"></div>
+  <div class="hero-overlay"></div>
   <div class="hero-content">
-    <span class="hero-eyebrow">Swiss M&amp;A · Zug · seit 1998</span>
-    <h1>Ihr Lebenswerk verdient<br><em>den richtigen Käufer.</em></h1>
-    <p class="hero-desc">Seit 1998 finden wir für Schweizer Inhaber den passenden Käufer — diskret, strukturiert, mit verifizierten Interessenten aus DACH und der Türkei. Über 200 Mandate.</p>
+    <span class="hero-eyebrow" data-i18n="hero.eyebrow">BSF CONSULTING AG · Zug · seit 1998</span>
+    <h1 data-i18n="hero.title">Wir verkaufen Unternehmen, die <em>nicht</em> öffentlich zum Verkauf stehen.</h1>
+    <p class="hero-desc" data-i18n="hero.desc">Vertrauliche M&amp;A-Beratung für inhabergeführte Mittelständler — Verkauf, Kauf, Nachfolge. <strong>Eine Seite pro Mandat, geführt auf Patron-Niveau.</strong> DACH, Türkei und international.</p>
     <div class="hero-actions">
-      <a href="#" onclick="openBooking();return false;" class="btn btn-green">→ Kostenfreies Erstgespräch</a>
-      <a href="stellplaetze.html" class="btn btn-outline">Mandate ansehen</a>
+      <a href="#" onclick="openBooking();return false;" class="btn btn-gold" data-i18n="hero.ctaPrimary">→ Vertrauliches Erstgespräch</a>
+      <a href="transaktionsuhr.html" class="btn btn-outline" data-i18n="hero.ctaSecondary">Transaktionsuhr ansehen</a>
+    </div>
+    <div class="hero-statbar">
+      <a class="hero-stat" href="firma.html">
+        <span class="hero-stat-num" data-i18n="hero.stat1Num">Seit 1998</span>
+        <span class="hero-stat-lbl" data-i18n="hero.stat1Label">Inhabergeführt</span>
+      </a>
+      <a class="hero-stat" href="honorar.html">
+        <span class="hero-stat-num" data-i18n="hero.stat2Num">5–200 Mio. €</span>
+        <span class="hero-stat-lbl" data-i18n="hero.stat2Label">Mandatsgrösse (Enterprise Value)</span>
+      </a>
+      <a class="hero-stat" href="leistungen.html">
+        <span class="hero-stat-num" data-i18n="hero.stat3Num">DACH & Türkei</span>
+        <span class="hero-stat-lbl" data-i18n="hero.stat3Label">Schwerpunktmärkte · international</span>
+      </a>
+      <a class="hero-stat" href="transaktionsuhr.html">
+        <span class="hero-stat-num" data-i18n="hero.stat4Num">14 Sektoren</span>
+        <span class="hero-stat-lbl" data-i18n="hero.stat4Label">Eigene Transaktionsuhr, quartalsweise</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ SUB-HERO ═══════════════ -->
+<section class="at-a-glance section section--soft">
+  <div class="aag-inner">
+    <div class="aag-eyebrow" data-i18n="glance.eyebrow">Auf einen Blick</div>
+    <div class="aag-grid">
+      <div class="aag-cell">
+        <div class="aag-k" data-i18n="glance.whoK">Wer</div>
+        <div class="aag-v"><span class="aag-vt" data-i18n="glance.whoV">BSF CONSULTING AG</span><span data-i18n="glance.whoSub">Zug · seit 1998 · inhabergeführt</span></div>
+      </div>
+      <div class="aag-cell">
+        <div class="aag-k" data-i18n="glance.whatK">Was</div>
+        <div class="aag-v"><span class="aag-vt" data-i18n="glance.whatV">M&amp;A</span><span data-i18n="glance.whatSub">Verkauf · Kauf · Nachfolge · Restrukturierung · Joint Ventures</span></div>
+      </div>
+      <div class="aag-cell">
+        <div class="aag-k" data-i18n="glance.forK">Für wen</div>
+        <div class="aag-v"><span class="aag-vt" data-i18n="glance.forV">Inhaber &amp; Familienunternehmen</span><span data-i18n="glance.forSub">mittelständisch · grenzüberschreitend</span></div>
+      </div>
+      <div class="aag-cell">
+        <div class="aag-k" data-i18n="glance.whyK">Warum</div>
+        <div class="aag-v"><span class="aag-vt" data-i18n="glance.whyV">Eine Seite pro Mandat</span><span data-i18n="glance.whySub">internationales Netzwerk · eigene Transaktionsuhr</span></div>
+      </div>
+      <div class="aag-cell">
+        <div class="aag-k" data-i18n="glance.nextK">Nächster Schritt</div>
+        <div class="aag-v"><a href="#" onclick="openBooking();return false;" data-i18n="glance.nextV">Erstgespräch →</a><span data-i18n="glance.nextSub">vertraulich · ohne Honorar</span></div>
+      </div>
     </div>
   </div>
 </section>
 
 <!-- ═══════════════ TICKER ═══════════════ -->
 <div class="ticker"><div class="ticker-track">
-  <span class="ticker-item"><span class="tdot"></span>Diskret seit 1998</span>
-  <span class="ticker-item"><span class="tdot"></span>200+ Mandate begleitet</span>
-  <span class="ticker-item"><span class="tdot"></span>Sitz in Zug · CH</span>
-  <span class="ticker-item"><span class="tdot"></span>DACH &amp; Türkei</span>
-  <span class="ticker-item"><span class="tdot"></span>Exklusive Mandatsbetreuung</span>
-  <span class="ticker-item"><span class="tdot"></span>Inhabergeführt · Eine Seite · Ein Mandat</span>
-  <span class="ticker-item"><span class="tdot"></span>Erstgespräch ohne Honorar</span>
-  <span class="ticker-item"><span class="tdot"></span>Diskret seit 1998</span>
-  <span class="ticker-item"><span class="tdot"></span>200+ Mandate begleitet</span>
-  <span class="ticker-item"><span class="tdot"></span>Sitz in Zug · CH</span>
-  <span class="ticker-item"><span class="tdot"></span>DACH &amp; Türkei</span>
-  <span class="ticker-item"><span class="tdot"></span>Exklusive Mandatsbetreuung</span>
-  <span class="ticker-item"><span class="tdot"></span>Inhabergeführt · Eine Seite · Ein Mandat</span>
-  <span class="ticker-item"><span class="tdot"></span>Erstgespräch ohne Honorar</span>
+  <span class="ticker-item"><span class="tdot"></span><span data-i18n="ticker[0]">Inhabergeführt seit 1998</span></span>
+  <span class="ticker-item"><span class="tdot"></span><span data-i18n="ticker[1]">Sitz in Zug · Schweiz</span></span>
+  <span class="ticker-item"><span class="tdot"></span><span data-i18n="ticker[2]">DACH · Türkei · international</span></span>
+  <span class="ticker-item"><span class="tdot"></span><span data-i18n="ticker[3]">BSF-Transaktionsuhr 2/2025</span></span>
+  <span class="ticker-item"><span class="tdot"></span><span data-i18n="ticker[4]">Eine Seite pro Mandat</span></span>
+  <span class="ticker-item"><span class="tdot"></span><span data-i18n="ticker[5]">Rund 30 Jahre M&amp;A-Erfahrung</span></span>
+  <span class="ticker-item"><span class="tdot"></span><span data-i18n="ticker[6]">Erstgespräch ohne Honorar</span></span>
+  <span class="ticker-item"><span class="tdot"></span><span data-i18n="ticker[0]">Inhabergeführt seit 1998</span></span>
+  <span class="ticker-item"><span class="tdot"></span><span data-i18n="ticker[1]">Sitz in Zug · Schweiz</span></span>
+  <span class="ticker-item"><span class="tdot"></span><span data-i18n="ticker[2]">DACH · Türkei · international</span></span>
+  <span class="ticker-item"><span class="tdot"></span><span data-i18n="ticker[3]">BSF-Transaktionsuhr 2/2025</span></span>
+  <span class="ticker-item"><span class="tdot"></span><span data-i18n="ticker[4]">Eine Seite pro Mandat</span></span>
+  <span class="ticker-item"><span class="tdot"></span><span data-i18n="ticker[5]">Rund 30 Jahre M&amp;A-Erfahrung</span></span>
+  <span class="ticker-item"><span class="tdot"></span><span data-i18n="ticker[6]">Erstgespräch ohne Honorar</span></span>
 </div></div>
 
-<!-- ═══════════════ FAMILY USP ═══════════════ -->
-<section class="fam-usp">
-  <div class="fam-usp-inner">
-    <div class="fam-usp-header">
-      <div class="section-tag reveal">Unsere Mandate</div>
-      <h2 class="section-title reveal">Was wir begleiten,<br>begleiten wir vollständig</h2>
-      <p class="section-sub reveal" style="margin:0 auto">Vier Mandatsfelder, ein Anspruch: vollständige Begleitung vom ersten Gespräch bis zum Closing und darüber hinaus.</p>
-    </div>
-    <div class="fam-grid">
-      <!-- TODO: BSF-Bild — Sulmsee-Foto temporär drin, später ersetzen -->
-      <div class="fam-card reveal">
-        <div class="fam-card-bg" style="background-image:url('https://images.unsplash.com/photo-1517502884422-41eaead166d4?w=1200&q=85');background-position:center 40%"></div>
-        <div class="fam-card-overlay"></div>
-        <div class="fam-card-body">
-          <div class="fam-card-title">Verkauf &amp; Kauf</div>
-          <div class="fam-card-sub">Begleitung beim Erst- bis zum Closing-Gespräch — mit verifizierten Käufern aus DACH und der Türkei</div>
-        </div>
-      </div>
-      <!-- TODO: BSF-Bild — Sulmsee-Foto temporär drin, später ersetzen -->
-      <div class="fam-card reveal">
-        <div class="fam-card-bg" style="background-image:url('https://images.unsplash.com/photo-1577495508048-b635879837f1?w=1200&q=85');background-position:center 60%"></div>
-        <div class="fam-card-overlay"></div>
-        <div class="fam-card-body">
-          <div class="fam-card-title">Nachfolgeregelung</div>
-          <div class="fam-card-sub">Generationswechsel in Familienunternehmen — strukturiert, diskret, mit Blick auf Werte und Kontinuität</div>
-        </div>
-      </div>
-      <!-- TODO: BSF-Bild — Sulmsee-Foto temporär drin, später ersetzen -->
-      <div class="fam-card reveal">
-        <div class="fam-card-bg" style="background-image:url('https://images.unsplash.com/photo-1497366216548-37526070297c?w=1200&q=85');background-position:center 30%"></div>
-        <div class="fam-card-overlay"></div>
-        <div class="fam-card-body">
-          <div class="fam-card-title">Restrukturierung</div>
-          <div class="fam-card-sub">Strukturen die heute funktionieren und morgen tragen — operative und gesellschaftsrechtliche Neuausrichtung</div>
-        </div>
-      </div>
-      <!-- TODO: BSF-Bild — Sulmsee-Foto temporär drin, später ersetzen -->
-      <div class="fam-card reveal">
-        <div class="fam-card-bg" style="background-image:url('https://images.unsplash.com/photo-1486325212027-8081e485255e?w=1200&q=85');background-position:center 50%"></div>
-        <div class="fam-card-overlay"></div>
-        <div class="fam-card-body">
-          <div class="fam-card-title">Joint Ventures</div>
-          <div class="fam-card-sub">Allianzen die beide Seiten gewinnen lassen — von der Struktur bis zur Vereinbarung</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════ ABOUT ═══════════════ -->
-<section class="about-v2">
-  <div class="about-v2-inner">
-    <!-- TODO: BSF-Bilder — Sulmsee-Fotos temporär drin, später ersetzen -->
-    <div class="about-v2-imgs reveal from-left">
-      <div class="av2-main"><img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=900&q=80" alt="Edler Konferenzraum BSF Consulting" loading="lazy"></div>
-      <div class="av2-sm"><img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=500&q=75" alt="Füller auf Vertragsdokument" loading="lazy"></div>
-      <div class="av2-sm"><img src="https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?w=500&q=75" alt="Manhattan Skyline bei Nacht" loading="lazy"></div>
-    </div>
-    <div class="about-v2-text">
-      <div class="section-tag reveal">Wer wir sind</div>
-      <h2 class="section-title reveal">Ein Haus.<br>Keine <em style="color:var(--e)">Investmentbank.</em></h2>
-      <p class="section-sub reveal">Wir sind eine inhabergeführte M&amp;A-Boutique mit Sitz in Zug. Seit 1998 begleiten wir Unternehmer durch die kritischen Übergänge ihrer Geschichte — Verkauf, Kauf, Nachfolge, Restrukturierung. Was uns von grösseren Häusern unterscheidet, ist nicht das Mandatsvolumen — es ist die Aufmerksamkeit, die wir jedem einzelnen Mandat geben.</p>
-      <div class="highlight-box reveal">
-        <p>„Was uns anvertraut wird, bleibt anvertraut. Jedes Mandat beginnt mit einem NDA — auch das Erstgespräch."</p>
-      </div>
-      <div class="feat-pills reveal">
-        <span class="feat-pill"><span class="feat-pill-icon">🤝</span>Inhabergeführt</span>
-        <span class="feat-pill"><span class="feat-pill-icon">🔒</span>NDA ab erstem Gespräch</span>
-        <span class="feat-pill"><span class="feat-pill-icon">🌍</span>DACH &amp; Türkei</span>
-        <span class="feat-pill"><span class="feat-pill-icon">📊</span>Transaktionsuhr</span>
-        <span class="feat-pill"><span class="feat-pill-icon">🏛</span>Sitz Zug · CH</span>
-        <span class="feat-pill"><span class="feat-pill-icon">⚖</span>Keine Interessenskonflikte</span>
-        <span class="feat-pill"><span class="feat-pill-icon">📁</span>200+ Mandate</span>
-        <span class="feat-pill"><span class="feat-pill-icon">✦</span>Seit 1998</span>
-      </div>
-      <div class="reveal" style="margin-top:2rem;display:flex;gap:.8rem;flex-wrap:wrap">
-        <a href="stellplaetze.html" class="btn btn-green">Mandate ansehen</a>
-        <a href="kontakt.html" class="btn btn-white">Kontakt aufnehmen</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════ STATS COUNTER ═══════════════ -->
-<section class="count-section">
-  <div class="count-inner">
-    <div class="count-item reveal">
-      <div class="count-num"><span class="counter" data-target="200">0</span><span class="count-suffix">+</span></div>
-      <div class="count-divider"></div>
-      <div class="count-label">Mandate</div>
-    </div>
-    <div class="count-item reveal">
-      <div class="count-num"><span class="counter" data-target="26">0</span></div>
-      <div class="count-divider"></div>
-      <div class="count-label">Jahre Erfahrung</div>
-    </div>
-    <div class="count-item reveal">
-      <div class="count-num"><span class="counter" data-target="3">0</span></div>
-      <div class="count-divider"></div>
-      <div class="count-label">Märkte DACH + TR</div>
-    </div>
-    <div class="count-item reveal">
-      <div class="count-num"><span class="counter" data-target="100">0</span><span class="count-suffix">%</span></div>
-      <div class="count-divider"></div>
-      <div class="count-label">Diskretion</div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════ WHY US (dark) ═══════════════ -->
-<section class="why-us">
-  <div class="why-inner">
-    <!-- TODO: BSF-Bild — Sulmsee-Foto temporär drin, später ersetzen -->
-    <div class="why-img-wrap reveal from-left">
-      <div class="why-img">
-        <img src="https://images.unsplash.com/photo-1573164574572-cb89e39749b4?w=800&q=80" alt="Distinguished Berater BSF Consulting AG" loading="lazy">
-      </div>
-      <div class="why-img-badge">26 Jahre<br><span style="font-size:.82rem;font-weight:400;font-family:'Inter',sans-serif">M&amp;A · BSF<br>Consulting AG</span></div>
-    </div>
-    <div class="why-text">
-      <div class="section-tag reveal">Warum BSF Consulting?</div>
-      <h2 class="section-title reveal">Mehr als nur ein<br><em>Berater</em></h2>
-      <ul class="why-list reveal">
-        <li class="why-li"><span class="why-li-check">✓</span><span><strong>Inhabergeführt seit 1998</strong> – direkte Erreichbarkeit, keine Junior-Berater als Ansprechpartner</span></li>
-        <li class="why-li"><span class="why-li-check">✓</span><span><strong>Verifiziertes Käufernetzwerk</strong> – 200+ qualifizierte Kaufinteressenten aus DACH und der Türkei</span></li>
-        <li class="why-li"><span class="why-li-check">✓</span><span><strong>BSF-Transaktionsuhr</strong> – proprietäres Bewertungsmodell auf Basis von 26 Jahren Transaktionsdaten</span></li>
-        <li class="why-li"><span class="why-li-check">✓</span><span><strong>NDA vom ersten Gespräch an</strong> – Diskretion vor dem Mandat, nicht erst nach Unterzeichnung</span></li>
-        <li class="why-li"><span class="why-li-check">✓</span><span><strong>Eine Seite, ein Mandat</strong> – volle Aufmerksamkeit, kein Interessenskonflikt durch Mehrfachmandate</span></li>
-        <li class="why-li"><span class="why-li-check">✓</span><span><strong>Zug, Schweiz</strong> – diskrete Lage, kurze Distanz zu Zürich, internationale Erreichbarkeit</span></li>
-      </ul>
-      <div class="reveal" style="display:flex;gap:1rem;flex-wrap:wrap">
-        <button class="btn btn-green" onclick="openBooking()">→ Erstgespräch anfragen</button>
-        <a href="preise.html" class="btn btn-outline">Honorar ansehen</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════ DISKRETION ═══════════════ -->
-<section class="ts-section" style="background-image:linear-gradient(rgba(26,43,72,.88),rgba(10,18,40,.96)),url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=1800&q=85');background-size:cover;background-position:center">
-  <div class="ts-inner">
-    <div class="ts-header">
-      <div class="section-tag reveal">Grundsatz</div>
-      <h2 class="section-title reveal">Was uns anvertraut wird,<br>bleibt <em style="font-style:italic;color:var(--el)">anvertraut</em></h2>
-      <p class="section-sub reveal">Diskretion ist nicht ein Marketing-Versprechen — sie ist die Voraussetzung unseres Geschäfts.</p>
-    </div>
-    <div class="ts-viewport">
-      <div class="ts-track" id="ts-track">
-        <div class="ts-card">
-          <div class="ts-stars">— NDA —</div>
-          <p class="ts-text">Jedes Mandat beginnt mit einem NDA — auch das Erstgespräch. Sensible Daten wandern ausschliesslich durch verschlüsselte Datenräume mit revisionssicherem Zugriffsprotokoll.</p>
-          <div class="ts-author"><div class="ts-av" style="background:#1a2b48">01</div><div><div class="ts-name">Vertraulichkeit <span style="font-weight:400;color:rgba(255,255,255,.5)">· Grundprinzip</span></div><div class="ts-date">Seit 1998</div></div></div>
-        </div>
-        <div class="ts-card">
-          <div class="ts-stars">— Diskretion —</div>
-          <p class="ts-text">Wir nennen keine Klienten, wir veröffentlichen keine Referenzen. Wer mit uns arbeitet, entscheidet selbst, ob und wie das nach aussen kommuniziert wird.</p>
-          <div class="ts-author"><div class="ts-av" style="background:#243e63">02</div><div><div class="ts-name">Anonymität <span style="font-weight:400;color:rgba(255,255,255,.5)">· Konsequent</span></div><div class="ts-date">Immer</div></div></div>
-        </div>
-        <div class="ts-card">
-          <div class="ts-stars">— Datenraum —</div>
-          <p class="ts-text">Sensible Unternehmensdaten werden ausschliesslich in verschlüsselten Datenräumen mit revisionssicherem Zugriffsprotokoll geteilt — kein E-Mail-Anhang, kein Cloud-Drive.</p>
-          <div class="ts-author"><div class="ts-av" style="background:#4a6788">03</div><div><div class="ts-name">Datensicherheit <span style="font-weight:400;color:rgba(255,255,255,.5)">· Technisch</span></div><div class="ts-date">Jedes Mandat</div></div></div>
-        </div>
-        <div class="ts-card">
-          <div class="ts-stars">— Eine Seite —</div>
-          <p class="ts-text">BSF vertritt immer nur eine Seite eines Mandats — Verkäufer oder Käufer, nie beide. Kein Interessenskonflikt, volle Aufmerksamkeit.</p>
-          <div class="ts-author"><div class="ts-av" style="background:var(--e)">04</div><div><div class="ts-name">Interessensfreiheit <span style="font-weight:400;color:rgba(255,255,255,.5)">· Konsequent</span></div><div class="ts-date">Ohne Ausnahme</div></div></div>
-        </div>
-        <div class="ts-card">
-          <div class="ts-stars">— Zug CH —</div>
-          <p class="ts-text">Zug ist nicht zufällig der Sitz vieler Schweizer Privatbanken. Hier verbindet sich kurze Distanz zu Zürich mit der Diskretion, die Mandate dieser Grössenordnung verlangen.</p>
-          <div class="ts-author"><div class="ts-av" style="background:var(--el)">05</div><div><div class="ts-name">Standort <span style="font-weight:400;color:rgba(255,255,255,.5)">· Gubelstrasse 12</span></div><div class="ts-date">CH-6300 Zug</div></div></div>
-        </div>
-        <div class="ts-card">
-          <div class="ts-stars">— Erstgespräch —</div>
-          <p class="ts-text">Das Erstgespräch kostet kein Honorar und verpflichtet zu nichts. Es endet mit Klarheit — für Sie und für uns. Danach entscheiden Sie, ob ein Mandat folgt.</p>
-          <div class="ts-author"><div class="ts-av" style="background:#1a2b48">06</div><div><div class="ts-name">Einstieg <span style="font-weight:400;color:rgba(255,255,255,.5)">· Unverbindlich</span></div><div class="ts-date">Innerhalb eines Werktags</div></div></div>
-        </div>
-        <div class="ts-card">
-          <div class="ts-stars">— Netzwerk —</div>
-          <p class="ts-text">200+ verifizierte Kaufinteressenten aus DACH und der Türkei — geprüft, qualifiziert, diskret angesprochen. Kein Schaufenster, kein öffentliches Inserat.</p>
-          <div class="ts-author"><div class="ts-av" style="background:#243e63">07</div><div><div class="ts-name">Käufernetzwerk <span style="font-weight:400;color:rgba(255,255,255,.5)">· Verifiziert</span></div><div class="ts-date">DACH &amp; Türkei</div></div></div>
-        </div>
-        <div class="ts-card">
-          <div class="ts-stars">— Transaktionsuhr —</div>
-          <p class="ts-text">Unser BSF-Marktalgorithmus stützt sich auf 26 Jahre Transaktionsdaten aus 12 Sektoren. Er liefert eine fundierte, marktnahe Bewertungsgrundlage — ohne Schönrechnen.</p>
-          <div class="ts-author"><div class="ts-av" style="background:#4a6788">08</div><div><div class="ts-name">Bewertung <span style="font-weight:400;color:rgba(255,255,255,.5)">· Methode</span></div><div class="ts-date">12 Sektoren</div></div></div>
-        </div>
-      </div>
-    </div>
-    <div class="ts-controls">
-      <button class="ts-arr" id="ts-prev">&#8592;</button>
-      <div class="ts-dots" id="ts-dots"></div>
-      <button class="ts-arr" id="ts-next">&#8594;</button>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════ TRANSAKTIONSUHR PREVIEW ═══════════════ -->
-<section class="section-wrap bg-paper">
+<!-- ═══════════════ TRANSAKTIONSUHR TEASER ═══════════════ -->
+<section class="section section--paper" id="transaktionsuhr-teaser">
   <div class="section-wrap-inner" style="display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center">
     <div class="reveal">
-      <div class="section-tag">Das BSF-Instrument</div>
-      <h2 class="section-title">Die <em style="color:var(--el);font-style:italic">Transaktions­uhr.</em></h2>
-      <p class="section-sub" style="margin-bottom:2rem">Seit über zwei Dekaden bestimmt unser proprietärer Marktalgorithmus den Zyklus-Stand von 12 Sektoren — halbjährlich aktualisiert. Sie zeigt auf einen Blick, ob Ihr Sektor gerade Verkäufer- oder Käufermarkt ist.</p>
-      <a href="transaktionsuhr.html" class="btn btn-green">→ Aktuelle Uhr ansehen</a>
+      <div class="tu-edition-badge" data-i18n="sections.uhrBadge">Ausgabe 2/2025 · Quartalsweise</div>
+      <div data-i18n="auto.a451697a" class="section-tag">Ausgabe 2/2025 · Quartalsweise</div>
+      <h2 class="section-title" data-i18n="sections.uhrTitle">Die <em>Transaktions­uhr.</em></h2>
+      <p data-i18n="auto.1c5cc98f" class="section-sub" style="margin-bottom:2rem">Unser Marktalgorithmus berechnet quartalsweise den Zyklus-Stand von 14 Wirtschaftssektoren. Verkäufermarkt, Abkühlung, Tief oder Aufschwung — die Ausgabe 2/2025 zeigt, wo Ihr Sektor heute steht.</p>
+      <a href="transaktionsuhr.html" class="btn btn-green" data-i18n="sections.uhrCta">→ Aktuelle Uhr ansehen</a>
     </div>
-    <!-- Mini-Vorschau-SVG -->
+    <!-- Mini-Vorschau-SVG (14 Sektoren) -->
     <div class="reveal" style="aspect-ratio:1;max-width:360px;margin:0 auto;background:var(--wh);border-radius:50%;box-shadow:0 20px 60px rgba(26,43,72,.10);border:1px solid var(--bd)">
       <svg viewBox="0 0 400 400" style="width:100%;height:100%">
         <circle cx="200" cy="200" r="180" fill="none" stroke="#e0ddd6" stroke-width="1.5"/>
@@ -323,96 +173,392 @@ window.openBooking=function(){var m=document.getElementById('bookingModal');if(m
         <text x="294" y="342" font-size="8" letter-spacing="2" fill="#999" text-anchor="middle" font-family="Inter,sans-serif">ABKÜHL.</text>
         <text x="106" y="342" font-size="8" letter-spacing="2" fill="#999" text-anchor="middle" font-family="Inter,sans-serif">TIEF</text>
         <text x="106" y="68" font-size="8" letter-spacing="2" fill="#999" text-anchor="middle" font-family="Inter,sans-serif">AUFSCHW.</text>
-        <!-- 12 Sektor-Tokens (stilisiert) -->
+        <!-- 14 Sektor-Tokens: 3 HOCH · 3 ABKÜHLUNG · 4 TIEF · 4 AUFSCHWUNG -->
         <g fill="#1a2b48" opacity=".85">
-          <circle cx="319" cy="148" r="16"/><circle cx="334" cy="207" r="16"/>
-          <circle cx="303" cy="270" r="16"/><circle cx="248" cy="321" r="16"/>
-          <circle cx="182" cy="333" r="16"/><circle cx="118" cy="305" r="16"/>
-          <circle cx="76"  cy="252" r="16"/><circle cx="66"  cy="190" r="16"/>
-          <circle cx="97"  cy="128" r="16"/><circle cx="152" cy="82"  r="16"/>
-          <circle cx="220" cy="67"  r="16"/>
+          <circle cx="310" cy="90"  r="14"/>
+          <circle cx="350" cy="160" r="14"/>
+          <circle cx="350" cy="240" r="14"/>
+          <circle cx="310" cy="310" r="14"/>
+          <circle cx="240" cy="350" r="14"/>
+          <circle cx="176" cy="353" r="14"/>
+          <circle cx="123" cy="334" r="14"/>
+          <circle cx="80"  cy="298" r="14"/>
+          <circle cx="50"  cy="240" r="14"/>
+          <circle cx="47"  cy="176" r="14"/>
+          <circle cx="66"  cy="123" r="14"/>
+          <circle cx="103" cy="80"  r="14"/>
+          <circle cx="160" cy="50"  r="14"/>
         </g>
-        <!-- Highlight-Token in Gold -->
-        <circle cx="288" cy="96" r="16" fill="#D4B976"/>
+        <!-- Nahrung — Spitzenwert HOCH -->
+        <circle cx="240" cy="50" r="14" fill="var(--gold)"/>
         <circle cx="200" cy="200" r="4" fill="#1a2b48" opacity=".5"/>
       </svg>
     </div>
   </div>
 </section>
 
-<!-- ═══════════════ EDITORIAL SPREAD ═══════════════ -->
-<section style="padding:6rem 2rem;background:var(--cr)">
-  <div style="max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center">
-    <div class="reveal from-left">
-      <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=1200&q=85"
-           alt="Vertragsdetail BSF Consulting AG"
-           loading="lazy"
-           style="width:100%;border-radius:var(--r);box-shadow:0 20px 60px rgba(26,43,72,.15)">
+<!-- ═══════════════ FAMILY USP ═══════════════ -->
+<section class="fam-usp section section--soft">
+  <div class="fam-usp-inner">
+    <div class="fam-usp-header">
+      <div class="section-tag reveal" data-i18n="sections.mandateTag">Unsere Mandate</div>
+      <h2 data-i18n="auto.916699dc" class="section-title reveal">Sechs Felder. <em>Ein Anspruch.</em></h2>
+      <p data-i18n="auto.7d5d3355" class="section-sub reveal" style="margin:0 auto">BSF begleitet Mittelständler in sechs klar umrissenen Mandatsformen — von der ersten Sondierung bis zum Closing.</p>
     </div>
+    <div class="fam-grid">
+      <a class="fam-card reveal" href="leistungen.html#verkauf">
+        <div class="fam-card-bg" style="background-image:url('pics/bsf_home_kauf.png');background-position:center top"></div>
+        <div class="fam-card-overlay"></div>
+        <div class="fam-card-body">
+          <div data-i18n="auto.dc2972ef" class="fam-card-title">Unternehmenskäufe &amp; -verkäufe</div>
+          <div data-i18n="auto.bc444b58" class="fam-card-sub">Strukturierter Prozess vom Erstgespräch bis Closing. Eine Seite pro Mandat.</div>
+        </div>
+      </a>
+      <a class="fam-card reveal" href="leistungen.html#fusion">
+        <div class="fam-card-bg" style="background-image:url('pics/bsf_home_merger.png');background-position:center top"></div>
+        <div class="fam-card-overlay"></div>
+        <div class="fam-card-body">
+          <div data-i18n="auto.ceaac63c" class="fam-card-title">Zusammenschlüsse &amp; Umwandlungen</div>
+          <div data-i18n="auto.a013e392" class="fam-card-sub">Strukturen, die heute funktionieren und morgen tragen.</div>
+        </div>
+      </a>
+      <a class="fam-card reveal" href="leistungen.html#nachfolge">
+        <div class="fam-card-bg" style="background-image:url('pics/bsf_home_nachfolge.png');background-position:center top"></div>
+        <div class="fam-card-overlay"></div>
+        <div class="fam-card-body">
+          <div data-i18n="auto.6df66daf" class="fam-card-title">Unternehmensnachfolgen</div>
+          <div data-i18n="auto.09c16207" class="fam-card-sub">Generationenwechsel im Familienunternehmen — begleitet, nicht durchgepeitscht.</div>
+        </div>
+      </a>
+      <a class="fam-card reveal" href="leistungen.html#jv">
+        <div class="fam-card-bg" style="background-image:url('pics/bsf_home_jv.png');background-position:center top"></div>
+        <div class="fam-card-overlay"></div>
+        <div class="fam-card-body">
+          <div data-i18n="auto.f6d18ee8" class="fam-card-title">Allianzen &amp; Joint Ventures</div>
+          <div data-i18n="auto.7205447b" class="fam-card-sub">Grenzüberschreitende Partnerschaften: Struktur, Verhandlung, Vereinbarung.</div>
+        </div>
+      </a>
+      <a class="fam-card reveal" href="leistungen.html#mbo">
+        <div class="fam-card-bg" style="background-image:url('pics/bsf_home_mbo.png');background-position:center top"></div>
+        <div class="fam-card-overlay"></div>
+        <div class="fam-card-body">
+          <div data-i18n="auto.70fa4298" class="fam-card-title">Management-Buy-out &amp; Buy-in</div>
+          <div data-i18n="auto.8ed7f865" class="fam-card-sub">Finanzierungslogik, Verhandlungsführung, Übergang — vor und nach der Unterzeichnung.</div>
+        </div>
+      </a>
+      <a class="fam-card reveal" href="leistungen.html#gruendung">
+        <div class="fam-card-bg" style="background-image:url('pics/bsf_home_gruendung.png');background-position:center top"></div>
+        <div class="fam-card-overlay"></div>
+        <div class="fam-card-body">
+          <div data-i18n="auto.c78ea386" class="fam-card-title">Unternehmensgründungen</div>
+          <div data-i18n="auto.bcb06986" class="fam-card-sub">Strategische Begleitung neuer Vorhaben im Schnittpunkt von Corporate Finance und Unternehmertum.</div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ INTERNATIONALE REICHWEITE ═══════════════ -->
+<section class="regions section section--paper">
+  <div class="regions-inner">
+    <div class="regions-head">
+      <div data-i18n="auto.eee6255e" class="section-tag reveal">Reichweite</div>
+      <h2 data-i18n="auto.9bf2c2c4" class="section-title reveal">Wo wir <em>tatsächlich</em> arbeiten.</h2>
+      <p data-i18n="auto.fcb1c28e" class="section-sub reveal" style="margin:0 auto">Aus Zug heraus betreuen wir Mandate dort, wo wir belastbare Verbindungen pflegen — Schwerpunkt DACH und Türkei, darüber hinaus international über persönliche Netzwerke.</p>
+    </div>
+
+    <div class="regions-grid">
+
+      <div class="region-card reveal">
+        <span class="region-num">01</span>
+        <h3 data-i18n="regions.dach_title">DACH-Raum</h3>
+        <p class="region-sub" data-i18n="regions.dach_sub">Schweiz · Deutschland · Österreich</p>
+      </div>
+
+      <div class="region-card reveal">
+        <span class="region-num">02</span>
+        <h3 data-i18n="regions.tr_title">Türkei</h3>
+        <p class="region-sub" data-i18n="regions.tr_sub">Istanbul · Ankara · industrielle Anatolien-Region</p>
+      </div>
+
+      <div class="region-card reveal">
+        <span class="region-num">03</span>
+        <h3 data-i18n="regions.intl_title">International</h3>
+        <p class="region-sub" data-i18n="regions.intl_sub">Über persönliche Netzwerke</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ LEITWERTE TEASER ═══════════════ -->
+<section class="lw-teaser-sec section section--soft">
+  <div class="lw-teaser-inner">
+    <div class="lw-teaser-head">
+      <div data-i18n="auto.f5fba07c" class="section-tag reveal">Was uns trägt</div>
+      <h2 data-i18n="auto.a1478977" class="section-title reveal">Sechs Werte. <em>Gelebt seit 1998.</em></h2>
+      <p data-i18n="auto.758a66d3" class="section-sub reveal">Werte werden gelebt, nicht ausgehängt. Die Vollversionen stehen auf der Über-uns-Seite.</p>
+    </div>
+    <div class="lw-teaser-grid">
+      <a class="lw-teaser-card reveal" href="firma.html#leitwerte">
+        <div data-i18n="auto.ca73ab65" class="lw-teaser-num">I</div>
+        <h3 data-i18n="auto.88508112">Diene und verdiene</h3>
+        <p data-i18n="auto.6fbd3971">Der Erfolg unserer Mandanten ist auch unser Erfolg.</p>
+      </a>
+      <a class="lw-teaser-card reveal" href="firma.html#leitwerte">
+        <div data-i18n="auto.e95267a3" class="lw-teaser-num">II</div>
+        <h3 data-i18n="auto.ba686cb4">Unternehmerische Führung</h3>
+        <p data-i18n="auto.90fdbf35">Klare Verantwortlichkeiten, inspirierendes Umfeld.</p>
+      </a>
+      <a class="lw-teaser-card reveal" href="firma.html#leitwerte">
+        <div data-i18n="auto.a6178c52" class="lw-teaser-num">III</div>
+        <h3 data-i18n="auto.7d568489">Ambition und Einsatz</h3>
+        <p data-i18n="auto.7eb0eb23">Ehrgeiz, Einsatz – und Freude an der Arbeit.</p>
+      </a>
+      <a class="lw-teaser-card reveal" href="firma.html#leitwerte">
+        <div data-i18n="auto.932eaaf5" class="lw-teaser-num">IV</div>
+        <h3 data-i18n="auto.f7e7df68">Innovation und Lernen</h3>
+        <p data-i18n="auto.e95f9c81">Erfahrung × Innovation × Lernen, international anwendbar.</p>
+      </a>
+      <a class="lw-teaser-card reveal" href="firma.html#leitwerte">
+        <div data-i18n="auto.c9ee5681" class="lw-teaser-num">V</div>
+        <h3 data-i18n="auto.3d2bcd7b">Partnerschaft</h3>
+        <p data-i18n="auto.5c37da07">Respekt, Engagement, freier Ideenaustausch.</p>
+      </a>
+      <a class="lw-teaser-card reveal" href="firma.html#leitwerte">
+        <div data-i18n="auto.85ebe39d" class="lw-teaser-num">VI</div>
+        <h3 data-i18n="auto.df923f41">Integrität &amp; Privatsphäre</h3>
+        <p data-i18n="auto.1f16678d">Unser wichtigster Wert: der gute Ruf.</p>
+      </a>
+    </div>
+    <div data-i18n="auto.7d064295" class="lw-teaser-cta reveal">
+      <a href="firma.html#leitwerte" class="btn btn-outline">Alle Leitwerte lesen →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ ABOUT ═══════════════ -->
+<section class="about-v2 section section--paper">
+  <div class="about-v2-inner">
+    <img class="section-portrait reveal from-left" loading="lazy" src="pics/bsf_home_werwirsind.png" alt="Inhabergeführte M&amp;A-Boutique — persönlich geführt seit 1998" data-i18n-attr="alt:auto.imgHomeWerwirsind">
+
+    <div class="about-v2-text">
+      <div data-i18n="auto.c3e34a4b" class="section-tag reveal">Wer wir sind</div>
+      <h2 data-i18n="auto.d19f3d5f" class="section-title reveal">Inhabergeführt. <em>Seit 1998.</em></h2>
+      <p data-i18n="auto.15ff7f9b" class="section-sub reveal">BSF ist eine inhabergeführte M&amp;A-Boutique mit Sitz in Zug. Was das Haus von grösseren Häusern unterscheidet, ist nicht das Mandatsvolumen — es ist die Aufmerksamkeit, die jedes einzelne Mandat erhält.</p>
+      <div class="highlight-box reveal">
+        <p data-i18n="auto.9c51b3de">„Diskretion versprechen viele. Wir beschreiben lieber, wie wir konkret arbeiten — eine Seite pro Mandat, NDA am Anfang statt am Ende, keine öffentliche Klientenliste."</p>
+      </div>
+      <div data-i18n="auto.b3d66ca2" class="feat-pills reveal">
+        <span class="feat-pill">Inhabergeführt</span>
+        <span class="feat-pill">NDA am Anfang, nicht am Ende</span>
+        <span class="feat-pill">Schwerpunkt DACH · Türkei · international</span>
+        <span class="feat-pill">14 Sektoren · Transaktionsuhr</span>
+        <span class="feat-pill">Sitz Zug · CH</span>
+        <span class="feat-pill">Keine Interessenskonflikte</span>
+        <span class="feat-pill">Eine Seite pro Mandat</span>
+        <span class="feat-pill">Seit 1998</span>
+      </div>
+      <div data-i18n="auto.4daa5935" class="reveal" style="margin-top:2rem;display:flex;gap:.8rem;flex-wrap:wrap">
+        <a href="leistungen.html" class="btn btn-green">Leistungen ansehen</a>
+        <a href="kontakt.html" class="btn btn-white">Kontakt aufnehmen</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ STATS COUNTER ═══════════════ -->
+<section class="count-section section section--soft">
+  <div class="count-inner">
+    <div class="count-item reveal">
+      <div class="count-num"><span class="counter" data-target="1998">0</span></div>
+      <div class="count-divider"></div>
+      <div data-i18n="auto.baf7524c" class="count-label">Gegründet</div>
+    </div>
+    <div class="count-item reveal">
+      <div class="count-num"><span class="counter" data-target="30">0</span></div>
+      <div class="count-divider"></div>
+      <div data-i18n="auto.80dd62a4" class="count-label">Jahre M&amp;A-Erfahrung<br><span class="count-sub">Patron · seit dem 26. Lebensjahr</span></div>
+    </div>
+    <div class="count-item reveal">
+      <div class="count-num"><span class="counter" data-target="2">0</span></div>
+      <div class="count-divider"></div>
+      <div data-i18n="auto.097fa2ae" class="count-label">Schwerpunkt-Regionen<br><span class="count-sub">DACH · Türkei · international</span></div>
+    </div>
+    <div class="count-item reveal">
+      <div class="count-num"><span class="counter" data-target="14">0</span></div>
+      <div class="count-divider"></div>
+      <div data-i18n="auto.27600230" class="count-label">Sektoren<br><span class="count-sub">in der Transaktionsuhr 2/2025</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ WHY US (dark) ═══════════════ -->
+<section class="why-us section section--paper">
+  <div class="why-inner">
+    <div class="why-img-wrap reveal from-left">
+      <div class="why-img">
+        <img loading="lazy" src="pics/bsf_firma_inhaber.png" alt="Inhabergeführte Boutique — persönlich verantwortet">
+      </div>
+      <div data-i18n="auto.72ff7215" class="why-img-badge">rund 30 Jahre<br><span style="font-size:.82rem;font-weight:400;font-family:'Inter',sans-serif">M&amp;A · Patron<br>seit 1998</span></div>
+    </div>
+    <div class="why-text">
+      <div data-i18n="auto.2e0ff592" class="section-tag reveal">Warum BSF</div>
+      <h2 data-i18n="auto.5cfb63cb" class="section-title reveal">Inhabergeführt. <em>Persönlich.</em></h2>
+      <ul class="why-list reveal">
+        <li data-i18n="auto.b2441f22" class="why-li"><span class="why-li-check">✓</span><span><strong>Patron-Niveau auf jedem Mandat</strong> — Thilo Hergott führt jedes Mandat persönlich, Junior-Berater übernehmen Detailarbeit, nie die Mandantenbeziehung</span></li>
+        <li data-i18n="auto.86b38c69" class="why-li"><span class="why-li-check">✓</span><span><strong>Eigenes Käufer- und Unternehmernetzwerk</strong> — belastbare Kontakte in sechs Weltregionen, aufgebaut über rund drei Jahrzehnte</span></li>
+        <li data-i18n="auto.26ce7927" class="why-li"><span class="why-li-check">✓</span><span><strong>BSF-Transaktionsuhr</strong> — eigener Marktalgorithmus, quartalsweise, 14 Wirtschaftssektoren in der aktuellen Ausgabe 2/2025</span></li>
+        <li data-i18n="auto.15750156" class="why-li"><span class="why-li-check">✓</span><span><strong>Keine Eigeninteressen</strong> — kein Eigenkapital, keine Beteiligungen, keine Provisionen von Dritten. Honorar kommt vom Mandanten</span></li>
+        <li data-i18n="auto.6cc51c0d" class="why-li"><span class="why-li-check">✓</span><span><strong>Schweizer M&amp;A-Boutique</strong> — inhabergeführt, unabhängig, mit Sitz in Zug. Kein Konzern, kein Interessenkonflikt</span></li>
+        
+      </ul>
+      <div class="reveal" style="display:flex;gap:1rem;flex-wrap:wrap">
+        <button data-i18n="auto.66273721" class="btn btn-green" onclick="openBooking()">→ Erstgespräch anfragen</button>
+        <a data-i18n="auto.35a89d50" href="honorar.html" class="btn btn-outline">Honorar ansehen</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ DISKRETION ═══════════════ -->
+<section class="stimmen-section section section--soft">
+  <div class="section-inner">
+    <span data-i18n="auto.bfc749ed" class="section-tag" style="justify-content:center">Stimmen</span>
+    <h2 data-i18n="auto.b986bb72" class="section-title">Wie Mandanten <em>über uns sprechen.</em></h2>
+    <p data-i18n="auto.ba0d4f38" class="section-sub">Vollständig anonymisiert — wir nennen keine Namen, keine Firmen, keine Branchendetails, die identifizierbar wären. Das ist Teil unseres Versprechens.</p>
+
+    <div class="stimmen-grid">
+
+      <!-- TODO BSF-CONTENT: durch echte, von Thilo freigegebene
+           anonymisierte Stimmen ersetzen. Bis dahin Platzhalter. -->
+
+      <article class="stimme-card reveal">
+        <span class="stimme-quote">„</span>
+        <p data-i18n="auto.2ceb2be9" class="stimme-text">
+          BSF hat keinen Verkauf erzwungen. Sie haben einen Käufer
+          gefunden, der unsere Mitarbeiter behalten hat — und uns
+          ehrlich gesagt, als zwei Kandidaten nicht passten.
+        </p>
+        <div data-i18n="auto.b218aa2a" class="stimme-meta">
+          <span class="stimme-role">Patron eines Familienunternehmens</span>
+          <span class="stimme-detail">Maschinenbau · DACH · Verkaufsmandat</span>
+        </div>
+      </article>
+
+      <article class="stimme-card reveal">
+        <span class="stimme-quote">„</span>
+        <p data-i18n="auto.21259c49" class="stimme-text">
+          Die Diskretion war absolut. Nicht einmal unser direkter
+          Wettbewerber hat etwas mitbekommen — bis die Vereinbarung
+          stand. Genau so muss das laufen.
+        </p>
+        <div data-i18n="auto.675b6788" class="stimme-meta">
+          <span class="stimme-role">CEO eines Software-Unternehmens</span>
+          <span class="stimme-detail">SaaS · Schweiz · MBO-Begleitung</span>
+        </div>
+      </article>
+
+      <article class="stimme-card reveal">
+        <span class="stimme-quote">„</span>
+        <p data-i18n="auto.26c05299" class="stimme-text">
+          Was ich vorher unterschätzt habe: das internationale
+          Netzwerk. Drei der fünf qualifizierten Bieter kamen aus
+          Regionen, die wir selbst nie angesprochen hätten.
+        </p>
+        <div data-i18n="auto.a6e8eadf" class="stimme-meta">
+          <span class="stimme-role">Verkäufer</span>
+          <span class="stimme-detail">Logistik · Süddeutschland · Mid-Cap</span>
+        </div>
+      </article>
+
+      <article class="stimme-card reveal">
+        <span class="stimme-quote">„</span>
+        <p data-i18n="auto.18535fe8" class="stimme-text">
+          Eine Seite pro Mandat — das ist nicht Marketing-Sprech.
+          Man spürt es im Prozess: keine versteckten Loyalitäten,
+          keine doppelten Botschaften, klare Antworten.
+        </p>
+        <div data-i18n="auto.ef76ce73" class="stimme-meta">
+          <span class="stimme-role">Käufer</span>
+          <span class="stimme-detail">Industriegüter · DACH · Cross-Border-Akquisition</span>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ EDITORIAL SPREAD ═══════════════ -->
+<section class="editorial-spread section section--paper">
+  <div class="editorial-spread-inner">
     <div class="reveal from-right">
-      <div class="section-tag">Vom Mandat zum Abschluss</div>
-      <h2 class="section-title">Jedes Detail.<br><em>Jede Phase.</em></h2>
-      <p class="section-sub" style="margin-bottom:1.5rem">Ein Unternehmensverkauf ist kein Produkt — er ist ein Prozess. BSF begleitet jeden Schritt: von der ersten Bewertung über Käufersuche und Due Diligence bis zur notariellen Unterzeichnung.</p>
-      <a href="freizeit.html" class="btn btn-green">→ Unsere Methode</a>
+      <div data-i18n="auto.5dcc6d55" class="section-tag">Methode</div>
+      <h2 data-i18n="auto.f2e5d9f9" class="section-title">Fünf Phasen. <em>Ein Closing.</em></h2>
+      <p data-i18n="auto.d4487c48" class="section-sub" style="margin-bottom:1.5rem">Jedes BSF-Mandat läuft in fünf klar definierten Phasen ab. Von der Einschätzung über Vorbereitung und Käufersuche bis zu Verhandlung und Closing — jede Phase hat ein klares Ergebnis, bevor die nächste beginnt.</p>
+      <a data-i18n="auto.8f5160c1" href="methode.html" class="btn btn-green">→ Unsere Methode</a>
     </div>
   </div>
 </section>
 
 <!-- ═══════════════ CTA BANNER ═══════════════ -->
 <section class="cta-banner">
-  <div class="cta-banner-bg" style="background-image:url('https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?w=2400&q=85')"></div>
+  <div class="cta-banner-bg" style="background-image:url('pics/bsf_home_hero_texture.png')"></div>
   <div class="cta-banner-overlay"></div>
   <div class="cta-banner-content reveal">
-    <div class="section-tag" style="justify-content:center;color:var(--el)">Erstgespräch</div>
-    <h2>Ihr Mandat beginnt<br>mit einem <em>Gespräch</em></h2>
-    <p>Unverbindlich, vertraulich, innerhalb eines Werktags. Senden Sie uns Ihre Anfrage — wir melden uns diskret zurück.</p>
+    <div class="section-tag" style="justify-content:center;color:var(--el)" data-i18n="cta.tag">Erstgespräch</div>
+    <h2><span data-i18n="cta.title1">Ihr Mandat beginnt</span><br><em data-i18n="cta.title2">mit einem Gespräch.</em></h2>
+    <p data-i18n="auto.6e1c52ee">Vertraulich, ohne Honorar, auf Wunsch unter NDA ab dem ersten Wort. Wir hören zu, ordnen ein, sagen ehrlich, ob ein Mandat zu uns passt.</p>
     <div class="cta-banner-btns">
-      <button class="btn btn-green" onclick="openBooking()" style="font-size:.95rem;padding:.95rem 2.4rem;box-shadow:0 8px 30px rgba(0,0,0,.3)">→ Erstgespräch anfragen</button>
-      <a href="tel:+41417603616" class="btn btn-outline" style="font-size:.95rem;padding:.95rem 2rem">Direkt anrufen</a>
+      <button class="btn btn-green" onclick="openBooking()" style="font-size:.95rem;padding:.95rem 2.4rem;box-shadow:0 8px 30px rgba(0,0,0,.3)" data-i18n="cta.ctaPrimary">→ Erstgespräch anfragen</button>
+      <a href="tel:+41417603616" class="btn btn-outline" style="font-size:.95rem;padding:.95rem 2rem" data-i18n="cta.ctaSecondary">Direkt anrufen</a>
     </div>
   </div>
 </section>
 
 <!-- Floating CTA -->
 <div class="fcta" id="fcta">
-  <button class="fcta-btn fcta-primary" onclick="openBooking()">→ Erstgespräch</button>
-  <a href="tel:+41417603616"><button class="fcta-btn fcta-phone">Anrufen</button></a>
+  <button data-i18n="auto.757a6af6" class="fcta-btn fcta-primary" onclick="openBooking()">→ Erstgespräch</button>
+  <a href="tel:+41417603616"><button data-i18n="auto.45a93dfb" class="fcta-btn fcta-phone">Anrufen</button></a>
 </div>
 
 <!-- Footer -->
 <footer>
   <div class="footer-top">
     <div class="footer-brand">
-      <a href="index.html" style="text-decoration:none"><div class="fb-logo">BSF <span>Consulting AG</span></div></a>
-      <p>Schweizer M&amp;A-Boutique mit Sitz in Zug. Diskret, strukturiert, mit Erfahrung seit 1998.</p>
-      <div style="font-size:.82rem;color:rgba(255,255,255,.32)">BSF Consulting AG<br>Gubelstrasse 12, CH-6300 Zug<br>+41 41 760 36 16<br>info@bsfconsulting.ch</div>
+      <a href="index.html" style="text-decoration:none"><div class="fb-logo">BSF CONSULTING AG</div></a>
+      <p data-i18n="footer.brandSub">Inhabergeführte M&amp;A-Boutique mit Sitz in Zug. Diskret, strukturiert, international vernetzt seit 1998.</p>
+      <div data-i18n="auto.0f7c3c96" style="font-size:.82rem;color:rgba(255,255,255,.32)">BSF Consulting AG<br>Gubelstrasse 12, CH-6300 Zug<br>+41 41 760 36 16<br>info@bsfconsulting.ch</div>
     </div>
-    <div class="fc"><h4>Navigation</h4><ul>
-      <li><a href="index.html">Startseite</a></li>
-      <li><a href="stellplaetze.html">Mandate</a></li>
-      <li><a href="preise.html">Honorar</a></li>
-      <li><a href="freizeit.html">Methode</a></li>
-      <li><a href="transaktionsuhr.html">Transaktionsuhr</a></li>
-      <li><a href="kontakt.html">Kontakt</a></li>
+    <div class="fc"><h4 data-i18n="footer.navHead">Navigation</h4><ul>
+      <li><a href="index.html" data-i18n="nav.home">Startseite</a></li>
+      <li><a href="firma.html" data-i18n="nav.ueberuns">Über uns</a></li>
+      <li><a href="leistungen.html" data-i18n="nav.leistungen">Leistungen</a></li>
+      <li><a href="methode.html" data-i18n="nav.methode">Methode</a></li>
+      <li><a href="transaktionsuhr.html" data-i18n="nav.transaktionsuhr">Transaktionsuhr</a></li>
+      <li><a href="honorar.html" data-i18n="nav.honorar">Honorar</a></li>
+      <li><a href="kontakt.html" data-i18n="nav.kontakt">Kontakt</a></li>
     </ul></div>
-    <div class="fc"><h4>Leistungen</h4><ul>
-      <li><a href="stellplaetze.html">Unternehmensverkauf</a></li>
-      <li><a href="stellplaetze.html">Unternehmenskauf</a></li>
-      <li><a href="stellplaetze.html">Nachfolge</a></li>
-      <li><a href="stellplaetze.html">Restrukturierung</a></li>
+        <div class="fc"><h4 data-i18n="footer.leistungenHead">Leistungen</h4><ul>
+      <li data-i18n="auto.bfd85769"><a href="leistungen.html#verkauf">Unternehmensverkauf</a></li>
+      <li data-i18n="auto.dd5b3846"><a href="leistungen.html#kauf">Unternehmenskauf</a></li>
+      <li data-i18n="auto.310f1a2e"><a href="leistungen.html#nachfolge">Nachfolge</a></li>
+      <li data-i18n="auto.98db43a0"><a href="leistungen.html#mbo">MBO / MBI</a></li>
+      <li data-i18n="auto.99ac9563"><a href="leistungen.html#jv">Joint Ventures</a></li>
+      <li data-i18n="auto.60252187"><a href="leistungen.html#gruendung">Unternehmensgründungen</a></li>
     </ul></div>
-    <div class="fc"><h4>Rechtliches</h4><ul>
-      <li><a href="#">Impressum</a></li>
-      <li><a href="#">Datenschutz</a></li>
-      <li><a href="#">AGB</a></li>
+    <div class="fc"><h4 data-i18n="footer.rechtlichesHead">Rechtliches</h4><ul>
+      <li data-i18n="auto.c6343caa"><a href="impressum.html">Impressum</a></li>
+      <li data-i18n="auto.af3859cf"><a href="datenschutz.html">Datenschutz</a></li>
     </ul></div>
   </div>
   <div class="footer-bottom">
-    <div class="footer-copy">© 2026 BSF Consulting AG · Zug · Schweiz</div>
-    <div class="footer-legal"><a href="#">Impressum</a><a href="#">Datenschutz</a><a href="#">AGB</a></div>
+    <div class="footer-copy" data-i18n="footer.copyright">© 2026 BSF Consulting AG · Zug · Schweiz</div>
+    <div data-i18n="auto.514a3aff" class="footer-legal"><a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutz</a></div>
   </div>
 </footer>
 
+<script src="i18n.js" defer></script>
 <script src="reveal.js"></script>
 <script src="booking.js"></script>
 <script>
@@ -427,7 +573,7 @@ document.addEventListener('DOMContentLoaded', function() {
   } catch(e) {}
   try {
     var cn = document.getElementById('cb-head-name');
-    if (cn) cn.textContent = 'BSF Concierge';
+    if (cn) cn.textContent = 'BSF-Assistent';
     // Chatbot-Logik bleibt unverändert — vollständiger Umbau folgt in späterem Schritt
   } catch(e) {}
 }, false);
@@ -440,7 +586,7 @@ document.addEventListener('DOMContentLoaded', function() {
   if(!loader)return;
   if(sessionStorage.getItem('bsf_loader_shown')){loader.style.display='none';return;}
   sessionStorage.setItem('bsf_loader_shown','1');
-  var minDisplayTime=1500,maxDisplayTime=3500,startTime=Date.now(),hidden=false;
+  var minDisplayTime=1200,maxDisplayTime=3500,startTime=Date.now(),hidden=false;
   function hideLoader(){
     if(hidden)return;hidden=true;
     var remaining=Math.max(0,minDisplayTime-(Date.now()-startTime));
@@ -472,43 +618,32 @@ window.addEventListener('scroll',()=>{
 // Mobile menu
 document.getElementById('hamBtn').addEventListener('click', openMobMenu);
 document.getElementById('mobMenuClose').addEventListener('click', closeMobMenu);
-// Scroll reveal (including directional)
-(function(){
-  const obs=new IntersectionObserver((entries)=>{
-    entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}});
-  },{threshold:.07,rootMargin:'0px 0px 50px 0px'});
-  document.querySelectorAll('.reveal').forEach((el,i)=>{
-    el.style.transitionDelay=(i%5*.08)+'s';
-    obs.observe(el);
-  });
-  setTimeout(()=>{
-    document.querySelectorAll('.reveal:not(.visible)').forEach(el=>{
-      const r=el.getBoundingClientRect();
-      if(r.top<window.innerHeight)el.classList.add('visible');
-    });
-  },120);
-})();
 // Animated counters
 (function(){
-  const counters=document.querySelectorAll('.counter');
+  var counters=document.querySelectorAll('.counter[data-target]');
   if(!counters.length)return;
-  const obs=new IntersectionObserver((entries)=>{
-    entries.forEach(entry=>{
-      if(!entry.isIntersecting)return;
-      const el=entry.target;
-      const target=+el.getAttribute('data-target');
-      const duration=1600;
-      const step=target/60;
-      let current=0;
-      const timer=setInterval(()=>{
-        current+=step;
-        if(current>=target){current=target;clearInterval(timer);}
-        el.textContent=Math.round(current);
-      },duration/60);
-      obs.unobserve(el);
-    });
-  },{threshold:.5});
-  counters.forEach(c=>obs.observe(c));
+  function animate(el){
+    if(el.dataset.done)return;
+    el.dataset.done='1';
+    var target=parseInt(el.dataset.target,10)||0;
+    var dur=1400,start=performance.now();
+    function step(now){
+      var t=Math.min(1,(now-start)/dur);
+      var v=Math.round(target*(1-Math.pow(1-t,3)));
+      el.textContent=v;
+      if(t<1)requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+  if(!('IntersectionObserver' in window)){counters.forEach(animate);return;}
+  var obs=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){if(e.isIntersecting){animate(e.target);obs.unobserve(e.target);}});
+  },{threshold:0.4});
+  counters.forEach(function(c){
+    var r=c.getBoundingClientRect();
+    if(r.top<(window.innerHeight||800))animate(c);
+    else obs.observe(c);
+  });
 })();
 // FCTA visibility
 (function(){
@@ -535,7 +670,7 @@ document.getElementById('mobMenuClose').addEventListener('click', closeMobMenu);
 })();
 // Weather widget – Open-Meteo (Koordinaten auf Zug aktualisieren in späterem Schritt)
 (function(){
-  const WI={0:'☀️',1:'🌤',2:'⛅',3:'☁️',45:'🌫',48:'🌫',51:'🌦',53:'🌦',55:'🌧',61:'🌧',63:'🌧',65:'🌧',71:'🌨',73:'🌨',75:'🌨',80:'🌦',81:'🌧',82:'🌧',95:'⛈',96:'⛈',99:'⛈'};
+  const WI={0:'',1:'',2:'',3:'',45:'',48:'',51:'',53:'',55:'',61:'',63:'',65:'',71:'',73:'',75:'',80:'',81:'',82:'',95:'',96:'',99:''};
   const WD={0:'Klar',1:'Meist klar',2:'Teils bewölkt',3:'Bedeckt',45:'Nebel',48:'Raureif',51:'Nieselregen',53:'Nieselregen',55:'Nieselregen',61:'Leichter Regen',63:'Regen',65:'Starkregen',71:'Leichter Schnee',73:'Schnee',75:'Starker Schnee',80:'Regenschauer',81:'Regenschauer',82:'Starke Schauer',95:'Gewitter',96:'Gewitter',99:'Gewitter'};
   fetch('https://api.open-meteo.com/v1/forecast?latitude=47.17&longitude=8.52&current=temperature_2m,weathercode,windspeed_10m&timezone=Europe%2FZurich')
     .then(r=>r.json())
@@ -543,53 +678,13 @@ document.getElementById('mobMenuClose').addEventListener('click', closeMobMenu);
       const c=d.current;
       const temp=Math.round(c.temperature_2m);
       const code=c.weathercode;
-      document.getElementById('hw-icon').textContent=WI[code]||'🌡';
+      document.getElementById('hw-icon').textContent=WI[code]||'';
       document.getElementById('hw-temp').textContent=temp+'°C';
       document.getElementById('hw-desc').textContent=(WD[code]||'')+(c.windspeed_10m?' · '+Math.round(c.windspeed_10m)+' km/h':'');
       const w=document.getElementById('hero-weather');
       if(w){w.style.display='';w.style.animation='hFloat 4s .8s ease-in-out infinite';}
     })
     .catch(()=>{});
-})();
-// Testimonial Carousel
-(function(){
-  var track=document.getElementById('ts-track');
-  var prev=document.getElementById('ts-prev');
-  var next=document.getElementById('ts-next');
-  var dotsWrap=document.getElementById('ts-dots');
-  if(!track||!prev||!next||!dotsWrap)return;
-  var cards=track.querySelectorAll('.ts-card');
-  var total=cards.length;
-  var getVis=function(){return window.innerWidth>900?3:window.innerWidth>600?2:1;};
-  var visibleCount=getVis();
-  var maxIndex=Math.max(0,total-visibleCount);
-  var current=0;
-  var autoTimer=null;
-  // Build dots
-  for(var i=0;i<maxIndex+1;i++){
-    var dot=document.createElement('button');
-    dot.className='ts-dot'+(i===0?' active':'');
-    (function(idx){dot.addEventListener('click',function(){goTo(idx);resetAuto();});})(i);
-    dotsWrap.appendChild(dot);
-  }
-  function updateDots(){dotsWrap.querySelectorAll('.ts-dot').forEach(function(d,i){d.classList.toggle('active',i===current);});}
-  function goTo(idx){
-    current=Math.max(0,Math.min(idx,maxIndex));
-    var w=cards[0].offsetWidth+21;
-    track.style.transform='translateX('+(-current*w)+'px)';
-    updateDots();
-  }
-  function resetAuto(){
-    clearInterval(autoTimer);
-    autoTimer=setInterval(function(){goTo(current<maxIndex?current+1:0);},4500);
-  }
-  prev.addEventListener('click',function(){goTo(current>0?current-1:maxIndex);resetAuto();});
-  next.addEventListener('click',function(){goTo(current<maxIndex?current+1:0);resetAuto();});
-  var sx=0;
-  track.addEventListener('touchstart',function(e){sx=e.changedTouches[0].screenX;},{passive:true});
-  track.addEventListener('touchend',function(e){var d=sx-e.changedTouches[0].screenX;if(Math.abs(d)>40){goTo(d>0?current+1:current-1);resetAuto();}},{passive:true});
-  window.addEventListener('resize',function(){visibleCount=getVis();maxIndex=Math.max(0,total-visibleCount);goTo(Math.min(current,maxIndex));});
-  goTo(0);resetAuto();
 })();
 // Gallery lightbox for gal-mag photos
 (function(){

@@ -3,3 +3,8 @@ node_modules/
 *.db
 .env
 camping-sulmsee-final2.html
+.env
+
+# Backups
+*.bak
+*.backup.js

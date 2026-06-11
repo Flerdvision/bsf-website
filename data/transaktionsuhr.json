@@ -1,0 +1,27 @@
+{
+  "ausgabe": "2/2025",
+  "stand": "Q4 2025",
+  "hinweis": "PLATZHALTER - vor Live-Gang von Thilo Hergott bestaetigen lassen",
+  "phasen_erklaerung": {
+    "hoch":       "Verkaeufermarkt - hohe Nachfrage, steigende Multiples, kurze Prozesse",
+    "abkuehlung": "Multiples beginnen zu sinken, Kaeufer werden selektiver",
+    "tief":       "Kaeufermarkt - wenige Transaktionen, niedrige Multiples",
+    "aufschwung": "Beginnender Wiederanstieg, gute Kaeufer kommen zurueck"
+  },
+  "sectors": {
+    "nahrung":        { "phase": "hoch",       "value":  2.10, "trend": "rising",  "change_qoq":  0.30 },
+    "pharma":         { "phase": "hoch",       "value":  1.80, "trend": "stable",  "change_qoq":  0.05 },
+    "maschinenbau":   { "phase": "hoch",       "value":  1.30, "trend": "rising",  "change_qoq":  0.20 },
+    "energie":        { "phase": "aufschwung", "value":  0.80, "trend": "rising",  "change_qoq":  0.40 },
+    "elektrotechnik": { "phase": "aufschwung", "value":  0.40, "trend": "rising",  "change_qoq":  0.25 },
+    "software":       { "phase": "aufschwung", "value":  0.60, "trend": "rising",  "change_qoq":  0.20 },
+    "bau":            { "phase": "aufschwung", "value":  0.20, "trend": "rising",  "change_qoq":  0.35 },
+    "chemie":         { "phase": "abkuehlung", "value": -0.20, "trend": "falling", "change_qoq": -0.30 },
+    "konsumgueter":   { "phase": "abkuehlung", "value": -0.40, "trend": "stable",  "change_qoq": -0.10 },
+    "handel":         { "phase": "abkuehlung", "value": -0.60, "trend": "falling", "change_qoq": -0.20 },
+    "logistik":       { "phase": "tief",       "value": -1.20, "trend": "stable",  "change_qoq":  0.00 },
+    "textil":         { "phase": "tief",       "value": -1.40, "trend": "falling", "change_qoq": -0.15 },
+    "medien_telekom": { "phase": "tief",       "value": -1.60, "trend": "stable",  "change_qoq":  0.05 },
+    "fahrzeugbau":    { "phase": "tief",       "value": -1.80, "trend": "falling", "change_qoq": -0.25 }
+  }
+}

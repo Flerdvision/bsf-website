@@ -1,0 +1,79 @@
+{
+  "metadata": {
+    "stand": "Q4 2025",
+    "region": "DACH und Tuerkei",
+    "hinweis": "Anonyme Kaeufertypen-Profile. Keine konkreten Namen. Quelle: PwC M&A Industry Trends DACH H1 2025, Lincoln International Mid-Market Monitor, Dealsuite M&A Monitor, BSF-Erfahrungswerte."
+  },
+  "types": {
+    "strategisch": {
+      "label": "Strategische Kaeufer",
+      "description": "Konsolidierer aus dem gleichen oder angrenzenden Sektor, ueblicherweise eigene Marktposition staerken oder ergaenzen.",
+      "multiple_range": "6.0x bis 9.5x EBITDA, oft Premium fuer Verbundeffekte",
+      "typical_process_length": "6 bis 12 Monate",
+      "preferred_size": "EBITDA ab EUR 2 Mio.",
+      "geography_focus": "DACH-fokussiert, bei tuerkischen Kaeufern Bridge-Deals beliebt",
+      "typical_demands": [
+        "Tiefer technischer Due-Diligence-Prozess",
+        "Earn-Out-Strukturen ueblich, 20 bis 40 Prozent ueber 2 bis 3 Jahre",
+        "Operative Integration ab Closing",
+        "Hohe Anforderungen an Daten-Cleanliness und Rechtsstruktur"
+      ],
+      "best_fit_for": "Verkaeufer mit klarer Marktposition und integrierbarer Organisation",
+      "watch_out": "Erwartungen an Verbundeffekte koennen den Preis treiben, aber Earn-Out-Komponenten kuerzen Cash-at-Closing deutlich"
+    },
+    "pe_mid_market": {
+      "label": "Private Equity Mid-Market",
+      "description": "Finanzinvestoren mit 5 bis 7 Jahren Halteperiode und Wertsteigerungs-Buy-and-Build-Strategien.",
+      "multiple_range": "7.0x bis 10.5x EBITDA, Premium fuer Plattform-Akquisitionen",
+      "typical_process_length": "4 bis 8 Monate",
+      "preferred_size": "EBITDA ab EUR 3 Mio., Sweet Spot 5 bis 15 Mio.",
+      "geography_focus": "Top-Fonds aktiv im gesamten DACH-Raum, manche Tuerkei-Mandate",
+      "typical_demands": [
+        "Audited Financials der letzten 3 Jahre",
+        "Klares Management-Team das nach Closing weitermacht",
+        "Wachstums-These und Buy-and-Build-Logik",
+        "Quality-of-Earnings-Report ueblicherweise Pflicht",
+        "Management-Beteiligung am Equity nach Closing"
+      ],
+      "best_fit_for": "Verkaeufer die Teil-Exit machen und mit Management weiterarbeiten",
+      "watch_out": "Hohe Multiples aber Cash-Out oft nur 70 bis 85 Prozent; Rest in Management-Pool und Earn-Out"
+    },
+    "family_office": {
+      "label": "Family Offices und Industrieholdings",
+      "description": "Patriot-Kapital mit langem Anlagehorizont, oft Nachfolge-Konstellationen, Buy-and-Hold-Strategie.",
+      "multiple_range": "5.5x bis 8.0x EBITDA, selten Premium",
+      "typical_process_length": "3 bis 6 Monate, oft kuerzer wenn Chemie passt",
+      "preferred_size": "EBITDA EUR 1 bis 10 Mio., Schwerpunkt 2 bis 5 Mio.",
+      "geography_focus": "Stark DACH-zentriert, regional fokussiert",
+      "typical_demands": [
+        "Persoenliche Chemie mit Eigentuemer entscheidend",
+        "Hoehere Toleranz fuer Eigentuemer-Abhaengigkeit als bei PE",
+        "Wenig Earn-Out, mehr Cash-at-Closing",
+        "Weniger formaler Prozess, aber genaue Pruefung",
+        "Oft Interesse an gestaffelter Uebergabe ueber 1 bis 2 Jahre"
+      ],
+      "best_fit_for": "Patrons mit Nachfolge-Wunsch, Mitarbeiter-Bindung wichtig, Werte-Fit ueber Hoechstpreis",
+      "watch_out": "Niedrigere Multiples als PE, aber sauberer Cash-Out und Mitarbeiter-Schutz"
+    }
+  },
+  "size_brackets": {
+    "lower_mid": {
+      "label": "Lower Mid-Market",
+      "ev_range_eur": "5 bis 25 Mio.",
+      "dominant_buyer_types": ["family_office", "strategisch"],
+      "note": "PE-Mid-Market selten unter EUR 20 Mio. EV"
+    },
+    "mid": {
+      "label": "Mid-Market",
+      "ev_range_eur": "25 bis 100 Mio.",
+      "dominant_buyer_types": ["pe_mid_market", "strategisch", "family_office"],
+      "note": "Sweet Spot fuer alle drei Kaeufertypen"
+    },
+    "upper_mid": {
+      "label": "Upper Mid-Market",
+      "ev_range_eur": "100 bis 250 Mio.",
+      "dominant_buyer_types": ["pe_mid_market", "strategisch"],
+      "note": "Family Offices selten in dieser Groesse, PE und Strategen dominieren"
+    }
+  }
+}
